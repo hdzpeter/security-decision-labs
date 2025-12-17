@@ -1,0 +1,319 @@
+{
+  "metadata": {
+    "source": "IRIS 2025 (Cyentia Institute)",
+    "data_period": "2008-2024",
+    "dataset_size": "150,000+ incidents",
+    "currency": "USD (2024)",
+    "report_date": "2025"
+  },
+  "lef_by_industry": {
+    "Manufacturing": {
+      "probability": 0.112,
+      "confidence": "high",
+      "source": "IRIS 2025 Figure 8, page 13",
+      "description": "11.2% annual probability"
+    },
+    "Public": {
+      "probability": 0.109,
+      "confidence": "high",
+      "source": "IRIS 2025 Figure 8, page 13",
+      "description": "10.9% annual probability"
+    },
+    "Healthcare": {
+      "probability": 0.091,
+      "confidence": "high",
+      "source": "IRIS 2025 Figure 8, page 13",
+      "description": "9.1% annual probability"
+    },
+    "Information": {
+      "probability": 0.084,
+      "confidence": "high",
+      "source": "IRIS 2025 Figure 8, page 13",
+      "description": "8.4% annual probability"
+    },
+    "Retail": {
+      "probability": 0.073,
+      "confidence": "high",
+      "source": "IRIS 2025 Figure 8, page 13",
+      "description": "7.3% annual probability"
+    },
+    "Financial Services": {
+      "probability": 0.068,
+      "confidence": "high",
+      "source": "IRIS 2025 Figure 8, page 13",
+      "description": "6.8% annual probability"
+    },
+    "Utilities": {
+      "probability": 0.045,
+      "confidence": "high",
+      "source": "IRIS 2025 Figure 8, page 13",
+      "description": "4.5% annual probability"
+    },
+    "Entertainment": {
+      "probability": 0.041,
+      "confidence": "high",
+      "source": "IRIS 2025 Figure 8, page 13",
+      "description": "4.1% annual probability"
+    },
+    "Education": {
+      "probability": 0.149,
+      "confidence": "medium",
+      "source": "IRIS 2025 Figure A1 (1.60x multiplier) × overall baseline (9.3%)",
+      "description": "~14.9% estimated (1.60x above average)"
+    },
+    "Professional Services": {
+      "probability": 0.140,
+      "confidence": "medium",
+      "source": "IRIS 2025 Figure A1 (1.50x multiplier) × overall baseline (9.3%)",
+      "description": "~14.0% estimated (1.50x above average)"
+    },
+    "Hospitality": {
+      "probability": 0.107,
+      "confidence": "medium",
+      "source": "IRIS 2025 Figure A1 (1.15x multiplier) × overall baseline (9.3%)",
+      "description": "~10.7% estimated (1.15x above average)"
+    },
+    "Technology": {
+      "probability": 0.093,
+      "confidence": "medium",
+      "source": "Estimated from IRIS 2025 data (similar to overall average)",
+      "description": "~9.3% estimated"
+    },
+    "Government": {
+      "probability": 0.109,
+      "confidence": "medium",
+      "source": "Estimated from Public sector data",
+      "description": "~10.9% estimated (same as Public sector)"
+    },
+    "Energy": {
+      "probability": 0.045,
+      "confidence": "medium",
+      "source": "Estimated from Utilities data",
+      "description": "~4.5% estimated (same as Utilities)"
+    },
+    "Telecommunications": {
+      "probability": 0.084,
+      "confidence": "medium",
+      "source": "Estimated from Information sector data",
+      "description": "~8.4% estimated (same as Information sector)"
+    }
+  },
+  "lef_by_revenue": {
+    "More than $100B": {
+      "probability": 0.12,
+      "range": [0.11, 0.13],
+      "confidence": "high",
+      "source": "IRIS 2025 Figure 7, page 12",
+      "trend": "declining from 70% (2008)",
+      "description": "12% annual probability (range: 11-13%)"
+    },
+    "$10B to $100B": {
+      "probability": 0.13,
+      "range": [0.12, 0.14],
+      "confidence": "high",
+      "source": "IRIS 2025 Figure 7, page 12",
+      "trend": "stable",
+      "description": "13% annual probability (range: 12-14%)"
+    },
+    "$1B to $10B": {
+      "probability": 0.10,
+      "range": [0.09, 0.11],
+      "confidence": "high",
+      "source": "IRIS 2025 Figure 7, page 12",
+      "trend": "stable",
+      "description": "10% annual probability (range: 9-11%)"
+    },
+    "$100M to $1B": {
+      "probability": 0.08,
+      "range": [0.07, 0.09],
+      "confidence": "high",
+      "source": "IRIS 2025 Figure 7, page 12",
+      "trend": "rising from 1-2% (2008)",
+      "description": "8% annual probability (range: 7-9%)"
+    },
+    "$10M to $100M": {
+      "probability": 0.08,
+      "range": [0.07, 0.09],
+      "confidence": "high",
+      "source": "IRIS 2025 Figure 7, page 12",
+      "trend": "rising from 1-2% (2008)",
+      "description": "8% annual probability (range: 7-9%)"
+    },
+    "Less than $10M": {
+      "probability": 0.07,
+      "range": [0.06, 0.08],
+      "confidence": "high",
+      "source": "IRIS 2025 Figure 7, page 12",
+      "trend": "rising from 1-2% (2008)",
+      "description": "7% annual probability (range: 6-8%)"
+    }
+  },
+  "lm_by_industry": {
+    "Financial Services": {
+      "median": 1000000,
+      "p95": 194000000,
+      "confidence": "high",
+      "source": "IRIS 2025 Appendix A3, page 35",
+      "description": "Median: $1.0M, 95th percentile: $194M"
+    },
+    "Manufacturing": {
+      "median": 1000000,
+      "p95": 42000000,
+      "confidence": "high",
+      "source": "IRIS 2025 Appendix A3, page 35",
+      "description": "Median: $1.0M, 95th percentile: $42M"
+    },
+    "Retail": {
+      "median": 746000,
+      "p95": 45000000,
+      "confidence": "high",
+      "source": "IRIS 2025 Appendix A3, page 35",
+      "trend": "dramatic decrease from 2008 levels",
+      "description": "Median: $746K, 95th percentile: $45M"
+    },
+    "Professional Services": {
+      "median": 736000,
+      "p95": 17000000,
+      "confidence": "high",
+      "source": "IRIS 2025 Appendix A3, page 35",
+      "trend": "up 25x since 2008",
+      "description": "Median: $736K, 95th percentile: $17M"
+    },
+    "Information": {
+      "median": 718000,
+      "p95": 217000000,
+      "confidence": "high",
+      "source": "IRIS 2025 Appendix A3, page 35",
+      "description": "Median: $718K, 95th percentile: $217M"
+    },
+    "Hospitality": {
+      "median": 600000,
+      "p95": 62000000,
+      "confidence": "high",
+      "source": "IRIS 2025 Appendix A3, page 35",
+      "description": "Median: $600K, 95th percentile: $62M"
+    },
+    "Healthcare": {
+      "median": 557000,
+      "p95": 14000000,
+      "confidence": "high",
+      "source": "IRIS 2025 Appendix A3, page 35",
+      "description": "Median: $557K, 95th percentile: $14M"
+    },
+    "Public": {
+      "median": 214000,
+      "p95": 18000000,
+      "confidence": "high",
+      "source": "IRIS 2025 Appendix A3, page 35",
+      "description": "Median: $214K, 95th percentile: $18M"
+    },
+    "Utilities": {
+      "median": 146000,
+      "p95": 3000000,
+      "confidence": "high",
+      "source": "IRIS 2025 Appendix A3, page 35",
+      "description": "Median: $146K, 95th percentile: $3M"
+    },
+    "Entertainment": {
+      "median": 282000,
+      "p95": 12000000,
+      "confidence": "high",
+      "source": "IRIS 2025 Appendix A3, page 35",
+      "description": "Median: $282K, 95th percentile: $12M"
+    },
+    "Education": {
+      "median": 249000,
+      "p95": 6000000,
+      "confidence": "high",
+      "source": "IRIS 2025 Appendix A3, page 35",
+      "description": "Median: $249K, 95th percentile: $6M"
+    },
+    "Technology": {
+      "median": 718000,
+      "p95": 217000000,
+      "confidence": "medium",
+      "source": "Estimated from Information sector data",
+      "description": "Median: $718K, 95th percentile: $217M"
+    },
+    "Government": {
+      "median": 214000,
+      "p95": 18000000,
+      "confidence": "medium",
+      "source": "Estimated from Public sector data",
+      "description": "Median: $214K, 95th percentile: $18M"
+    },
+    "Energy": {
+      "median": 146000,
+      "p95": 3000000,
+      "confidence": "medium",
+      "source": "Estimated from Utilities data",
+      "description": "Median: $146K, 95th percentile: $3M"
+    },
+    "Telecommunications": {
+      "median": 718000,
+      "p95": 217000000,
+      "confidence": "medium",
+      "source": "Estimated from Information sector data",
+      "description": "Median: $718K, 95th percentile: $217M"
+    }
+  },
+  "lm_by_revenue": {
+    "More than $100B": {
+      "median": 6000000,
+      "p95": 259000000,
+      "confidence": "high",
+      "source": "IRIS 2025 Figure A4, page 35",
+      "description": "Median: ~$6M, 95th percentile: ~$259M"
+    },
+    "$10B to $100B": {
+      "median": 2000000,
+      "p95": 269000000,
+      "confidence": "high",
+      "source": "IRIS 2025 Figure A4, page 35",
+      "description": "Median: ~$2M, 95th percentile: ~$269M"
+    },
+    "$1B to $10B": {
+      "median": 2000000,
+      "p95": 62000000,
+      "confidence": "high",
+      "source": "IRIS 2025 Figure A4, page 35",
+      "description": "Median: ~$2M, 95th percentile: ~$62M"
+    },
+    "$100M to $1B": {
+      "median": 467000,
+      "p95": 12000000,
+      "confidence": "high",
+      "source": "IRIS 2025 Figure A4, page 35",
+      "description": "Median: ~$467K, 95th percentile: ~$12M"
+    },
+    "$10M to $100M": {
+      "median": 403000,
+      "p95": 7000000,
+      "confidence": "high",
+      "source": "IRIS 2025 Figure A4, page 35",
+      "description": "Median: ~$403K, 95th percentile: ~$7M"
+    },
+    "Less than $10M": {
+      "median": 329000,
+      "p95": 10000000,
+      "confidence": "high",
+      "source": "IRIS 2025 Figure A4, page 35",
+      "description": "Median: ~$329K, 95th percentile: ~$10M"
+    }
+  },
+  "lef_overall_baseline": {
+    "probability": 0.093,
+    "confidence": "high",
+    "source": "IRIS 2025 Figure 6, page 11",
+    "trend": "up from 2.5% (2008) - nearly 4x increase",
+    "description": "9.3% annual probability (2024 baseline)"
+  },
+  "lm_overall_baseline": {
+    "median": 603000,
+    "p95": 32000000,
+    "confidence": "high",
+    "source": "IRIS 2025 Figure 9, page 15",
+    "trend": "median up 15x from $190K (2008) to $2.9M (2024)",
+    "description": "Overall median: $603K, 95th percentile: $32M"
+  }
+}
