@@ -13,8 +13,8 @@ and quantitative risk methods.
 
 ## Tools
 
-### [FAIR Risk Quantification](tools/fair-risk-simulator/README.md)
-[![License](https://img.shields.io/badge/license-CC--BY--NC--SA%204.0-orange)](tools/fair-risk-simulator/LICENSE)
+### [FAIR Risk Quantification](tools/fair-simulator/README.md)
+[![License](https://img.shields.io/badge/license-CC--BY--NC--SA%204.0-orange)](tools/fair-simulator/LICENSE)
 [![Status](https://img.shields.io/badge/status-active-green)]()
 
 Monte Carlo simulation tool for FAIR (Factor Analysis of Information Risk) methodology 
@@ -24,7 +24,7 @@ with industry benchmarks.
 
 **License:** CC BY-NC-SA 4.0 (Non-Commercial Use Only)
 
-[Read More](tools/fair-risk-simulator/README.md) | [Quick Start](tools/fair-risk-simulator/docs/getting-started.md)
+[Read More](tools/fair-simulator/README.md) | [Quick Start](tools/fair-simulator/docs/getting-started.md)
 
 ## Licensing
 
