@@ -7,8 +7,9 @@ A cyber risk quantification tool based on the FAIR (Factor Analysis of Informati
 - IRIS 2025 benchmarks for LEF (frequency) and LM (loss magnitude)
 - UI designed in Figma, implemented with shadcn/ui components
 
-See [docs/MODEL_REFERENCE.md](docs/MODEL_REFERENCE.md) for the math details and  
-[docs/LIMITATIONS.md](docs/LIMITATIONS.md) for scope & limitations.
+See 
+[docs/MODEL_REFERENCE.md](docs/MODEL_REFERENCE.md) for the math details and  
+[docs/LIMITATIONS.md](docs/LIMITATIONS.md) for scope and limitations.
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![FAIR Methodology](https://img.shields.io/badge/Methodology-FAIR-blue.svg)](https://www.fairinstitute.org/)
@@ -182,7 +183,7 @@ uvicorn api:app --reload --host 0.0.0.0 --port 8000
 
 ## Production Deployment
 
-This tool is not currently intended for production use. See [docs/LIMITATIONS.md](docs/LIMITATIONS.md) for details.
+This tool is not intended for commercial or production use. See [docs/LIMITATIONS.md](docs/LIMITATIONS.md) for details.
 
 For theoretical production deployment guidance, see the **Production Deployment** section in [SETUP.md](SETUP.md).
 
