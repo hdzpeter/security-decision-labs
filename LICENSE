@@ -19,3 +19,12 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+================================================================================
+IMPORTANT: TOOL-SPECIFIC LICENSES
+
+This MIT License applies ONLY to the repository infrastructure (build scripts,
+CI/CD configuration, documentation templates, and shared utilities).
+
+Individual tools in the tools/ directory have their own licenses.
+See tools/*/LICENSE for each tool's specific license terms.
