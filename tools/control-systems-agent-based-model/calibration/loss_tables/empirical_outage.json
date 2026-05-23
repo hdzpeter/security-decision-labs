@@ -1,0 +1,48 @@
+{
+  "_metadata": {
+    "description": "Empirical business interruption loss magnitude distributions from NetDiligence ransomware claims data. Replaces duration-binned CSV outage table.",
+    "source": "NetDiligence Ransomware Spotlight 2024 (Table 5: SME, Table 6: Large Company)",
+    "extracted_via": "Substrata corpus (2026-05-08), records netd2024_ransomware_sme_bi_recovery and netd2024_ransomware_large_bi_recovery",
+    "parameterization": "Two-point lognormal: mu = ln(avg_usd), sigma = (ln(max_usd) - mu) / z_score. avg_usd used as median proxy (true median not reported). For max of N claims: z = invnorm(1 - 1/(2N)).",
+    "duration_scaling": "Sampled BI cost is scaled by (outage_hours / reference_duration_hours). Reference duration = 72 hours (3 days), approximately the median ransomware recovery time for SMEs. Linear scaling is the simplest defensible form given a single anchor point per revenue tier; nonlinear forms would require duration-stratified claim data that NetDiligence does not publish.",
+    "limitations": [
+      "avg_usd used as median proxy — for heavy-tailed claims, mean > median, so this overestimates the center slightly",
+      "max_usd used as upper percentile — at N=294 this approximates p99.7 (z=2.75); at N=15, p96.7 (z=1.83)",
+      "No sector stratification available — NetDiligence BI data is not broken out by sector",
+      "Non-ransomware BI data not disaggregated by incident type in source"
+    ]
+  },
+  "reference_duration_hours": 72,
+  "baseline": {
+    "avg_usd": 1000000,
+    "max_usd": 100000000,
+    "n": 294,
+    "percentile_type": "max_of_n",
+    "source_table": "Table 5 (SME <$2B revenue)"
+  },
+  "by_revenue_bucket": {
+    "sme_under_2b": {
+      "avg_usd": 1000000,
+      "max_usd": 100000000,
+      "n": 294,
+      "percentile_type": "max_of_n",
+      "source_table": "Table 5"
+    },
+    "large_over_2b": {
+      "avg_usd": 27900000,
+      "max_usd": 111000000,
+      "n": 15,
+      "percentile_type": "max_of_n",
+      "source_table": "Table 6"
+    }
+  },
+  "_revenue_bucket_mapping": {
+    "lt_10m": "sme_under_2b",
+    "10m_to_100m": "sme_under_2b",
+    "100m_to_1b": "sme_under_2b",
+    "1b_to_10b": "sme_under_2b",
+    "10b_to_100b": "large_over_2b",
+    "gt_100b": "large_over_2b"
+  },
+  "_design_note": "Business interruption cost IS duration-driven (KB §04 compliant): revenue per hour lost, SLA penalties, emergency staffing all scale with outage length. This is the opposite of information-asset breach loss, where dwell time does NOT continuously scale magnitude. The duration scaling factor ensures that a 1-hour outage costs less than a 168-hour outage, proportionally to the reference duration."
+}

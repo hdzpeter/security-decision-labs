@@ -1,0 +1,2189 @@
+{
+  "dsc": [
+    {
+      "Name": "Secure software development policy",
+      "Description": "Aware of expectations",
+      "Network Node ID": "DSC1",
+      "Control Type": "Expectation Awareness",
+      "OpEx": 100000,
+      "CapEx": 0,
+      "Efficacy Method": "random draw to binomial eval",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 0.9,
+      "Efficacy Param 2": 0.95,
+      "Efficacy Param 3": 1,
+      "Efficacy Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 20000,
+      "Change Freq Param 2": 30000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "DSC",
+      "ID": "DSC1",
+      "_efficacy_method_raw": "random draw to binomial eval",
+      "_efficacy_method_type": "probability",
+      "_efficacy_semantic_type": "probability",
+      "_efficacy_behavior": "bernoulli_trial",
+      "_efficacy_time_type": null
+    },
+    {
+      "Name": "Secure software development training",
+      "Description": "Aware of expectations",
+      "Network Node ID": "DSC2",
+      "Control Type": "Expectation Awareness",
+      "OpEx": 50000,
+      "CapEx": 50000,
+      "Efficacy Method": "random draw to binomial eval",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 0.9,
+      "Efficacy Param 2": 0.95,
+      "Efficacy Param 3": 1,
+      "Efficacy Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 20000,
+      "Change Freq Param 2": 30000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "DSC",
+      "ID": "DSC2",
+      "_efficacy_method_raw": "random draw to binomial eval",
+      "_efficacy_method_type": "probability",
+      "_efficacy_semantic_type": "probability",
+      "_efficacy_behavior": "bernoulli_trial",
+      "_efficacy_time_type": null
+    },
+    {
+      "Name": "Software developer security MBOs",
+      "Description": "Personal priorities are aligned with org expectations",
+      "Network Node ID": "DSC3",
+      "Control Type": "Personal Priority Alignment",
+      "OpEx": 5000,
+      "CapEx": 0,
+      "Efficacy Method": "random draw to binomial eval",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 0.9,
+      "Efficacy Param 2": 0.95,
+      "Efficacy Param 3": 1,
+      "Efficacy Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 20000,
+      "Change Freq Param 2": 30000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "DSC",
+      "ID": "DSC3",
+      "_efficacy_method_raw": "random draw to binomial eval",
+      "_efficacy_method_type": "probability",
+      "_efficacy_semantic_type": "probability",
+      "_efficacy_behavior": "bernoulli_trial",
+      "_efficacy_time_type": null
+    },
+    {
+      "Name": "Software developer compensation tied to MBOs",
+      "Description": "Personal priorities are aligned with org expectations",
+      "Network Node ID": "DSC4",
+      "Control Type": "Personal Priority Alignment",
+      "OpEx": 5000,
+      "CapEx": 0,
+      "Efficacy Method": "random draw to binomial eval",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 0.9,
+      "Efficacy Param 2": 0.95,
+      "Efficacy Param 3": 1,
+      "Efficacy Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 20000,
+      "Change Freq Param 2": 30000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "DSC",
+      "ID": "DSC4",
+      "_efficacy_method_raw": "random draw to binomial eval",
+      "_efficacy_method_type": "probability",
+      "_efficacy_semantic_type": "probability",
+      "_efficacy_behavior": "bernoulli_trial",
+      "_efficacy_time_type": null
+    },
+    {
+      "Name": "Patching policy",
+      "Description": "Aware of expectations",
+      "Network Node ID": "DSC5",
+      "Control Type": "Expectation Awareness",
+      "OpEx": 5000,
+      "CapEx": 0,
+      "Efficacy Method": "random draw to binomial eval",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 0.9,
+      "Efficacy Param 2": 0.95,
+      "Efficacy Param 3": 1,
+      "Efficacy Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 20000,
+      "Change Freq Param 2": 30000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "DSC",
+      "ID": "DSC5",
+      "_efficacy_method_raw": "random draw to binomial eval",
+      "_efficacy_method_type": "probability",
+      "_efficacy_semantic_type": "probability",
+      "_efficacy_behavior": "bernoulli_trial",
+      "_efficacy_time_type": null
+    },
+    {
+      "Name": "Security awareness training for managers",
+      "Description": "Aware of expectations",
+      "Network Node ID": "DSC6",
+      "Control Type": "Expectation Awareness",
+      "OpEx": 25000,
+      "CapEx": 0,
+      "Efficacy Method": "random draw to binomial eval",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 0.9,
+      "Efficacy Param 2": 0.95,
+      "Efficacy Param 3": 1,
+      "Efficacy Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 20000,
+      "Change Freq Param 2": 30000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "DSC",
+      "ID": "DSC6",
+      "_efficacy_method_raw": "random draw to binomial eval",
+      "_efficacy_method_type": "probability",
+      "_efficacy_semantic_type": "probability",
+      "_efficacy_behavior": "bernoulli_trial",
+      "_efficacy_time_type": null
+    },
+    {
+      "Name": "Software engineering manager MBOs",
+      "Description": "Personal priorities are aligned with org expectations",
+      "Network Node ID": "DSC7",
+      "Control Type": "Personal Priority Alignment",
+      "OpEx": 5000,
+      "CapEx": 0,
+      "Efficacy Method": "random draw to binomial eval",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 0.9,
+      "Efficacy Param 2": 0.95,
+      "Efficacy Param 3": 1,
+      "Efficacy Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 20000,
+      "Change Freq Param 2": 30000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "DSC",
+      "ID": "DSC7",
+      "_efficacy_method_raw": "random draw to binomial eval",
+      "_efficacy_method_type": "probability",
+      "_efficacy_semantic_type": "probability",
+      "_efficacy_behavior": "bernoulli_trial",
+      "_efficacy_time_type": null
+    },
+    {
+      "Name": "Software engineering manager compensation tied to MBOs ",
+      "Description": "Personal priorities are aligned with org expectations",
+      "Network Node ID": "DSC8",
+      "Control Type": "Personal Priority Alignment",
+      "OpEx": 5000,
+      "CapEx": 0,
+      "Efficacy Method": "random draw to binomial eval",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 0.9,
+      "Efficacy Param 2": 0.95,
+      "Efficacy Param 3": 1,
+      "Efficacy Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 20000,
+      "Change Freq Param 2": 30000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "DSC",
+      "ID": "DSC8",
+      "_efficacy_method_raw": "random draw to binomial eval",
+      "_efficacy_method_type": "probability",
+      "_efficacy_semantic_type": "probability",
+      "_efficacy_behavior": "bernoulli_trial",
+      "_efficacy_time_type": null
+    },
+    {
+      "Name": "Risk analysis & reporting",
+      "Description": "Aware of relevance to the organization",
+      "Network Node ID": "DSC12",
+      "Control Type": "Org Relevance Awareness",
+      "OpEx": 150000,
+      "CapEx": 100000,
+      "Efficacy Method": "random draw to binomial eval",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 0.9,
+      "Efficacy Param 2": 0.95,
+      "Efficacy Param 3": 1,
+      "Efficacy Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 20000,
+      "Change Freq Param 2": 30000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "DSC",
+      "ID": "DSC12",
+      "_efficacy_method_raw": "random draw to binomial eval",
+      "_efficacy_method_type": "probability",
+      "_efficacy_semantic_type": "probability",
+      "_efficacy_behavior": "bernoulli_trial",
+      "_efficacy_time_type": null
+    },
+    {
+      "Name": "Training",
+      "Description": "Capable of fulfilling responsibilities",
+      "Network Node ID": "DSC13",
+      "Control Type": "Capability",
+      "OpEx": 10000,
+      "CapEx": 0,
+      "Efficacy Method": "random draw to binomial eval",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 0.9,
+      "Efficacy Param 2": 0.95,
+      "Efficacy Param 3": 1,
+      "Efficacy Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 20000,
+      "Change Freq Param 2": 30000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "DSC",
+      "ID": "DSC13",
+      "_efficacy_method_raw": "random draw to binomial eval",
+      "_efficacy_method_type": "probability",
+      "_efficacy_semantic_type": "probability",
+      "_efficacy_behavior": "bernoulli_trial",
+      "_efficacy_time_type": null
+    }
+  ],
+  "vmc": [
+    {
+      "Name": "System configuation management",
+      "Description": null,
+      "Network Node ID": "VM1",
+      "Control Type": "reduce var prob",
+      "OpEx": 100000,
+      "CapEx": 250000,
+      "Efficacy Method": "variance probability adjustment factor",
+      "Dist Type": "Beta PERT",
+      "Param 1": 0.75,
+      "Param 2": 0.9,
+      "Param 3": 1,
+      "Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 25000,
+      "Change Freq Param 2": 35000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "VMC",
+      "ID": "VM1",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 0.75,
+      "Efficacy Param 2": 0.9,
+      "Efficacy Param 3": 1,
+      "Efficacy Param 4": 4,
+      "_efficacy_method_raw": "variance probability adjustment factor",
+      "_efficacy_method_type": "probability",
+      "_efficacy_semantic_type": "probability",
+      "_efficacy_behavior": "bernoulli_trial",
+      "_efficacy_time_type": null,
+      "Control_Type": "reduce var prob"
+    },
+    {
+      "Name": "Threat monitoring service",
+      "Description": null,
+      "Network Node ID": "VM2",
+      "Control Type": "threat intel",
+      "OpEx": 50000,
+      "CapEx": 100000,
+      "Efficacy Method": "time interval for variance detection sweep",
+      "Dist Type": "Beta PERT",
+      "Param 1": 24,
+      "Param 2": 168,
+      "Param 3": 720,
+      "Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 20000,
+      "Change Freq Param 2": 30000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "VMC",
+      "ID": "VM2",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 24,
+      "Efficacy Param 2": 168,
+      "Efficacy Param 3": 720,
+      "Efficacy Param 4": 4,
+      "_efficacy_method_raw": "time interval for variance detection sweep",
+      "_efficacy_method_type": "detection_time",
+      "_efficacy_semantic_type": "time_hours",
+      "_efficacy_behavior": "sample_time_interval",
+      "_efficacy_time_type": "detection_time",
+      "Control_Type": "threat intel"
+    },
+    {
+      "Name": "Vulnerability scanning",
+      "Description": null,
+      "Network Node ID": "VM3",
+      "Control Type": "controls monitoring",
+      "OpEx": 100000,
+      "CapEx": 200000,
+      "Efficacy Method": "time interval for variance detection sweep",
+      "Dist Type": "Beta PERT",
+      "Param 1": 24,
+      "Param 2": 168,
+      "Param 3": 720,
+      "Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 20000,
+      "Change Freq Param 2": 30000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "VMC",
+      "ID": "VM3",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 24,
+      "Efficacy Param 2": 168,
+      "Efficacy Param 3": 720,
+      "Efficacy Param 4": 4,
+      "_efficacy_method_raw": "time interval for variance detection sweep",
+      "_efficacy_method_type": "detection_time",
+      "_efficacy_semantic_type": "time_hours",
+      "_efficacy_behavior": "sample_time_interval",
+      "_efficacy_time_type": "detection_time",
+      "Control_Type": "controls monitoring"
+    },
+    {
+      "Name": "Annual audit",
+      "Description": null,
+      "Network Node ID": "VM4",
+      "Control Type": "controls monitoring",
+      "OpEx": 200000,
+      "CapEx": 0,
+      "Efficacy Method": "time interval for variance detection sweep",
+      "Dist Type": "Beta PERT",
+      "Param 1": 8736,
+      "Param 2": 8736,
+      "Param 3": 8736,
+      "Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 7500,
+      "Change Freq Param 2": 15000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "VMC",
+      "ID": "VM4",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 8736,
+      "Efficacy Param 2": 8736,
+      "Efficacy Param 3": 8736,
+      "Efficacy Param 4": 4,
+      "_efficacy_method_raw": "time interval for variance detection sweep",
+      "_efficacy_method_type": "detection_time",
+      "_efficacy_semantic_type": "time_hours",
+      "_efficacy_behavior": "sample_time_interval",
+      "_efficacy_time_type": "detection_time",
+      "Control_Type": "controls monitoring"
+    },
+    {
+      "Name": "Risk analysis",
+      "Description": null,
+      "Network Node ID": "VM5",
+      "Control Type": "treatment select",
+      "OpEx": 150000,
+      "CapEx": 0,
+      "Efficacy Method": "variance probability adjustment",
+      "Dist Type": "Beta PERT",
+      "Param 1": 1,
+      "Param 2": 1,
+      "Param 3": 1,
+      "Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 7500,
+      "Change Freq Param 2": 15000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "VMC",
+      "ID": "VM5",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 1,
+      "Efficacy Param 2": 1,
+      "Efficacy Param 3": 1,
+      "Efficacy Param 4": 4,
+      "_efficacy_method_raw": "variance probability adjustment",
+      "_efficacy_method_type": "probability",
+      "_efficacy_semantic_type": "probability",
+      "_efficacy_behavior": "bernoulli_trial",
+      "_efficacy_time_type": null,
+      "Control_Type": "treatment select"
+    },
+    {
+      "Name": "Patching",
+      "Description": null,
+      "Network Node ID": "VM6",
+      "Control Type": "implementation",
+      "OpEx": 200000,
+      "CapEx": 100000,
+      "Efficacy Method": "time interval for variance correction",
+      "Dist Type": "Beta PERT",
+      "Param 1": 24,
+      "Param 2": 720,
+      "Param 3": 3000,
+      "Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 25000,
+      "Change Freq Param 2": 35000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "VMC",
+      "ID": "VM6",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 24,
+      "Efficacy Param 2": 720,
+      "Efficacy Param 3": 3000,
+      "Efficacy Param 4": 4,
+      "_efficacy_method_raw": "time interval for variance correction",
+      "_efficacy_method_type": "remediation_time",
+      "_efficacy_semantic_type": "time_hours",
+      "_efficacy_behavior": "sample_time_interval",
+      "_efficacy_time_type": "remediation_time",
+      "Control_Type": "implementation"
+    },
+    {
+      "Name": "Generic correction action",
+      "Description": null,
+      "Network Node ID": "VM7",
+      "Control Type": "implementation",
+      "OpEx": 300000,
+      "CapEx": 0,
+      "Efficacy Method": "time interval for variance correction",
+      "Dist Type": "Beta PERT",
+      "Param 1": 72,
+      "Param 2": 720,
+      "Param 3": 2100,
+      "Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 25000,
+      "Change Freq Param 2": 35000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "VMC",
+      "ID": "VM7",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 72,
+      "Efficacy Param 2": 720,
+      "Efficacy Param 3": 2100,
+      "Efficacy Param 4": 4,
+      "_efficacy_method_raw": "time interval for variance correction",
+      "_efficacy_method_type": "remediation_time",
+      "_efficacy_semantic_type": "time_hours",
+      "_efficacy_behavior": "sample_time_interval",
+      "_efficacy_time_type": "remediation_time",
+      "Control_Type": "implementation"
+    },
+    {
+      "Name": "DR testing",
+      "Description": null,
+      "Network Node ID": "VM8",
+      "Control Type": "controls monitoring",
+      "OpEx": 200000,
+      "CapEx": 350000,
+      "Efficacy Method": "time interval for variance detection sweep",
+      "Dist Type": "Beta PERT",
+      "Param 1": 2,
+      "Param 2": 4,
+      "Param 3": 16,
+      "Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 25000,
+      "Change Freq Param 2": 35000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "VMC",
+      "ID": "VM8",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 2,
+      "Efficacy Param 2": 4,
+      "Efficacy Param 3": 16,
+      "Efficacy Param 4": 4,
+      "_efficacy_method_raw": "time interval for variance detection sweep",
+      "_efficacy_method_type": "detection_time",
+      "_efficacy_semantic_type": "time_hours",
+      "_efficacy_behavior": "sample_time_interval",
+      "_efficacy_time_type": "detection_time",
+      "Control_Type": "controls monitoring"
+    },
+    {
+      "Name": "Signature updates",
+      "Description": null,
+      "Network Node ID": "VM10",
+      "Control Type": "implementation",
+      "OpEx": 10000,
+      "CapEx": 0,
+      "Efficacy Method": "time interval for variance correction",
+      "Dist Type": "Beta PERT",
+      "Param 1": 24,
+      "Param 2": 24,
+      "Param 3": 720,
+      "Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 25000,
+      "Change Freq Param 2": 35000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "VMC",
+      "ID": "VM10",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 24,
+      "Efficacy Param 2": 24,
+      "Efficacy Param 3": 720,
+      "Efficacy Param 4": 4,
+      "_efficacy_method_raw": "time interval for variance correction",
+      "_efficacy_method_type": "remediation_time",
+      "_efficacy_semantic_type": "time_hours",
+      "_efficacy_behavior": "sample_time_interval",
+      "_efficacy_time_type": "remediation_time",
+      "Control_Type": "implementation"
+    }
+  ],
+  "lec": [
+    {
+      "Name": "Email filtering",
+      "Description": "Technology",
+      "Network Node ID": "LEC1",
+      "Control Type": "avoidance",
+      "OpEx": 100000,
+      "CapEx": 250000,
+      "Efficacy Method": "comparison to threat sophistication",
+      "Dist Type": "Beta PERT",
+      "Param 1": 0.7,
+      "Param 2": 0.8,
+      "Param 3": 0.95,
+      "Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 25000,
+      "Change Freq Param 2": 45000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "LEC",
+      "ID": "LEC1",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 0.7,
+      "Efficacy Param 2": 0.8,
+      "Efficacy Param 3": 0.95,
+      "Efficacy Param 4": 4,
+      "_efficacy_method_raw": "comparison to threat sophistication",
+      "_efficacy_method_type": "efficacy",
+      "_efficacy_semantic_type": "efficacy",
+      "_efficacy_behavior": "compare_sophistication",
+      "_efficacy_time_type": null,
+      "Control_Type": "avoidance",
+      "LEC_Type": "resistance",
+      "Actor_Type": "technology"
+    },
+    {
+      "Name": "User",
+      "Description": "Human",
+      "Network Node ID": "LEC2",
+      "Control Type": "resistance",
+      "OpEx": 150000,
+      "CapEx": 0,
+      "Efficacy Method": "comparison to threat sophistication",
+      "Dist Type": "Beta PERT",
+      "Param 1": 0.8,
+      "Param 2": 0.9,
+      "Param 3": 0.95,
+      "Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 25000,
+      "Change Freq Param 2": 45000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "LEC",
+      "ID": "LEC2",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 0.8,
+      "Efficacy Param 2": 0.9,
+      "Efficacy Param 3": 0.95,
+      "Efficacy Param 4": 4,
+      "_efficacy_method_raw": "comparison to threat sophistication",
+      "_efficacy_method_type": "efficacy",
+      "_efficacy_semantic_type": "efficacy",
+      "_efficacy_behavior": "compare_sophistication",
+      "_efficacy_time_type": null,
+      "Control_Type": "resistance",
+      "LEC_Type": "resistance",
+      "Actor_Type": "human"
+    },
+    {
+      "Name": "Workstation software",
+      "Description": "Technology",
+      "Network Node ID": "LEC3",
+      "Control Type": "resistance",
+      "OpEx": 10000,
+      "CapEx": 1000,
+      "Efficacy Method": "comparison to threat sophistication",
+      "Dist Type": "Beta PERT",
+      "Param 1": 1,
+      "Param 2": 1,
+      "Param 3": 1,
+      "Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 25000,
+      "Change Freq Param 2": 45000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "LEC",
+      "ID": "LEC3",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 1,
+      "Efficacy Param 2": 1,
+      "Efficacy Param 3": 1,
+      "Efficacy Param 4": 4,
+      "_efficacy_method_raw": "comparison to threat sophistication",
+      "_efficacy_method_type": "efficacy",
+      "_efficacy_semantic_type": "efficacy",
+      "_efficacy_behavior": "compare_sophistication",
+      "_efficacy_time_type": null,
+      "Control_Type": "resistance",
+      "LEC_Type": "resistance",
+      "Actor_Type": "technology"
+    },
+    {
+      "Name": "Server software",
+      "Description": "Technology",
+      "Network Node ID": "LEC4",
+      "Control Type": "resistance",
+      "OpEx": 20000,
+      "CapEx": 5000,
+      "Efficacy Method": "comparison to threat sophistication",
+      "Dist Type": "Beta PERT",
+      "Param 1": 1,
+      "Param 2": 1,
+      "Param 3": 1,
+      "Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 25000,
+      "Change Freq Param 2": 45000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "LEC",
+      "ID": "LEC4",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 1,
+      "Efficacy Param 2": 1,
+      "Efficacy Param 3": 1,
+      "Efficacy Param 4": 4,
+      "_efficacy_method_raw": "comparison to threat sophistication",
+      "_efficacy_method_type": "efficacy",
+      "_efficacy_semantic_type": "efficacy",
+      "_efficacy_behavior": "compare_sophistication",
+      "_efficacy_time_type": null,
+      "Control_Type": "resistance",
+      "LEC_Type": "resistance",
+      "Actor_Type": "technology"
+    },
+    {
+      "Name": "System software",
+      "Description": "Technology",
+      "Network Node ID": "LEC5",
+      "Control Type": "resistance",
+      "OpEx": 10000,
+      "CapEx": 2000,
+      "Efficacy Method": "comparison to threat sophistication",
+      "Dist Type": "Beta PERT",
+      "Param 1": 1,
+      "Param 2": 1,
+      "Param 3": 1,
+      "Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 25000,
+      "Change Freq Param 2": 45000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "LEC",
+      "ID": "LEC5",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 1,
+      "Efficacy Param 2": 1,
+      "Efficacy Param 3": 1,
+      "Efficacy Param 4": 4,
+      "_efficacy_method_raw": "comparison to threat sophistication",
+      "_efficacy_method_type": "efficacy",
+      "_efficacy_semantic_type": "efficacy",
+      "_efficacy_behavior": "compare_sophistication",
+      "_efficacy_time_type": null,
+      "Control_Type": "resistance",
+      "LEC_Type": "resistance",
+      "Actor_Type": "technology"
+    },
+    {
+      "Name": "Authentication",
+      "Description": "Control set",
+      "Network Node ID": "LEC6",
+      "Control Type": "resistance",
+      "OpEx": 50000,
+      "CapEx": 10000,
+      "Efficacy Method": "comparison to threat sophistication",
+      "Dist Type": "Beta PERT",
+      "Param 1": 1,
+      "Param 2": 1,
+      "Param 3": 1,
+      "Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 75000,
+      "Change Freq Param 2": 150000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "LEC",
+      "ID": "LEC6",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 1,
+      "Efficacy Param 2": 1,
+      "Efficacy Param 3": 1,
+      "Efficacy Param 4": 4,
+      "_efficacy_method_raw": "comparison to threat sophistication",
+      "_efficacy_method_type": "efficacy",
+      "_efficacy_semantic_type": "efficacy",
+      "_efficacy_behavior": "compare_sophistication",
+      "_efficacy_time_type": null,
+      "Control_Type": "resistance",
+      "LEC_Type": "resistance",
+      "Actor_Type": "technology"
+    },
+    {
+      "Name": "Anti-malware",
+      "Description": "Technology",
+      "Network Node ID": "LEC7a",
+      "Control Type": "resistance",
+      "OpEx": 25000,
+      "CapEx": 100000,
+      "Efficacy Method": "comparison to threat sophistication",
+      "Dist Type": "Beta PERT",
+      "Param 1": 0.7,
+      "Param 2": 0.8,
+      "Param 3": 0.9,
+      "Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 25000,
+      "Change Freq Param 2": 45000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "LEC",
+      "ID": "LEC7a",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 0.7,
+      "Efficacy Param 2": 0.8,
+      "Efficacy Param 3": 0.9,
+      "Efficacy Param 4": 4,
+      "_efficacy_method_raw": "comparison to threat sophistication",
+      "_efficacy_method_type": "efficacy",
+      "_efficacy_semantic_type": "efficacy",
+      "_efficacy_behavior": "compare_sophistication",
+      "_efficacy_time_type": null,
+      "Control_Type": "resistance",
+      "LEC_Type": "resistance",
+      "Actor_Type": "technology"
+    },
+    {
+      "Name": "Anti-malware",
+      "Description": "Technology",
+      "Network Node ID": "LEC7b",
+      "Control Type": "visibility",
+      "OpEx": 25000,
+      "CapEx": 100000,
+      "Efficacy Method": "random draw, success/failure outcome",
+      "Dist Type": "Beta PERT",
+      "Param 1": 1,
+      "Param 2": 1,
+      "Param 3": 1,
+      "Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 25000,
+      "Change Freq Param 2": 45000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "LEC",
+      "ID": "LEC7b",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 1,
+      "Efficacy Param 2": 1,
+      "Efficacy Param 3": 1,
+      "Efficacy Param 4": 4,
+      "_efficacy_method_raw": "random draw, success/failure outcome",
+      "_efficacy_method_type": "probability",
+      "_efficacy_semantic_type": "probability",
+      "_efficacy_behavior": "bernoulli_trial",
+      "_efficacy_time_type": null,
+      "Control_Type": "visibility",
+      "LEC_Type": "resistance",
+      "Actor_Type": "technology"
+    },
+    {
+      "Name": "Anti-malware",
+      "Description": "Technology",
+      "Network Node ID": "LEC7c",
+      "Control Type": "monitoring",
+      "OpEx": 25000,
+      "CapEx": 100000,
+      "Efficacy Method": "timing interval for loss termination",
+      "Dist Type": "Beta PERT",
+      "Param 1": 0.0167,
+      "Param 2": 0.05,
+      "Param 3": 0.083,
+      "Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 25000,
+      "Change Freq Param 2": 45000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "LEC",
+      "ID": "LEC7c",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 0.0167,
+      "Efficacy Param 2": 0.05,
+      "Efficacy Param 3": 0.083,
+      "Efficacy Param 4": 4,
+      "_efficacy_method_raw": "timing interval for loss termination",
+      "_efficacy_method_type": "termination_time",
+      "_efficacy_semantic_type": "time_hours",
+      "_efficacy_behavior": "sample_time_interval",
+      "_efficacy_time_type": "termination_time",
+      "Control_Type": "monitoring",
+      "LEC_Type": "resistance",
+      "Actor_Type": "technology"
+    },
+    {
+      "Name": "Anti-malware",
+      "Description": "Technology",
+      "Network Node ID": "LEC7d",
+      "Control Type": "recognition",
+      "OpEx": 2500,
+      "CapEx": 100000,
+      "Efficacy Method": "random draw, success/failure outcome",
+      "Dist Type": "Beta PERT",
+      "Param 1": 0.7,
+      "Param 2": 0.8,
+      "Param 3": 0.9,
+      "Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 25000,
+      "Change Freq Param 2": 45000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "LEC",
+      "ID": "LEC7d",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 0.7,
+      "Efficacy Param 2": 0.8,
+      "Efficacy Param 3": 0.9,
+      "Efficacy Param 4": 4,
+      "_efficacy_method_raw": "random draw, success/failure outcome",
+      "_efficacy_method_type": "probability",
+      "_efficacy_semantic_type": "probability",
+      "_efficacy_behavior": "bernoulli_trial",
+      "_efficacy_time_type": null,
+      "Control_Type": "recognition",
+      "LEC_Type": "resistance",
+      "Actor_Type": "technology"
+    },
+    {
+      "Name": "Logging",
+      "Description": "Technology",
+      "Network Node ID": "LEC8",
+      "Control Type": "visibility",
+      "OpEx": 10000,
+      "CapEx": 0,
+      "Efficacy Method": "random draw, success/failure outcome",
+      "Dist Type": "Beta PERT",
+      "Param 1": 0.8,
+      "Param 2": 0.9,
+      "Param 3": 1,
+      "Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 25000,
+      "Change Freq Param 2": 45000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "LEC",
+      "ID": "LEC8",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 0.8,
+      "Efficacy Param 2": 0.9,
+      "Efficacy Param 3": 1,
+      "Efficacy Param 4": 4,
+      "_efficacy_method_raw": "random draw, success/failure outcome",
+      "_efficacy_method_type": "probability",
+      "_efficacy_semantic_type": "probability",
+      "_efficacy_behavior": "bernoulli_trial",
+      "_efficacy_time_type": null,
+      "Control_Type": "visibility",
+      "LEC_Type": "resistance",
+      "Actor_Type": "technology"
+    },
+    {
+      "Name": "Manual log review",
+      "Description": "Human",
+      "Network Node ID": "LEC9a",
+      "Control Type": "monitoring",
+      "OpEx": 50000,
+      "CapEx": 0,
+      "Efficacy Method": "timing interval for detection sweep",
+      "Dist Type": "Beta PERT",
+      "Param 1": 24,
+      "Param 2": 72,
+      "Param 3": 168,
+      "Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 25000,
+      "Change Freq Param 2": 45000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "LEC",
+      "ID": "LEC9a",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 24,
+      "Efficacy Param 2": 72,
+      "Efficacy Param 3": 168,
+      "Efficacy Param 4": 4,
+      "_efficacy_method_raw": "timing interval for detection sweep",
+      "_efficacy_method_type": "detection_time",
+      "_efficacy_semantic_type": "time_hours",
+      "_efficacy_behavior": "sample_time_interval",
+      "_efficacy_time_type": "detection_time",
+      "Control_Type": "monitoring",
+      "LEC_Type": "resistance",
+      "Actor_Type": "technology"
+    },
+    {
+      "Name": "Manual log review",
+      "Description": "Human",
+      "Network Node ID": "LEC9b",
+      "Control Type": "recognition",
+      "OpEx": 50000,
+      "CapEx": 0,
+      "Efficacy Method": "random draw, success/failure outcome",
+      "Dist Type": "Beta PERT",
+      "Param 1": 24,
+      "Param 2": 24,
+      "Param 3": 24,
+      "Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 25000,
+      "Change Freq Param 2": 45000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "LEC",
+      "ID": "LEC9b",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 24,
+      "Efficacy Param 2": 24,
+      "Efficacy Param 3": 24,
+      "Efficacy Param 4": 4,
+      "_efficacy_method_raw": "random draw, success/failure outcome",
+      "_efficacy_method_type": "probability",
+      "_efficacy_semantic_type": "probability",
+      "_efficacy_behavior": "bernoulli_trial",
+      "_efficacy_time_type": null,
+      "Control_Type": "recognition",
+      "LEC_Type": "resistance",
+      "Actor_Type": "technology"
+    },
+    {
+      "Name": "SIEM",
+      "Description": "Technology",
+      "Network Node ID": "LEC10a",
+      "Control Type": "recognition",
+      "OpEx": 20000,
+      "CapEx": 150000,
+      "Efficacy Method": "random draw, success/failure outcome",
+      "Dist Type": "Beta PERT",
+      "Param 1": 0.8,
+      "Param 2": 0.9,
+      "Param 3": 0.95,
+      "Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 25000,
+      "Change Freq Param 2": 45000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "LEC",
+      "ID": "LEC10a",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 0.8,
+      "Efficacy Param 2": 0.9,
+      "Efficacy Param 3": 0.95,
+      "Efficacy Param 4": 4,
+      "_efficacy_method_raw": "random draw, success/failure outcome",
+      "_efficacy_method_type": "probability",
+      "_efficacy_semantic_type": "probability",
+      "_efficacy_behavior": "bernoulli_trial",
+      "_efficacy_time_type": null,
+      "Control_Type": "recognition",
+      "LEC_Type": "resistance",
+      "Actor_Type": "technology"
+    },
+    {
+      "Name": "SIEM",
+      "Description": "Technology",
+      "Network Node ID": "LEC10b",
+      "Control Type": "monitoring",
+      "OpEx": 20000,
+      "CapEx": 150000,
+      "Efficacy Method": "timing interval for detection sweep",
+      "Dist Type": "Beta PERT",
+      "Param 1": 0.0167,
+      "Param 2": 0.05,
+      "Param 3": 0.083,
+      "Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 25000,
+      "Change Freq Param 2": 45000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "LEC",
+      "ID": "LEC10b",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 0.0167,
+      "Efficacy Param 2": 0.05,
+      "Efficacy Param 3": 0.083,
+      "Efficacy Param 4": 4,
+      "_efficacy_method_raw": "timing interval for detection sweep",
+      "_efficacy_method_type": "detection_time",
+      "_efficacy_semantic_type": "time_hours",
+      "_efficacy_behavior": "sample_time_interval",
+      "_efficacy_time_type": "detection_time",
+      "Control_Type": "monitoring",
+      "LEC_Type": "resistance",
+      "Actor_Type": "technology"
+    },
+    {
+      "Name": "Incident response",
+      "Description": "Control set",
+      "Network Node ID": "LEC11",
+      "Control Type": "event termination",
+      "OpEx": 100000,
+      "CapEx": 0,
+      "Efficacy Method": "timing interval for loss termination",
+      "Dist Type": "Beta PERT",
+      "Param 1": 1,
+      "Param 2": 24,
+      "Param 3": 72,
+      "Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 12000,
+      "Change Freq Param 2": 23000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "LEC",
+      "ID": "LEC11",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 1,
+      "Efficacy Param 2": 24,
+      "Efficacy Param 3": 72,
+      "Efficacy Param 4": 4,
+      "_efficacy_method_raw": "timing interval for loss termination",
+      "_efficacy_method_type": "termination_time",
+      "_efficacy_semantic_type": "time_hours",
+      "_efficacy_behavior": "sample_time_interval",
+      "_efficacy_time_type": "termination_time",
+      "Control_Type": "event termination",
+      "LEC_Type": "resistance",
+      "Actor_Type": "technology"
+    },
+    {
+      "Name": "Data recovery ",
+      "Description": "Control set",
+      "Network Node ID": "LEC12",
+      "Control Type": "resilience",
+      "OpEx": 250000,
+      "CapEx": 100000,
+      "Efficacy Method": "timing interval for recovery",
+      "Dist Type": "Beta PERT",
+      "Param 1": 2,
+      "Param 2": 24,
+      "Param 3": 168,
+      "Param 4": 4,
+      "Change Freq Dist Type": "Uniform",
+      "Change Freq Param 1": 25000,
+      "Change Freq Param 2": 45000,
+      "Change Freq Param 3": 0,
+      "Change Freq Param 4": 0,
+      "_agent_type": "LEC",
+      "ID": "LEC12",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 2,
+      "Efficacy Param 2": 24,
+      "Efficacy Param 3": 168,
+      "Efficacy Param 4": 4,
+      "_efficacy_method_raw": "timing interval for recovery",
+      "_efficacy_method_type": "recovery_time",
+      "_efficacy_semantic_type": "time_hours",
+      "_efficacy_behavior": "sample_time_interval",
+      "_efficacy_time_type": "recovery_time",
+      "Control_Type": "resilience",
+      "LEC_Type": "resistance",
+      "Actor_Type": "technology"
+    },
+    {
+      "ID": "LEC13",
+      "Description": "New Loss Event Control",
+      "LEC_Type": "resistance",
+      "Actor_Type": "technology",
+      "Efficacy Method": "beta_pert",
+      "Efficacy Dist Type": "Beta PERT",
+      "Efficacy Param 1": 0.3,
+      "Efficacy Param 2": 0.6,
+      "Efficacy Param 3": 0.9,
+      "Efficacy Param 4": 4,
+      "Change Freq Dist Type": "Beta PERT",
+      "Change Freq Param 1": 0.5,
+      "Change Freq Param 2": 1,
+      "Change Freq Param 3": 2,
+      "Change Freq Param 4": 4,
+      "CapEx": 0,
+      "OpEx": 0
+    }
+  ],
+  "techAssets": [
+    {
+      "Name": "Hospital floor workstations",
+      "Type": "End points",
+      "Network Node ID": "TA1",
+      "Network Layer": "internal",
+      "Visible": true,
+      "_agent_type": "TechAsset",
+      "ID": "TA1",
+      "Network_Layer": "internal"
+    },
+    {
+      "Name": "Personal workstations",
+      "Type": "End points",
+      "Network Node ID": "TA2",
+      "Network Layer": "external",
+      "Visible": true,
+      "_agent_type": "TechAsset",
+      "ID": "TA2",
+      "Network_Layer": "external"
+    },
+    {
+      "Name": "Backoffice servers",
+      "Type": "Servers",
+      "Network Node ID": "TA3",
+      "Network Layer": "internal",
+      "Visible": true,
+      "_agent_type": "TechAsset",
+      "ID": "TA3",
+      "Network_Layer": "internal"
+    },
+    {
+      "Name": "Medical treatment systems",
+      "Type": "Servers",
+      "Network Node ID": "TA4",
+      "Network Layer": "internal",
+      "Visible": true,
+      "_agent_type": "TechAsset",
+      "ID": "TA4",
+      "Network_Layer": "internal"
+    }
+  ],
+  "busAssets": [
+    {
+      "Name": "Medical treatment processing",
+      "Description": null,
+      "Network Node ID": "BA1",
+      "Type": "process",
+      "Record Size": null,
+      "_agent_type": "BusinessAsset",
+      "ID": "BA1",
+      "Asset_Type": "process",
+      "Record_Count": 0
+    },
+    {
+      "Name": "Patient information processing",
+      "Description": null,
+      "Network Node ID": "BA2",
+      "Type": "process",
+      "Record Size": null,
+      "_agent_type": "BusinessAsset",
+      "ID": "BA2",
+      "Asset_Type": "process",
+      "Record_Count": 0
+    },
+    {
+      "Name": "Patient information",
+      "Description": null,
+      "Network Node ID": "BA3",
+      "Type": "information",
+      "Record Size": null,
+      "_agent_type": "BusinessAsset",
+      "ID": "BA3",
+      "Asset_Type": "information",
+      "Record_Count": 0
+    }
+  ],
+  "threatSources": [
+    {
+      "ID Tag": "TS1",
+      "Name": "Test Model Source",
+      "Generated Threat Type ID": "TRT1",
+      "Contact Frequency Dist Type": "Beta PERT",
+      "Param 1": 0.5,
+      "Param 2": 4,
+      "Param 3": 12,
+      "Param 4": 4,
+      "_agent_type": "ThreatSource",
+      "ID": "TS1",
+      "Threat_Template": "TRT1"
+    }
+  ],
+  "threatAgents": [
+    {
+      "ID Tag": "TRT1",
+      "Name": "Cyber Criminal",
+      "Threat Type": "Opportunistic",
+      "Threat Method": "SW Exploit",
+      "Threat Origin (internal/external)": "external",
+      "Mean Event Velocity for Losses": 168,
+      "Loss Rate Exponent (based on hours estimate)": 0.6578815,
+      "Sophistication Dist Type": "Beta PERT",
+      "Param 1": 0.5,
+      "Param 2": 0.75,
+      "Param 3": 0.99,
+      "Param 4": 4,
+      "_agent_type": "ThreatAgent",
+      "ID": "TRT1",
+      "Origin": "external",
+      "Sophistication Param 1": 0.5,
+      "Sophistication Param 2": 0.75,
+      "Sophistication Param 3": 0.99,
+      "Sophistication Param 4": 4,
+      "Mean_Velocity_Hours": 168,
+      "Exp_Loss_Rate": 0.6578815
+    }
+  ],
+  "personnel": [
+    {
+      "ID": "HA1",
+      "Description": "New Personnel",
+      "Department": "clinical",
+      "RoleLevel": 3,
+      "Admin": true,
+      "awareness": 0.6,
+      "capability": 0.55,
+      "situational": 0.5,
+      "incentive": 0.6
+    }
+  ],
+  "edges": [
+    {
+      "source": "TA1",
+      "target": "TA2",
+      "rel_type": "TECH_CONNECTS_TECH"
+    },
+    {
+      "source": "TA1",
+      "target": "TA3",
+      "rel_type": "TECH_CONNECTS_TECH"
+    },
+    {
+      "source": "TA1",
+      "target": "TA4",
+      "rel_type": "TECH_CONNECTS_TECH"
+    },
+    {
+      "source": "TA2",
+      "target": "TA3",
+      "rel_type": "TECH_CONNECTS_TECH"
+    },
+    {
+      "source": "TA2",
+      "target": "TA4",
+      "rel_type": "TECH_CONNECTS_TECH"
+    },
+    {
+      "source": "TA3",
+      "target": "TA4",
+      "rel_type": "TECH_CONNECTS_TECH"
+    },
+    {
+      "source": "BA1",
+      "target": "TA1",
+      "rel_type": "TECH_HOSTS_BUSINESS"
+    },
+    {
+      "source": "BA1",
+      "target": "TA4",
+      "rel_type": "TECH_HOSTS_BUSINESS"
+    },
+    {
+      "source": "BA2",
+      "target": "TA1",
+      "rel_type": "TECH_HOSTS_BUSINESS"
+    },
+    {
+      "source": "BA2",
+      "target": "TA3",
+      "rel_type": "TECH_HOSTS_BUSINESS"
+    },
+    {
+      "source": "BA3",
+      "target": "TA1",
+      "rel_type": "TECH_HOSTS_BUSINESS"
+    },
+    {
+      "source": "BA3",
+      "target": "TA3",
+      "rel_type": "TECH_HOSTS_BUSINESS"
+    },
+    {
+      "source": "LEC10a",
+      "target": "TA1",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC10b",
+      "target": "TA1",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC11",
+      "target": "TA1",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC12",
+      "target": "TA1",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC2",
+      "target": "TA1",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC3",
+      "target": "TA1",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC6",
+      "target": "TA1",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC7a",
+      "target": "TA1",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC7b",
+      "target": "TA1",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC7c",
+      "target": "TA1",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC7d",
+      "target": "TA1",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC8",
+      "target": "TA1",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC1",
+      "target": "TA2",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC10a",
+      "target": "TA2",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC10b",
+      "target": "TA2",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC11",
+      "target": "TA2",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC2",
+      "target": "TA2",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC3",
+      "target": "TA2",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC6",
+      "target": "TA2",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC7a",
+      "target": "TA2",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC7b",
+      "target": "TA2",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC7c",
+      "target": "TA2",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC7d",
+      "target": "TA2",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC8",
+      "target": "TA2",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC10a",
+      "target": "TA3",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC10b",
+      "target": "TA3",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC11",
+      "target": "TA3",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC12",
+      "target": "TA3",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC4",
+      "target": "TA3",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC6",
+      "target": "TA3",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC7a",
+      "target": "TA3",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC7b",
+      "target": "TA3",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC7c",
+      "target": "TA3",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC7d",
+      "target": "TA3",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC8",
+      "target": "TA3",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC11",
+      "target": "TA4",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC12",
+      "target": "TA4",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC5",
+      "target": "TA4",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC6",
+      "target": "TA4",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC8",
+      "target": "TA4",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC9a",
+      "target": "TA4",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "LEC9b",
+      "target": "TA4",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    },
+    {
+      "source": "VM10",
+      "target": "LEC1",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM2",
+      "target": "LEC1",
+      "rel_type": "VMC_THREAT_INTEL"
+    },
+    {
+      "source": "VM4",
+      "target": "LEC1",
+      "rel_type": "VMC_MONITORS"
+    },
+    {
+      "source": "VM5",
+      "target": "LEC1",
+      "rel_type": "VMC_SELECTS_TREATMENT"
+    },
+    {
+      "source": "VM7",
+      "target": "LEC1",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM2",
+      "target": "LEC2",
+      "rel_type": "VMC_THREAT_INTEL"
+    },
+    {
+      "source": "VM4",
+      "target": "LEC2",
+      "rel_type": "VMC_MONITORS"
+    },
+    {
+      "source": "VM5",
+      "target": "LEC2",
+      "rel_type": "VMC_SELECTS_TREATMENT"
+    },
+    {
+      "source": "VM7",
+      "target": "LEC2",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM1",
+      "target": "LEC3",
+      "rel_type": "VMC_REDUCES_VAR_PROB"
+    },
+    {
+      "source": "VM2",
+      "target": "LEC3",
+      "rel_type": "VMC_THREAT_INTEL"
+    },
+    {
+      "source": "VM3",
+      "target": "LEC3",
+      "rel_type": "VMC_MONITORS"
+    },
+    {
+      "source": "VM4",
+      "target": "LEC3",
+      "rel_type": "VMC_MONITORS"
+    },
+    {
+      "source": "VM5",
+      "target": "LEC3",
+      "rel_type": "VMC_SELECTS_TREATMENT"
+    },
+    {
+      "source": "VM6",
+      "target": "LEC3",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM7",
+      "target": "LEC3",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM1",
+      "target": "LEC4",
+      "rel_type": "VMC_REDUCES_VAR_PROB"
+    },
+    {
+      "source": "VM2",
+      "target": "LEC4",
+      "rel_type": "VMC_THREAT_INTEL"
+    },
+    {
+      "source": "VM3",
+      "target": "LEC4",
+      "rel_type": "VMC_MONITORS"
+    },
+    {
+      "source": "VM4",
+      "target": "LEC4",
+      "rel_type": "VMC_MONITORS"
+    },
+    {
+      "source": "VM5",
+      "target": "LEC4",
+      "rel_type": "VMC_SELECTS_TREATMENT"
+    },
+    {
+      "source": "VM6",
+      "target": "LEC4",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM7",
+      "target": "LEC4",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM1",
+      "target": "LEC5",
+      "rel_type": "VMC_REDUCES_VAR_PROB"
+    },
+    {
+      "source": "VM2",
+      "target": "LEC5",
+      "rel_type": "VMC_THREAT_INTEL"
+    },
+    {
+      "source": "VM3",
+      "target": "LEC5",
+      "rel_type": "VMC_MONITORS"
+    },
+    {
+      "source": "VM4",
+      "target": "LEC5",
+      "rel_type": "VMC_MONITORS"
+    },
+    {
+      "source": "VM5",
+      "target": "LEC5",
+      "rel_type": "VMC_SELECTS_TREATMENT"
+    },
+    {
+      "source": "VM6",
+      "target": "LEC5",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM7",
+      "target": "LEC5",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM2",
+      "target": "LEC6",
+      "rel_type": "VMC_THREAT_INTEL"
+    },
+    {
+      "source": "VM4",
+      "target": "LEC6",
+      "rel_type": "VMC_MONITORS"
+    },
+    {
+      "source": "VM5",
+      "target": "LEC6",
+      "rel_type": "VMC_SELECTS_TREATMENT"
+    },
+    {
+      "source": "VM7",
+      "target": "LEC6",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM10",
+      "target": "LEC7a",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM2",
+      "target": "LEC7a",
+      "rel_type": "VMC_THREAT_INTEL"
+    },
+    {
+      "source": "VM4",
+      "target": "LEC7a",
+      "rel_type": "VMC_MONITORS"
+    },
+    {
+      "source": "VM5",
+      "target": "LEC7a",
+      "rel_type": "VMC_SELECTS_TREATMENT"
+    },
+    {
+      "source": "VM7",
+      "target": "LEC7a",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM10",
+      "target": "LEC7b",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM2",
+      "target": "LEC7b",
+      "rel_type": "VMC_THREAT_INTEL"
+    },
+    {
+      "source": "VM4",
+      "target": "LEC7b",
+      "rel_type": "VMC_MONITORS"
+    },
+    {
+      "source": "VM5",
+      "target": "LEC7b",
+      "rel_type": "VMC_SELECTS_TREATMENT"
+    },
+    {
+      "source": "VM7",
+      "target": "LEC7b",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM10",
+      "target": "LEC7c",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM2",
+      "target": "LEC7c",
+      "rel_type": "VMC_THREAT_INTEL"
+    },
+    {
+      "source": "VM4",
+      "target": "LEC7c",
+      "rel_type": "VMC_MONITORS"
+    },
+    {
+      "source": "VM5",
+      "target": "LEC7c",
+      "rel_type": "VMC_SELECTS_TREATMENT"
+    },
+    {
+      "source": "VM7",
+      "target": "LEC7c",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM10",
+      "target": "LEC7d",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM2",
+      "target": "LEC7d",
+      "rel_type": "VMC_THREAT_INTEL"
+    },
+    {
+      "source": "VM4",
+      "target": "LEC7d",
+      "rel_type": "VMC_MONITORS"
+    },
+    {
+      "source": "VM5",
+      "target": "LEC7d",
+      "rel_type": "VMC_SELECTS_TREATMENT"
+    },
+    {
+      "source": "VM7",
+      "target": "LEC7d",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM4",
+      "target": "LEC8",
+      "rel_type": "VMC_MONITORS"
+    },
+    {
+      "source": "VM5",
+      "target": "LEC8",
+      "rel_type": "VMC_SELECTS_TREATMENT"
+    },
+    {
+      "source": "VM7",
+      "target": "LEC8",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM2",
+      "target": "LEC9a",
+      "rel_type": "VMC_THREAT_INTEL"
+    },
+    {
+      "source": "VM4",
+      "target": "LEC9a",
+      "rel_type": "VMC_MONITORS"
+    },
+    {
+      "source": "VM5",
+      "target": "LEC9a",
+      "rel_type": "VMC_SELECTS_TREATMENT"
+    },
+    {
+      "source": "VM7",
+      "target": "LEC9a",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM2",
+      "target": "LEC9b",
+      "rel_type": "VMC_THREAT_INTEL"
+    },
+    {
+      "source": "VM4",
+      "target": "LEC9b",
+      "rel_type": "VMC_MONITORS"
+    },
+    {
+      "source": "VM5",
+      "target": "LEC9b",
+      "rel_type": "VMC_SELECTS_TREATMENT"
+    },
+    {
+      "source": "VM7",
+      "target": "LEC9b",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM10",
+      "target": "LEC10a",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM2",
+      "target": "LEC10a",
+      "rel_type": "VMC_THREAT_INTEL"
+    },
+    {
+      "source": "VM4",
+      "target": "LEC10a",
+      "rel_type": "VMC_MONITORS"
+    },
+    {
+      "source": "VM5",
+      "target": "LEC10a",
+      "rel_type": "VMC_SELECTS_TREATMENT"
+    },
+    {
+      "source": "VM7",
+      "target": "LEC10a",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM10",
+      "target": "LEC10b",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM2",
+      "target": "LEC10b",
+      "rel_type": "VMC_THREAT_INTEL"
+    },
+    {
+      "source": "VM4",
+      "target": "LEC10b",
+      "rel_type": "VMC_MONITORS"
+    },
+    {
+      "source": "VM5",
+      "target": "LEC10b",
+      "rel_type": "VMC_SELECTS_TREATMENT"
+    },
+    {
+      "source": "VM7",
+      "target": "LEC10b",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM2",
+      "target": "LEC11",
+      "rel_type": "VMC_THREAT_INTEL"
+    },
+    {
+      "source": "VM4",
+      "target": "LEC11",
+      "rel_type": "VMC_MONITORS"
+    },
+    {
+      "source": "VM5",
+      "target": "LEC11",
+      "rel_type": "VMC_SELECTS_TREATMENT"
+    },
+    {
+      "source": "VM7",
+      "target": "LEC11",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM4",
+      "target": "LEC12",
+      "rel_type": "VMC_MONITORS"
+    },
+    {
+      "source": "VM5",
+      "target": "LEC12",
+      "rel_type": "VMC_SELECTS_TREATMENT"
+    },
+    {
+      "source": "VM7",
+      "target": "LEC12",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM8",
+      "target": "LEC12",
+      "rel_type": "VMC_MONITORS"
+    },
+    {
+      "source": "VM1",
+      "target": "VM4",
+      "rel_type": "VMC_REDUCES_VAR_PROB"
+    },
+    {
+      "source": "VM2",
+      "target": "VM4",
+      "rel_type": "VMC_THREAT_INTEL"
+    },
+    {
+      "source": "VM3",
+      "target": "VM4",
+      "rel_type": "VMC_MONITORS"
+    },
+    {
+      "source": "VM5",
+      "target": "VM4",
+      "rel_type": "VMC_SELECTS_TREATMENT"
+    },
+    {
+      "source": "VM6",
+      "target": "VM4",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM7",
+      "target": "VM4",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM8",
+      "target": "VM4",
+      "rel_type": "VMC_MONITORS"
+    },
+    {
+      "source": "VM10",
+      "target": "VM4",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM1",
+      "target": "VM5",
+      "rel_type": "VMC_REDUCES_VAR_PROB"
+    },
+    {
+      "source": "VM2",
+      "target": "VM5",
+      "rel_type": "VMC_THREAT_INTEL"
+    },
+    {
+      "source": "VM3",
+      "target": "VM5",
+      "rel_type": "VMC_MONITORS"
+    },
+    {
+      "source": "VM4",
+      "target": "VM5",
+      "rel_type": "VMC_MONITORS"
+    },
+    {
+      "source": "VM6",
+      "target": "VM5",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM7",
+      "target": "VM5",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM8",
+      "target": "VM5",
+      "rel_type": "VMC_MONITORS"
+    },
+    {
+      "source": "VM10",
+      "target": "VM5",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM1",
+      "target": "VM7",
+      "rel_type": "VMC_REDUCES_VAR_PROB"
+    },
+    {
+      "source": "VM2",
+      "target": "VM7",
+      "rel_type": "VMC_THREAT_INTEL"
+    },
+    {
+      "source": "VM3",
+      "target": "VM7",
+      "rel_type": "VMC_MONITORS"
+    },
+    {
+      "source": "VM4",
+      "target": "VM7",
+      "rel_type": "VMC_MONITORS"
+    },
+    {
+      "source": "VM5",
+      "target": "VM7",
+      "rel_type": "VMC_SELECTS_TREATMENT"
+    },
+    {
+      "source": "VM6",
+      "target": "VM7",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM8",
+      "target": "VM7",
+      "rel_type": "VMC_MONITORS"
+    },
+    {
+      "source": "VM10",
+      "target": "VM7",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "DSC13",
+      "target": "LEC2",
+      "rel_type": "DSC_AFFECTS_CONTROL"
+    },
+    {
+      "source": "VM4",
+      "target": "VM1",
+      "rel_type": "VMC_MONITORS"
+    },
+    {
+      "source": "VM4",
+      "target": "VM2",
+      "rel_type": "VMC_MONITORS"
+    },
+    {
+      "source": "VM4",
+      "target": "VM6",
+      "rel_type": "VMC_MONITORS"
+    },
+    {
+      "source": "VM4",
+      "target": "VM10",
+      "rel_type": "VMC_MONITORS"
+    },
+    {
+      "source": "VM5",
+      "target": "VM1",
+      "rel_type": "VMC_SELECTS_TREATMENT"
+    },
+    {
+      "source": "VM5",
+      "target": "VM2",
+      "rel_type": "VMC_SELECTS_TREATMENT"
+    },
+    {
+      "source": "VM5",
+      "target": "VM3",
+      "rel_type": "VMC_SELECTS_TREATMENT"
+    },
+    {
+      "source": "VM5",
+      "target": "VM6",
+      "rel_type": "VMC_SELECTS_TREATMENT"
+    },
+    {
+      "source": "VM5",
+      "target": "VM8",
+      "rel_type": "VMC_SELECTS_TREATMENT"
+    },
+    {
+      "source": "VM5",
+      "target": "VM10",
+      "rel_type": "VMC_SELECTS_TREATMENT"
+    },
+    {
+      "source": "VM7",
+      "target": "VM1",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM7",
+      "target": "VM2",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM7",
+      "target": "VM3",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "VM7",
+      "target": "VM8",
+      "rel_type": "VMC_IMPLEMENTS_REMEDIATION"
+    },
+    {
+      "source": "TA2",
+      "target": "BA2",
+      "rel_type": "TECH_HOSTS_BUSINESS"
+    },
+    {
+      "source": "TA2",
+      "target": "BA3",
+      "rel_type": "TECH_HOSTS_BUSINESS"
+    },
+    {
+      "source": "HA1",
+      "target": "LEC2",
+      "rel_type": "PERSONNEL_ACCESSES"
+    },
+    {
+      "source": "LEC13",
+      "target": "TA1",
+      "rel_type": "LEC_PROTECTS_ASSET"
+    }
+  ],
+  "validation": {
+    "topologyMissingIds": [],
+    "topologyExtraIds": []
+  }
+}
