@@ -16,6 +16,7 @@ and quantitative risk methods.
 ### [FAIR Risk Quantification](tools/fair-simulator/README.md)
 [![License](https://img.shields.io/badge/license-CC--BY--NC--SA%204.0-orange)](tools/fair-simulator/LICENSE)
 [![Status](https://img.shields.io/badge/status-active-green)]()
+[![Methodology](https://img.shields.io/badge/Methodology-FAIR-blue)]()
 
 Monte Carlo simulation tool for FAIR (Factor Analysis of Information Risk) methodology 
 with industry benchmarks.
@@ -26,6 +27,20 @@ with industry benchmarks.
 
 [Read More](tools/fair-simulator/README.md) | [Setup](tools/fair-simulator/SETUP.md)
 
+### [Control Systems Agent-Based Model](tools/control-systems-agent-based-model/README.md)
+[![License](https://img.shields.io/badge/license-CC--BY--NC--SA%204.0-orange)](tools/control-systems-agent-based-model/LICENSE)
+[![Status](https://img.shields.io/badge/status-active-green)]()
+[![Methodology](https://img.shields.io/badge/Methodology-FAIR--CAM-blue)]()
+
+Agent-based simulation of FAIR-CAM control dynamics. Reproduction package for Jones & Voicu (2026), "Control Physiology: An Agent-Based Model of FAIR-CAM Dynamics."
+
+**Features:** 8 agent types, multiplicative defense-in-depth, three-source variance model, budget-constrained remediation, narrative causation engine, empirically calibrated loss magnitudes
+  
+**License:** CC BY-NC-SA 4.0 (Non-Commercial Use Only)
+
+[Read More](tools/control-systems-agent-based-model/README.md) |
+[Reproduce](tools/control-systems-agent-based-model/REPRODUCE.md)
+  
 ## Licensing
 
 **This repository uses multiple licenses.**
