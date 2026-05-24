@@ -1,0 +1,1753 @@
+{
+  "budget_levels": [
+    2,
+    5,
+    10,
+    20,
+    40,
+    80,
+    160
+  ],
+  "iterations": 100,
+  "controls": {
+    "DSC12": {
+      "analytical_opeff": 0.9708880116566695,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 0.9512106562093925,
+          "min_emergent_opeff": 0.9119993165783715,
+          "max_emergent_opeff": 0.9906048840554078,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 0.9512106562093925,
+          "min_emergent_opeff": 0.9119993165783715,
+          "max_emergent_opeff": 0.9906048840554078,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 0.9512106562093925,
+          "min_emergent_opeff": 0.9119993165783715,
+          "max_emergent_opeff": 0.9906048840554078,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 0.9512106562093925,
+          "min_emergent_opeff": 0.9119993165783715,
+          "max_emergent_opeff": 0.9906048840554078,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 0.9512106562093925,
+          "min_emergent_opeff": 0.9119993165783715,
+          "max_emergent_opeff": 0.9906048840554078,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 0.9512106562093925,
+          "min_emergent_opeff": 0.9119993165783715,
+          "max_emergent_opeff": 0.9906048840554078,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 0.9512106562093925,
+          "min_emergent_opeff": 0.9119993165783715,
+          "max_emergent_opeff": 0.9906048840554078,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "VM3": {
+      "analytical_opeff": 172.4026299928651,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 230.90302726535086,
+          "min_emergent_opeff": 50.56225799812737,
+          "max_emergent_opeff": 569.0911738129586,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 230.90302726535086,
+          "min_emergent_opeff": 50.56225799812737,
+          "max_emergent_opeff": 569.0911738129586,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 230.90302726535086,
+          "min_emergent_opeff": 50.56225799812737,
+          "max_emergent_opeff": 569.0911738129586,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 230.90302726535086,
+          "min_emergent_opeff": 50.56225799812737,
+          "max_emergent_opeff": 569.0911738129586,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 230.90302726535086,
+          "min_emergent_opeff": 50.56225799812737,
+          "max_emergent_opeff": 569.0911738129586,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 230.90302726535086,
+          "min_emergent_opeff": 50.56225799812737,
+          "max_emergent_opeff": 569.0911738129586,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 230.90302726535086,
+          "min_emergent_opeff": 50.56225799812737,
+          "max_emergent_opeff": 569.0911738129586,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "DSC8": {
+      "analytical_opeff": 0.9540803537738745,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 0.9503008235064739,
+          "min_emergent_opeff": 0.9127480572501732,
+          "max_emergent_opeff": 0.9899566507626174,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 0.9503008235064739,
+          "min_emergent_opeff": 0.9127480572501732,
+          "max_emergent_opeff": 0.9899566507626174,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 0.9503008235064739,
+          "min_emergent_opeff": 0.9127480572501732,
+          "max_emergent_opeff": 0.9899566507626174,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 0.9503008235064739,
+          "min_emergent_opeff": 0.9127480572501732,
+          "max_emergent_opeff": 0.9899566507626174,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 0.9503008235064739,
+          "min_emergent_opeff": 0.9127480572501732,
+          "max_emergent_opeff": 0.9899566507626174,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 0.9503008235064739,
+          "min_emergent_opeff": 0.9127480572501732,
+          "max_emergent_opeff": 0.9899566507626174,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 0.9503008235064739,
+          "min_emergent_opeff": 0.9127480572501732,
+          "max_emergent_opeff": 0.9899566507626174,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "DSC2": {
+      "analytical_opeff": 0.9537052728675244,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 0.9526052931362038,
+          "min_emergent_opeff": 0.9134954580334267,
+          "max_emergent_opeff": 0.9901441709485777,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 0.9526052931362038,
+          "min_emergent_opeff": 0.9134954580334267,
+          "max_emergent_opeff": 0.9901441709485777,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 0.9526052931362038,
+          "min_emergent_opeff": 0.9134954580334267,
+          "max_emergent_opeff": 0.9901441709485777,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 0.9526052931362038,
+          "min_emergent_opeff": 0.9134954580334267,
+          "max_emergent_opeff": 0.9901441709485777,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 0.9526052931362038,
+          "min_emergent_opeff": 0.9134954580334267,
+          "max_emergent_opeff": 0.9901441709485777,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 0.9526052931362038,
+          "min_emergent_opeff": 0.9134954580334267,
+          "max_emergent_opeff": 0.9901441709485777,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 0.9526052931362038,
+          "min_emergent_opeff": 0.9134954580334267,
+          "max_emergent_opeff": 0.9901441709485777,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "LEC10b": {
+      "analytical_opeff": 0.04394742060672029,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 0.03918335172102411,
+          "min_emergent_opeff": 0.006106801380618268,
+          "max_emergent_opeff": 0.07355015269599632,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 0.03918335172102411,
+          "min_emergent_opeff": 0.006106801380618268,
+          "max_emergent_opeff": 0.07355015269599632,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 0.03918335172102411,
+          "min_emergent_opeff": 0.006106801380618268,
+          "max_emergent_opeff": 0.07355015269599632,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 0.03918335172102411,
+          "min_emergent_opeff": 0.006106801380618268,
+          "max_emergent_opeff": 0.07355015269599632,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 0.03918335172102411,
+          "min_emergent_opeff": 0.006106801380618268,
+          "max_emergent_opeff": 0.07355015269599632,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 0.039401008227750715,
+          "min_emergent_opeff": 0.005251013363556524,
+          "max_emergent_opeff": 0.07355015269599632,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 0.0394171806143564,
+          "min_emergent_opeff": 0.005251013363556524,
+          "max_emergent_opeff": 0.07355015269599632,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "LEC9a": {
+      "analytical_opeff": 64.13669140184683,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 64.8924154421898,
+          "min_emergent_opeff": 3.2421640701892507,
+          "max_emergent_opeff": 137.60354545289493,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 64.8924154421898,
+          "min_emergent_opeff": 3.2421640701892507,
+          "max_emergent_opeff": 137.60354545289493,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 64.8924154421898,
+          "min_emergent_opeff": 3.2421640701892507,
+          "max_emergent_opeff": 137.60354545289493,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 64.8924154421898,
+          "min_emergent_opeff": 3.2421640701892507,
+          "max_emergent_opeff": 137.60354545289493,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 65.0350364109851,
+          "min_emergent_opeff": 4.892159187225433,
+          "max_emergent_opeff": 137.60354545289493,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 65.31078605050645,
+          "min_emergent_opeff": 4.892159187225433,
+          "max_emergent_opeff": 137.60354545289493,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 65.31078605050645,
+          "min_emergent_opeff": 4.892159187225433,
+          "max_emergent_opeff": 137.60354545289493,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "VM4": {
+      "analytical_opeff": 8712.765957446809,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 8736.103351535838,
+          "min_emergent_opeff": 8736.0,
+          "max_emergent_opeff": 8746.335153583783,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 8736.103351535838,
+          "min_emergent_opeff": 8736.0,
+          "max_emergent_opeff": 8746.335153583783,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 8736.103351535838,
+          "min_emergent_opeff": 8736.0,
+          "max_emergent_opeff": 8746.335153583783,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 8736.334311482698,
+          "min_emergent_opeff": 8736.0,
+          "max_emergent_opeff": 8759.095994686006,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 8736.103351535838,
+          "min_emergent_opeff": 8736.0,
+          "max_emergent_opeff": 8746.335153583783,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 8736.103351535838,
+          "min_emergent_opeff": 8736.0,
+          "max_emergent_opeff": 8746.335153583783,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 8736.103351535838,
+          "min_emergent_opeff": 8736.0,
+          "max_emergent_opeff": 8746.335153583783,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "DSC5": {
+      "analytical_opeff": 0.9224586461863247,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 0.9489046052767043,
+          "min_emergent_opeff": 0.9005126451574158,
+          "max_emergent_opeff": 0.9954608404307697,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 0.9489046052767043,
+          "min_emergent_opeff": 0.9005126451574158,
+          "max_emergent_opeff": 0.9954608404307697,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 0.9489046052767043,
+          "min_emergent_opeff": 0.9005126451574158,
+          "max_emergent_opeff": 0.9954608404307697,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 0.9489046052767043,
+          "min_emergent_opeff": 0.9005126451574158,
+          "max_emergent_opeff": 0.9954608404307697,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 0.9489046052767043,
+          "min_emergent_opeff": 0.9005126451574158,
+          "max_emergent_opeff": 0.9954608404307697,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 0.9489046052767043,
+          "min_emergent_opeff": 0.9005126451574158,
+          "max_emergent_opeff": 0.9954608404307697,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 0.9489046052767043,
+          "min_emergent_opeff": 0.9005126451574158,
+          "max_emergent_opeff": 0.9954608404307697,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "LEC12": {
+      "analytical_opeff": 46.03434953555492,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 47.27418687911163,
+          "min_emergent_opeff": 4.516592589612001,
+          "max_emergent_opeff": 144.55885979567915,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 47.27418687911163,
+          "min_emergent_opeff": 4.516592589612001,
+          "max_emergent_opeff": 144.55885979567915,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 45.505983679520995,
+          "min_emergent_opeff": 8.837009133527525,
+          "max_emergent_opeff": 144.55885979567915,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 46.04353745060901,
+          "min_emergent_opeff": 4.87769594349348,
+          "max_emergent_opeff": 144.55885979567915,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 46.19596476515352,
+          "min_emergent_opeff": 8.837009133527525,
+          "max_emergent_opeff": 144.55885979567915,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 46.73504681249201,
+          "min_emergent_opeff": 8.837009133527525,
+          "max_emergent_opeff": 144.55885979567915,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 46.73504681249201,
+          "min_emergent_opeff": 8.837009133527525,
+          "max_emergent_opeff": 144.55885979567915,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "VM2": {
+      "analytical_opeff": 234.8642008861965,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 219.6863489382972,
+          "min_emergent_opeff": 30.829852703117286,
+          "max_emergent_opeff": 631.692032631784,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 219.6863489382972,
+          "min_emergent_opeff": 30.829852703117286,
+          "max_emergent_opeff": 631.692032631784,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 219.6863489382972,
+          "min_emergent_opeff": 30.829852703117286,
+          "max_emergent_opeff": 631.692032631784,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 219.6863489382972,
+          "min_emergent_opeff": 30.829852703117286,
+          "max_emergent_opeff": 631.692032631784,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 219.6863489382972,
+          "min_emergent_opeff": 30.829852703117286,
+          "max_emergent_opeff": 631.692032631784,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 219.6863489382972,
+          "min_emergent_opeff": 30.829852703117286,
+          "max_emergent_opeff": 631.692032631784,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 219.6863489382972,
+          "min_emergent_opeff": 30.829852703117286,
+          "max_emergent_opeff": 631.692032631784,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "LEC13": {
+      "analytical_opeff": 0.4941637350229037,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 0.3086947847618542,
+          "min_emergent_opeff": 0.0006228138583110204,
+          "max_emergent_opeff": 0.6873522606801835,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 0.3086947847618542,
+          "min_emergent_opeff": 0.0006228138583110204,
+          "max_emergent_opeff": 0.6873522606801835,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 0.3086947847618542,
+          "min_emergent_opeff": 0.0006228138583110204,
+          "max_emergent_opeff": 0.6873522606801835,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 0.3086947847618542,
+          "min_emergent_opeff": 0.0006228138583110204,
+          "max_emergent_opeff": 0.6873522606801835,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 0.3086947847618542,
+          "min_emergent_opeff": 0.0006228138583110204,
+          "max_emergent_opeff": 0.6873522606801835,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 0.3086947847618542,
+          "min_emergent_opeff": 0.0006228138583110204,
+          "max_emergent_opeff": 0.6873522606801835,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 0.3086947847618542,
+          "min_emergent_opeff": 0.0006228138583110204,
+          "max_emergent_opeff": 0.6873522606801835,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "LEC6": {
+      "analytical_opeff": 0.9997334044254865,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 0.798435391886151,
+          "min_emergent_opeff": 0.09532077958664957,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 0.798435391886151,
+          "min_emergent_opeff": 0.09532077958664957,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 0.7985885426768858,
+          "min_emergent_opeff": 0.09532077958664957,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 0.7986750415741903,
+          "min_emergent_opeff": 0.09532077958664957,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 0.7987324183204219,
+          "min_emergent_opeff": 0.09532077958664957,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 0.7987324183204219,
+          "min_emergent_opeff": 0.09532077958664957,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 0.7987324183204219,
+          "min_emergent_opeff": 0.09532077958664957,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "DSC4": {
+      "analytical_opeff": 0.9512075701971218,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 0.9490359720027128,
+          "min_emergent_opeff": 0.9052381611764508,
+          "max_emergent_opeff": 0.9917641814583097,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 0.9490359720027128,
+          "min_emergent_opeff": 0.9052381611764508,
+          "max_emergent_opeff": 0.9917641814583097,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 0.9490359720027128,
+          "min_emergent_opeff": 0.9052381611764508,
+          "max_emergent_opeff": 0.9917641814583097,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 0.9490359720027128,
+          "min_emergent_opeff": 0.9052381611764508,
+          "max_emergent_opeff": 0.9917641814583097,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 0.9490359720027128,
+          "min_emergent_opeff": 0.9052381611764508,
+          "max_emergent_opeff": 0.9917641814583097,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 0.9490359720027128,
+          "min_emergent_opeff": 0.9052381611764508,
+          "max_emergent_opeff": 0.9917641814583097,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 0.9490359720027128,
+          "min_emergent_opeff": 0.9052381611764508,
+          "max_emergent_opeff": 0.9917641814583097,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "LEC7d": {
+      "analytical_opeff": 0.753270056871149,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 0.6278898527157816,
+          "min_emergent_opeff": 0.07427543169223899,
+          "max_emergent_opeff": 0.8726877234000655,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 0.6278898527157816,
+          "min_emergent_opeff": 0.07427543169223899,
+          "max_emergent_opeff": 0.8726877234000655,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 0.6278898527157816,
+          "min_emergent_opeff": 0.07427543169223899,
+          "max_emergent_opeff": 0.8726877234000655,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 0.6278898527157816,
+          "min_emergent_opeff": 0.07427543169223899,
+          "max_emergent_opeff": 0.8726877234000655,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 0.6278898527157816,
+          "min_emergent_opeff": 0.07427543169223899,
+          "max_emergent_opeff": 0.8726877234000655,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 0.6255923642140253,
+          "min_emergent_opeff": 0.07638655040507594,
+          "max_emergent_opeff": 0.8726877234000655,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 0.6255923642140253,
+          "min_emergent_opeff": 0.07638655040507594,
+          "max_emergent_opeff": 0.8726877234000655,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "LEC9b": {
+      "analytical_opeff": 23.97868561278863,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 19.381495561475248,
+          "min_emergent_opeff": 2.494541648282099,
+          "max_emergent_opeff": 24.0,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 19.381495561475248,
+          "min_emergent_opeff": 2.494541648282099,
+          "max_emergent_opeff": 24.0,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 19.381495561475248,
+          "min_emergent_opeff": 2.494541648282099,
+          "max_emergent_opeff": 24.0,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 19.381495561475248,
+          "min_emergent_opeff": 2.494541648282099,
+          "max_emergent_opeff": 24.0,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 19.393769839015864,
+          "min_emergent_opeff": 2.5379760504062445,
+          "max_emergent_opeff": 24.0,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 19.395305551775333,
+          "min_emergent_opeff": 2.5379760504062445,
+          "max_emergent_opeff": 24.0,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 19.395305551775333,
+          "min_emergent_opeff": 2.5379760504062445,
+          "max_emergent_opeff": 24.0,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "LEC5": {
+      "analytical_opeff": 0.9991119005328597,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 0.941700754664382,
+          "min_emergent_opeff": 0.5808091653580221,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 0.941700754664382,
+          "min_emergent_opeff": 0.5808091653580221,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 0.9780726740752198,
+          "min_emergent_opeff": 0.8456564634079939,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 0.9890226659282421,
+          "min_emergent_opeff": 0.9350614649820362,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 0.9908887781253106,
+          "min_emergent_opeff": 0.9209768241443207,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 0.9907091160196957,
+          "min_emergent_opeff": 0.9145917579510752,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 0.9907091160196957,
+          "min_emergent_opeff": 0.9145917579510752,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "DSC1": {
+      "analytical_opeff": 0.9697970191282795,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 0.9490768401505919,
+          "min_emergent_opeff": 0.9120743668973798,
+          "max_emergent_opeff": 0.9858150591976654,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 0.9490768401505919,
+          "min_emergent_opeff": 0.9120743668973798,
+          "max_emergent_opeff": 0.9858150591976654,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 0.9490768401505919,
+          "min_emergent_opeff": 0.9120743668973798,
+          "max_emergent_opeff": 0.9858150591976654,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 0.9490768401505919,
+          "min_emergent_opeff": 0.9120743668973798,
+          "max_emergent_opeff": 0.9858150591976654,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 0.9490768401505919,
+          "min_emergent_opeff": 0.9120743668973798,
+          "max_emergent_opeff": 0.9858150591976654,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 0.9490768401505919,
+          "min_emergent_opeff": 0.9120743668973798,
+          "max_emergent_opeff": 0.9858150591976654,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 0.9490768401505919,
+          "min_emergent_opeff": 0.9120743668973798,
+          "max_emergent_opeff": 0.9858150591976654,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "VM8": {
+      "analytical_opeff": 4.2500782440887095,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 5.540588144792992,
+          "min_emergent_opeff": 2.085694245761715,
+          "max_emergent_opeff": 12.547487303207273,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 5.540588144792992,
+          "min_emergent_opeff": 2.085694245761715,
+          "max_emergent_opeff": 12.547487303207273,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 5.540588144792992,
+          "min_emergent_opeff": 2.085694245761715,
+          "max_emergent_opeff": 12.547487303207273,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 5.540588144792992,
+          "min_emergent_opeff": 2.085694245761715,
+          "max_emergent_opeff": 12.547487303207273,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 5.540588144792992,
+          "min_emergent_opeff": 2.085694245761715,
+          "max_emergent_opeff": 12.547487303207273,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 5.540588144792992,
+          "min_emergent_opeff": 2.085694245761715,
+          "max_emergent_opeff": 12.547487303207273,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 5.540588144792992,
+          "min_emergent_opeff": 2.085694245761715,
+          "max_emergent_opeff": 12.547487303207273,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "LEC11": {
+      "analytical_opeff": 25.843234093004675,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 21.198188609168835,
+          "min_emergent_opeff": 1.0782466078857504,
+          "max_emergent_opeff": 54.77082256979502,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 21.198188609168835,
+          "min_emergent_opeff": 1.0782466078857504,
+          "max_emergent_opeff": 54.77082256979502,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 21.198188609168835,
+          "min_emergent_opeff": 1.0782466078857504,
+          "max_emergent_opeff": 54.77082256979502,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 21.198188609168835,
+          "min_emergent_opeff": 1.0782466078857504,
+          "max_emergent_opeff": 54.77082256979502,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 21.198188609168835,
+          "min_emergent_opeff": 1.0782466078857504,
+          "max_emergent_opeff": 54.77082256979502,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 21.198188609168835,
+          "min_emergent_opeff": 1.0782466078857504,
+          "max_emergent_opeff": 54.77082256979502,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 21.819242335247996,
+          "min_emergent_opeff": 1.4635871609131166,
+          "max_emergent_opeff": 54.77082256979502,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "DSC6": {
+      "analytical_opeff": 0.9913377084224462,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 0.9506178768613516,
+          "min_emergent_opeff": 0.907730454345681,
+          "max_emergent_opeff": 0.9926594920336761,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 0.9506178768613516,
+          "min_emergent_opeff": 0.907730454345681,
+          "max_emergent_opeff": 0.9926594920336761,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 0.9506178768613516,
+          "min_emergent_opeff": 0.907730454345681,
+          "max_emergent_opeff": 0.9926594920336761,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 0.9506178768613516,
+          "min_emergent_opeff": 0.907730454345681,
+          "max_emergent_opeff": 0.9926594920336761,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 0.9506178768613516,
+          "min_emergent_opeff": 0.907730454345681,
+          "max_emergent_opeff": 0.9926594920336761,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 0.9506178768613516,
+          "min_emergent_opeff": 0.907730454345681,
+          "max_emergent_opeff": 0.9926594920336761,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 0.9506178768613516,
+          "min_emergent_opeff": 0.907730454345681,
+          "max_emergent_opeff": 0.9926594920336761,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "VM6": {
+      "analytical_opeff": 1049.6877451154073,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 1065.2556958186876,
+          "min_emergent_opeff": 159.6070921453609,
+          "max_emergent_opeff": 2398.242209334973,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 1065.2556958186876,
+          "min_emergent_opeff": 159.6070921453609,
+          "max_emergent_opeff": 2398.242209334973,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 1065.2556958186876,
+          "min_emergent_opeff": 159.6070921453609,
+          "max_emergent_opeff": 2398.242209334973,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 1065.2556958186876,
+          "min_emergent_opeff": 159.6070921453609,
+          "max_emergent_opeff": 2398.242209334973,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 1065.2556958186876,
+          "min_emergent_opeff": 159.6070921453609,
+          "max_emergent_opeff": 2398.242209334973,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 1065.2556958186876,
+          "min_emergent_opeff": 159.6070921453609,
+          "max_emergent_opeff": 2398.242209334973,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 1065.2556958186876,
+          "min_emergent_opeff": 159.6070921453609,
+          "max_emergent_opeff": 2398.242209334973,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "LEC2": {
+      "analytical_opeff": 0.8635039071592895,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 0.8916557336439235,
+          "min_emergent_opeff": 0.8294186661580752,
+          "max_emergent_opeff": 0.9476280424578414,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 0.8916557336439235,
+          "min_emergent_opeff": 0.8294186661580752,
+          "max_emergent_opeff": 0.9476280424578414,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 0.8916557336439235,
+          "min_emergent_opeff": 0.8294186661580752,
+          "max_emergent_opeff": 0.9476280424578414,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 0.8916557336439235,
+          "min_emergent_opeff": 0.8294186661580752,
+          "max_emergent_opeff": 0.9476280424578414,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 0.8916557336439235,
+          "min_emergent_opeff": 0.8294186661580752,
+          "max_emergent_opeff": 0.9476280424578414,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 0.8916557336439235,
+          "min_emergent_opeff": 0.8294186661580752,
+          "max_emergent_opeff": 0.9476280424578414,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 0.8916557336439235,
+          "min_emergent_opeff": 0.8294186661580752,
+          "max_emergent_opeff": 0.9476280424578414,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "LEC8": {
+      "analytical_opeff": 0.9646502112630378,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 0.7336060921967039,
+          "min_emergent_opeff": 0.04890153782661562,
+          "max_emergent_opeff": 0.9788471029989438,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 0.7336060921967039,
+          "min_emergent_opeff": 0.04890153782661562,
+          "max_emergent_opeff": 0.9788471029989438,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 0.7336060921967039,
+          "min_emergent_opeff": 0.04890153782661562,
+          "max_emergent_opeff": 0.9788471029989438,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 0.7336060921967039,
+          "min_emergent_opeff": 0.04890153782661562,
+          "max_emergent_opeff": 0.9788471029989438,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 0.7336060921967039,
+          "min_emergent_opeff": 0.04890153782661562,
+          "max_emergent_opeff": 0.9788471029989438,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 0.7340225161617117,
+          "min_emergent_opeff": 0.04800026171522599,
+          "max_emergent_opeff": 0.9788471029989438,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 0.7339375225923135,
+          "min_emergent_opeff": 0.04800026171522599,
+          "max_emergent_opeff": 0.9788471029989438,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "VM7": {
+      "analytical_opeff": 709.9754773911616,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 878.5263259844849,
+          "min_emergent_opeff": 124.83269237463878,
+          "max_emergent_opeff": 1765.2533866382423,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 878.5263259844849,
+          "min_emergent_opeff": 124.83269237463878,
+          "max_emergent_opeff": 1765.2533866382423,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 878.5263259844849,
+          "min_emergent_opeff": 124.83269237463878,
+          "max_emergent_opeff": 1765.2533866382423,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 878.5263259844849,
+          "min_emergent_opeff": 124.83269237463878,
+          "max_emergent_opeff": 1765.2533866382423,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 878.5263259844849,
+          "min_emergent_opeff": 124.83269237463878,
+          "max_emergent_opeff": 1765.2533866382423,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 878.5263259844849,
+          "min_emergent_opeff": 124.83269237463878,
+          "max_emergent_opeff": 1765.2533866382423,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 878.5263259844849,
+          "min_emergent_opeff": 124.83269237463878,
+          "max_emergent_opeff": 1765.2533866382423,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "VM10": {
+      "analytical_opeff": 40.233142501360405,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 146.27908367700869,
+          "min_emergent_opeff": 24.121312607460236,
+          "max_emergent_opeff": 519.4772676486193,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 146.27908367700869,
+          "min_emergent_opeff": 24.121312607460236,
+          "max_emergent_opeff": 519.4772676486193,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 146.27908367700869,
+          "min_emergent_opeff": 24.121312607460236,
+          "max_emergent_opeff": 519.4772676486193,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 146.27908367700869,
+          "min_emergent_opeff": 24.121312607460236,
+          "max_emergent_opeff": 519.4772676486193,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 146.27908367700869,
+          "min_emergent_opeff": 24.121312607460236,
+          "max_emergent_opeff": 519.4772676486193,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 146.27908367700869,
+          "min_emergent_opeff": 24.121312607460236,
+          "max_emergent_opeff": 519.4772676486193,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 146.27908367700869,
+          "min_emergent_opeff": 24.121312607460236,
+          "max_emergent_opeff": 519.4772676486193,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "DSC13": {
+      "analytical_opeff": 0.949057158426575,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 0.9488217895191177,
+          "min_emergent_opeff": 0.9029803024108616,
+          "max_emergent_opeff": 0.9896692908248366,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 0.9488217895191177,
+          "min_emergent_opeff": 0.9029803024108616,
+          "max_emergent_opeff": 0.9896692908248366,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 0.9488217895191177,
+          "min_emergent_opeff": 0.9029803024108616,
+          "max_emergent_opeff": 0.9896692908248366,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 0.9488217895191177,
+          "min_emergent_opeff": 0.9029803024108616,
+          "max_emergent_opeff": 0.9896692908248366,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 0.9488217895191177,
+          "min_emergent_opeff": 0.9029803024108616,
+          "max_emergent_opeff": 0.9896692908248366,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 0.9488217895191177,
+          "min_emergent_opeff": 0.9029803024108616,
+          "max_emergent_opeff": 0.9896692908248366,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 0.9488217895191177,
+          "min_emergent_opeff": 0.9029803024108616,
+          "max_emergent_opeff": 0.9896692908248366,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "DSC3": {
+      "analytical_opeff": 0.9334125426512911,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 0.9477327080225117,
+          "min_emergent_opeff": 0.9055538954264867,
+          "max_emergent_opeff": 0.9918636317633553,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 0.9477327080225117,
+          "min_emergent_opeff": 0.9055538954264867,
+          "max_emergent_opeff": 0.9918636317633553,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 0.9477327080225117,
+          "min_emergent_opeff": 0.9055538954264867,
+          "max_emergent_opeff": 0.9918636317633553,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 0.9477327080225117,
+          "min_emergent_opeff": 0.9055538954264867,
+          "max_emergent_opeff": 0.9918636317633553,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 0.9477327080225117,
+          "min_emergent_opeff": 0.9055538954264867,
+          "max_emergent_opeff": 0.9918636317633553,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 0.9477327080225117,
+          "min_emergent_opeff": 0.9055538954264867,
+          "max_emergent_opeff": 0.9918636317633553,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 0.9477327080225117,
+          "min_emergent_opeff": 0.9055538954264867,
+          "max_emergent_opeff": 0.9918636317633553,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "LEC10a": {
+      "analytical_opeff": 0.8849847710632404,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 0.7135901054008188,
+          "min_emergent_opeff": 0.1235029450503684,
+          "max_emergent_opeff": 0.9410190957868085,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 0.7135901054008188,
+          "min_emergent_opeff": 0.1235029450503684,
+          "max_emergent_opeff": 0.9410190957868085,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 0.7135901054008188,
+          "min_emergent_opeff": 0.1235029450503684,
+          "max_emergent_opeff": 0.9410190957868085,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 0.7135901054008188,
+          "min_emergent_opeff": 0.1235029450503684,
+          "max_emergent_opeff": 0.9410190957868085,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 0.7135901054008188,
+          "min_emergent_opeff": 0.1235029450503684,
+          "max_emergent_opeff": 0.9410190957868085,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 0.7142523123248056,
+          "min_emergent_opeff": 0.11290725749717744,
+          "max_emergent_opeff": 0.9410190957868085,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 0.7133574522683037,
+          "min_emergent_opeff": 0.11290725749717744,
+          "max_emergent_opeff": 0.9410190957868085,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "LEC7b": {
+      "analytical_opeff": 0.9991119005328597,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 0.8083863472314238,
+          "min_emergent_opeff": 0.11901031458060636,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 0.8083863472314238,
+          "min_emergent_opeff": 0.11901031458060636,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 0.8083863472314238,
+          "min_emergent_opeff": 0.11901031458060636,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 0.8083863472314238,
+          "min_emergent_opeff": 0.11901031458060636,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 0.8083863472314238,
+          "min_emergent_opeff": 0.11901031458060636,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 0.8083863472314238,
+          "min_emergent_opeff": 0.11901031458060636,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 0.8089655108496493,
+          "min_emergent_opeff": 0.12078964239766139,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "VM5": {
+      "analytical_opeff": 0.9973404255319149,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 0.9995530964132083,
+          "min_emergent_opeff": 0.9742569274910345,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 0.9995530964132083,
+          "min_emergent_opeff": 0.9742569274910345,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 0.9998152676143293,
+          "min_emergent_opeff": 0.9815267614329385,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 0.9999970522871301,
+          "min_emergent_opeff": 0.9997052287130106,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 1.0,
+          "min_emergent_opeff": 1.0,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 1.0,
+          "min_emergent_opeff": 1.0,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 1.0,
+          "min_emergent_opeff": 1.0,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "LEC7a": {
+      "analytical_opeff": 0.7790248262073752,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 0.6339967629545217,
+          "min_emergent_opeff": 0.10385672542061172,
+          "max_emergent_opeff": 0.8777821373156995,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 0.6339967629545217,
+          "min_emergent_opeff": 0.10385672542061172,
+          "max_emergent_opeff": 0.8777821373156995,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 0.6332885208888366,
+          "min_emergent_opeff": 0.11235443230169852,
+          "max_emergent_opeff": 0.8777821373156995,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 0.6354945088344764,
+          "min_emergent_opeff": 0.11296600622169045,
+          "max_emergent_opeff": 0.8777821373156995,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 0.6332962982149675,
+          "min_emergent_opeff": 0.11399740643894292,
+          "max_emergent_opeff": 0.8777821373156995,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 0.6343440566648086,
+          "min_emergent_opeff": 0.11399740643894292,
+          "max_emergent_opeff": 0.8777821373156995,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 0.6343440566648086,
+          "min_emergent_opeff": 0.11399740643894292,
+          "max_emergent_opeff": 0.8777821373156995,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "VM1": {
+      "analytical_opeff": 0.8879884222163734,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 0.8963955758666995,
+          "min_emergent_opeff": 0.7861929653956381,
+          "max_emergent_opeff": 0.9875456845915989,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 0.8963955758666995,
+          "min_emergent_opeff": 0.7861929653956381,
+          "max_emergent_opeff": 0.9875456845915989,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 0.8963955758666995,
+          "min_emergent_opeff": 0.7861929653956381,
+          "max_emergent_opeff": 0.9875456845915989,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 0.8963955758666995,
+          "min_emergent_opeff": 0.7861929653956381,
+          "max_emergent_opeff": 0.9875456845915989,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 0.8963955758666995,
+          "min_emergent_opeff": 0.7861929653956381,
+          "max_emergent_opeff": 0.9875456845915989,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 0.8963955758666995,
+          "min_emergent_opeff": 0.7861929653956381,
+          "max_emergent_opeff": 0.9875456845915989,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 0.8963955758666995,
+          "min_emergent_opeff": 0.7861929653956381,
+          "max_emergent_opeff": 0.9875456845915989,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "LEC4": {
+      "analytical_opeff": 0.9991119005328597,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 0.9071344443455547,
+          "min_emergent_opeff": 0.5367923597471211,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 0.9071344443455547,
+          "min_emergent_opeff": 0.5367923597471211,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 0.9614454814987313,
+          "min_emergent_opeff": 0.5728361970740941,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 0.9796585383110229,
+          "min_emergent_opeff": 0.8581029886651559,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 0.9894704982956715,
+          "min_emergent_opeff": 0.934523789728759,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 0.9897531791293938,
+          "min_emergent_opeff": 0.9290995768490408,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 0.9897531791293938,
+          "min_emergent_opeff": 0.9290995768490408,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "LEC1": {
+      "analytical_opeff": 0.8164589835082031,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 0.6631067409674266,
+          "min_emergent_opeff": 0.055815662919460336,
+          "max_emergent_opeff": 0.9081056997015137,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 0.6631067409674266,
+          "min_emergent_opeff": 0.055815662919460336,
+          "max_emergent_opeff": 0.9081056997015137,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 0.6631067409674266,
+          "min_emergent_opeff": 0.055815662919460336,
+          "max_emergent_opeff": 0.9081056997015137,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 0.6617807403827587,
+          "min_emergent_opeff": 0.05329315450613574,
+          "max_emergent_opeff": 0.9081056997015137,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 0.6642546280590835,
+          "min_emergent_opeff": 0.052726733268710115,
+          "max_emergent_opeff": 0.9081056997015137,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 0.6649573106223824,
+          "min_emergent_opeff": 0.052726733268710115,
+          "max_emergent_opeff": 0.9081056997015137,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 0.6649573106223824,
+          "min_emergent_opeff": 0.052726733268710115,
+          "max_emergent_opeff": 0.9081056997015137,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "LEC3": {
+      "analytical_opeff": 0.9991119005328597,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 0.9726196116540704,
+          "min_emergent_opeff": 0.8269714743156983,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 0.9726196116540704,
+          "min_emergent_opeff": 0.8269714743156983,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 0.9880125367048944,
+          "min_emergent_opeff": 0.8872244276343574,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 0.9893020436207578,
+          "min_emergent_opeff": 0.9365657865314783,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 0.9893599384592175,
+          "min_emergent_opeff": 0.8901304840941883,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 0.9910534522914692,
+          "min_emergent_opeff": 0.9408102349209427,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 0.9910534522914692,
+          "min_emergent_opeff": 0.9408102349209427,
+          "max_emergent_opeff": 1.0,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "LEC7c": {
+      "analytical_opeff": 0.06501177982072097,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 0.03968371407967716,
+          "min_emergent_opeff": 0.005385161798693814,
+          "max_emergent_opeff": 0.07329814983058543,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 0.03968371407967716,
+          "min_emergent_opeff": 0.005385161798693814,
+          "max_emergent_opeff": 0.07329814983058543,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 0.03968371407967716,
+          "min_emergent_opeff": 0.005385161798693814,
+          "max_emergent_opeff": 0.07329814983058543,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 0.03968371407967716,
+          "min_emergent_opeff": 0.005385161798693814,
+          "max_emergent_opeff": 0.07329814983058543,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 0.03968371407967716,
+          "min_emergent_opeff": 0.005385161798693814,
+          "max_emergent_opeff": 0.07329814983058543,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 0.039216737999391384,
+          "min_emergent_opeff": 0.00700854495885282,
+          "max_emergent_opeff": 0.07329814983058543,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 0.03945113730448618,
+          "min_emergent_opeff": 0.00700854495885282,
+          "max_emergent_opeff": 0.07329814983058543,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    },
+    "DSC7": {
+      "analytical_opeff": 0.9721896008206447,
+      "budgets": {
+        "2": {
+          "mean_emergent_opeff": 0.9476513917475339,
+          "min_emergent_opeff": 0.9053411885118983,
+          "max_emergent_opeff": 0.984258493942113,
+          "mean_ale": 3289480.878825269
+        },
+        "5": {
+          "mean_emergent_opeff": 0.9476513917475339,
+          "min_emergent_opeff": 0.9053411885118983,
+          "max_emergent_opeff": 0.984258493942113,
+          "mean_ale": 3289480.878825269
+        },
+        "10": {
+          "mean_emergent_opeff": 0.9476513917475339,
+          "min_emergent_opeff": 0.9053411885118983,
+          "max_emergent_opeff": 0.984258493942113,
+          "mean_ale": 2048803.0347055623
+        },
+        "20": {
+          "mean_emergent_opeff": 0.9476513917475339,
+          "min_emergent_opeff": 0.9053411885118983,
+          "max_emergent_opeff": 0.984258493942113,
+          "mean_ale": 2381636.321896561
+        },
+        "40": {
+          "mean_emergent_opeff": 0.9476513917475339,
+          "min_emergent_opeff": 0.9053411885118983,
+          "max_emergent_opeff": 0.984258493942113,
+          "mean_ale": 2084435.664187259
+        },
+        "80": {
+          "mean_emergent_opeff": 0.9476513917475339,
+          "min_emergent_opeff": 0.9053411885118983,
+          "max_emergent_opeff": 0.984258493942113,
+          "mean_ale": 2084435.664187259
+        },
+        "160": {
+          "mean_emergent_opeff": 0.9476513917475339,
+          "min_emergent_opeff": 0.9053411885118983,
+          "max_emergent_opeff": 0.984258493942113,
+          "mean_ale": 2084435.664187259
+        }
+      }
+    }
+  }
+}

@@ -1,10 +1,8 @@
 # FAIR Risk Quantification Tool – Scope & Limitations
 
-This prototype is designed as a **learning and exploration tool** for FAIR practitioners, not as a drop-in replacement for a fully governed commercial platform.
+This tools is a prototype designed as a **learning and exploration tool** for FAIR practitioners, not as a drop-in replacement for a fully governed commercial platform.
 
 ## 1. What the Tool Does
-
-The tool helps with:
 
 - Monte Carlo simulation of FAIR factors:
   - TEF, Susceptibility, Loss Magnitude, SLEF
@@ -79,7 +77,6 @@ but not for multi-year scenarios with planned control improvements, major archit
 
 This tool uses a **simplified secondary loss model** with a single SLEF parameter representing the probability that a primary loss event triggers additional loss forms (e.g., fines, legal costs, reputation damage).
 
-**How It Works:**
 ```
 For each primary loss event:
   - Generate primary loss (e.g., response costs)
@@ -88,10 +85,8 @@ For each primary loss event:
   - Total loss = Primary + Secondary (if triggered)
 ```
 
-**What This Approximates:**
-- Multiple distinct secondary loss forms (fines, lawsuits, customer churn) as a single "gate"
-- Reality: Each secondary form has its own probability and magnitude
-- Model: One aggregate probability (SLEF) and one aggregate magnitude
+**What This Approximates:** Multiple distinct secondary loss forms (fines, lawsuits, customer churn) as a single "gate"
+In reality however, each secondary form may have its own probability and magnitude. This implementation choice is intentional and aligned with the FAIR model, so that it uses one aggregate probability (SLEF) and one aggregate magnitude.
 
 **Limitations:**
 - Cannot distinguish between "10% chance of fine + 30% chance of lawsuit"

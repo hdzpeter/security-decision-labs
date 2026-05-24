@@ -1,0 +1,1030 @@
+# Model configuration
+
+paths:
+  # Root of the repository (used for resolving relative csv/xlsx paths)
+  project_root: .
+
+model:
+  default_seed: 42
+  default_steps: 175200
+
+batch:
+  num_iterations: 10
+
+excel_loader:
+  defaults:
+    threat_agent:
+      # Used when a ThreatAgent sheet omits Origin
+      origin: external
+
+
+time:
+  # Simulation tick = 1 hour
+  hours_per_day: 24
+  hours_per_week: 168
+  # Average month length used by the Phase 2 docs (730 hours)
+  hours_per_month: 730
+  hours_per_year: 8760
+  ticks_per_month: 730
+
+  # Periodic VMC monitoring sweeps (Phase 2: monitoring behavior)
+  vmc_monitoring_interval_hours: 24
+
+network:
+  # Policy when the topology matrix is inconsistent with the parameter sheets.
+  # Allowed:
+  # - warn   : log missing/extra IDs and continue
+  # - fail   : raise if any core IDs are missing from topology
+  # - filter : drop parameter rows not present in the topology matrix (core nodes only)
+  topology_policy: warn
+
+  # Implicit TA-to-TA connectivity for lateral movement.
+  # When true, all Tech Assets are assumed to be connected to each other (full mesh).
+  # When false, only explicit TECH_CONNECTS_TECH edges in the topology are used.
+  # This affects lateral movement after an external TA is breached.
+  implicit_ta_connectivity: true
+
+# -----------------------------------------------------------------------------
+# Threat landscape changes (externally-driven variance)
+# -----------------------------------------------------------------------------
+# When a threat landscape change occurs, all software-based controls (actor_type
+# != "human") that are currently normal automatically transition to variant state.
+# This bypasses DSC/VMC prevention gates since it is externally driven.
+
+threat_landscape:
+  # Average number of threat landscape changes per year (default from spec: 1).
+  # Set to 0 to disable.
+  change_frequency_per_year: 1
+  # Whether threat landscape changes affect detection (VMC) and decision support
+  # (DSC) controls. When false, VMCs and DSCs are excluded from threat landscape
+  # variance — they degrade only through their own drift timers and personnel
+  # checks. Default false: a zero-day bypasses resistive controls but does not
+  # automatically blind monitoring or invalidate training.
+  affect_detection_controls: false
+
+# -----------------------------------------------------------------------------
+# Asset defaults / validation
+# -----------------------------------------------------------------------------
+
+assets:
+  business_asset:
+    # Allowed values:
+    # - information  (data breach / records based)
+    # - process      (outage / downtime based)
+    # - other        (custom taxonomy; map to a canonical mode below)
+    allowed_types: [information, process, other]
+
+    # If true, accept any asset_type string (useful while Excel is evolving).
+    # If false, asset_type must be in allowed_types.
+    allow_unlisted_type: true
+
+    # Map any allowed asset type to a canonical loss mode.
+    # Canonical modes used by the Phase 2 loss logic are:
+    # - information  (records-driven)
+    # - process      (downtime/recovery-driven)
+    # If you add new asset types (e.g., "clinical", "device", ...), add them to
+    # allowed_types and map them here.
+    type_semantics:
+      information: information
+      process: process
+      other: information
+    defaults:
+      # Used when Excel is missing the "Type" or "Asset_Type" column.
+      asset_type: information
+      # Used when Excel is missing "Record Size" / "Record_Count".
+      # Used by remediation priority ordering (risk_score computation).
+      record_count: 0
+
+  tech_asset:
+    # Allowed values:
+    # - external   (internet-facing)
+    # - internal   (inside org boundary)
+    # - other       (custom taxonomy)
+    allowed_network_layers: [external, internal, other]
+
+    # If true, accept any network_layer string (useful while Excel is evolving).
+    # If false, network_layer must be in allowed_network_layers.
+    allow_unlisted_network_layer: true
+    defaults:
+      # Used when Excel is missing "Network Layer" / "Network_Layer".
+      network_layer: internal
+      # Used when Excel is missing "Visible".
+      visible: false
+
+# -----------------------------------------------------------------------------
+# Control defaults
+# -----------------------------------------------------------------------------
+
+controls:
+  # Cost tracking settings
+  cost_tracking:
+    # CapEx is accumulated once at model initialization (controls already deployed)
+    accumulate_capex_at_init: true
+    # OpEx is accumulated annually (every hours_per_year ticks)
+    opex_accumulation_interval: annual  # annual | monthly | none
+
+  defaults:
+    # Control type strings used across the codebase. These MUST match the node IDs / sheet semantics.
+    control_types:
+      lec: LEC
+      vmc: VMC
+      dsc: DSC
+
+    # If a control row omits CapEx/OpEx, fill with these defaults.
+    capex: 0
+    opex: 0
+
+    # Used only when a control has no draw_efficacy() and no efficacy parameterization.
+    # Prefer providing efficacy in Excel/JSON for all controls.
+    default_efficacy: 0.5
+
+    # Default remediation effort in hours when a control does not specify its own
+    remediation_hours: 8
+
+    # Default distribution parameterization used if a control row is missing distro fields.
+    # NOTE: Values here are placeholders; for calibrated runs, each control row should provide its own.
+    efficacy:
+      # Allowed: Beta PERT (preferred), Uniform (supported)
+      dist_type: Beta PERT
+      param1: 0
+      param2: 0.5
+      param3: 1
+      param4: 4
+    change_freq:
+      # Allowed: Beta PERT (preferred), Uniform (supported)
+      dist_type: Uniform
+      # If Uniform: [param1, param2] is the range in hours
+      param1: 20000
+      param2: 30000
+      # If Beta PERT: params 1..4 are min/mode/max/lambda
+      param3: 0
+      param4: 0
+
+    lec:
+      defaults:
+        # LEC type is used for remediation priority heuristics.
+        # Allowed (Phase 2): avoidance | deterrence | resistance | monitoring | recognition |
+        #                  event_termination | resilience | response
+        lec_type: resistance
+        # Actor type affects some contact logic (human vs technology).
+        # Allowed: technology | human
+        actor_type: technology
+
+        # Fallback time distribution params (hours) for time-based LECs
+        # Used when Excel row doesn't provide Param 1..4
+        time_dist:
+          min: 1
+          mode: 24
+          max: 168
+          confidence: 4
+
+        # Fallback probability distribution params [0-1] for probability-based LECs
+        # Used when Excel row doesn't provide Param 1..4
+        prob_dist:
+          min: 0
+          mode: 0.5
+          max: 1
+          confidence: 4
+
+    vmc:
+      defaults:
+        # Fallback time distribution params (hours) for time-based VMCs
+        # Used when Excel row doesn't provide Param 1..4
+        time_dist:
+          min: 24
+          mode: 168
+          max: 720
+          confidence: 4
+
+    dsc:
+      defaults:
+        # Fallback probability distribution params [0-1] for DSC binomial eval
+        # Used when Excel row doesn't provide Efficacy Param 1..4
+        prob_dist:
+          min: 0
+          mode: 0.5
+          max: 1
+          confidence: 4
+
+  # -----------------------------------------------------------------------------
+  # Efficacy Method Behavior Mappings (from Excel specification)
+  # -----------------------------------------------------------------------------
+  # These mappings define how each "Efficacy Method" string from Excel determines
+  # the semantic interpretation of parameters and the control's behavior.
+  # All distributions are Beta-PERT unless otherwise specified in Excel.
+  #
+  # semantic_type values:
+  #   - efficacy: params are [0-1] efficacy, compared against threat sophistication
+  #   - probability: params are [0-1] probability, used for Bernoulli trials
+  #   - time_hours: params are time in hours (detection/termination/recovery intervals)
+  #
+  # behavior values:
+  #   - compare_sophistication: compare sampled efficacy against threat sophistication
+  #   - bernoulli_trial: sample probability, perform Bernoulli trial
+  #   - sample_time_interval: sample time interval in hours for scheduling
+
+  efficacy_methods:
+    # LEC efficacy methods
+    lec:
+      "comparison to threat sophistication":
+        semantic_type: efficacy
+        behavior: compare_sophistication
+        description: "Efficacy [0-1] compared against threat sophistication"
+
+      "random draw, success/failure outcome":
+        semantic_type: probability
+        behavior: bernoulli_trial
+        description: "Probability [0-1] for Bernoulli success/failure trial"
+
+      "timing interval for detection sweep":
+        semantic_type: time_hours
+        behavior: sample_time_interval
+        description: "Detection interval in hours (Beta-PERT)"
+
+      "timing interval for loss termination":
+        semantic_type: time_hours
+        behavior: sample_time_interval
+        description: "Time to terminate loss event in hours (Beta-PERT)"
+
+      "timing interval for recovery":
+        semantic_type: time_hours
+        behavior: sample_time_interval
+        description: "Recovery time in hours (Beta-PERT)"
+
+    # VMC efficacy methods
+    vmc:
+      "variance probability adjustment factor":
+        semantic_type: probability
+        behavior: bernoulli_trial
+        description: "Factor [0-1] to adjust variance detection probability"
+
+      "variance probability adjustment":
+        semantic_type: probability
+        behavior: bernoulli_trial
+        description: "Factor [0-1] to adjust variance detection probability (alternate
+          spelling)"
+
+      "time interval for variance detection sweep":
+        semantic_type: time_hours
+        behavior: sample_time_interval
+        detection_probability: 1.0  # 100% detection when sweep occurs
+        description: "Detection sweep interval in hours (Beta-PERT). Excel specifies
+          WHEN to sweep, not IF detection succeeds. When the sweep runs, all variant
+          controls are detected (100% probability)."
+
+      "time interval for variance correction":
+        semantic_type: time_hours
+        behavior: sample_time_interval
+        description: "Remediation/correction time in hours (Beta-PERT)"
+
+    # DSC efficacy methods
+    dsc:
+      "random draw to binomial eval":
+        semantic_type: probability
+        behavior: bernoulli_trial
+        description: "Probability [0-1] for decision quality Bernoulli trial"
+
+# -----------------------------------------------------------------------------
+# Change events (DEPRECATED - no longer used)
+# -----------------------------------------------------------------------------
+# Variance events are now driven solely by each control's Change Freq distribution
+# from the Excel control_params sheets (e.g., "Change Freq Dist Type", "Change Freq Param 1..4").
+# The previous ChangeEventGenerator with monthly/quarterly scheduled events was removed
+# because it added variance events not specified in the Excel data, causing 5-9x more
+# variance events than the Repast baseline.
+#
+# Control variance mechanism:
+# - Each control has a "Change Freq" distribution (typically Uniform) from Excel
+# - BaseControlAgent.step() checks if current_tick >= next_change_time
+# - When reached, on_change_event("periodic_internal") triggers variance
+# - Example: LEC1 has Uniform(25000, 45000) hours = variance every 2.9-5.1 years
+#
+# The settings below are retained for backwards compatibility but are NOT used.
+
+# Variance prevention gates (Phase 2 Gaps 2+3)
+# These checks run before a control becomes variant.
+variance_prevention:
+  # DSC check: personnel managing the control can prevent variance if aligned
+  enable_dsc_check: true
+  # VM "reduce var freq": linked VMCs extend the change interval
+  enable_vm_reduce_freq: true
+  # VM "reduce var prob": linked VMCs can prevent variance via efficacy trial
+  enable_vm_reduce_prob: true
+
+change_events:
+  # DEPRECATED: These settings are no longer active
+  monthly_change_rate: 0.2
+  quarterly_change_rate: 0.5
+  base_change_risk: 0.15
+
+  severity:
+    software_update: 0.3
+    policy_update: 0.5
+    config_change: 0.4
+    infrastructure: 0.6
+    security_patch: 0.2
+
+  schedule:
+    monthly_periods: 12
+    quarterly_periods: 4
+    lookahead_ticks: 1000
+
+  # Legacy multiplier map (retained for personnel_behavior compatibility)
+  personnel_risk_multipliers:
+    LOW_RISK: 0.1
+    NORMAL: 0.3
+    HIGH_RISK: 0.7
+    TEMPORARY_LOW_RISK: 0.2
+
+  default_personnel_factor: 1.0
+
+# -----------------------------------------------------------------------------
+# VMC monitoring + detection
+# -----------------------------------------------------------------------------
+
+vmc_detection:
+  change_event:
+    # How strongly change severity amplifies detection probability
+    severity_scale: 1
+
+  monitoring_sweep:
+    # Base probability for detecting a variant control during a sweep.
+    # NOTE: This is ONLY used for VMCs that don't have a specific detection method:
+    # - Time-based VMCs ("time interval for variance detection sweep"): 100% detection
+    # - Probability VMCs ("variance probability adjustment factor"): use sampled factor
+    # - Other VMCs: use base_detection_probability * efficacy (this fallback)
+    base_detection_probability: 0.3
+
+    # If true, run a sweep at tick 0 (otherwise first sweep is at interval)
+    run_at_tick0: false
+
+    # Organizational event names forwarded into personnel_behavior
+    audit_event_names:
+      finding: audit_finding
+      passed: audit_passed
+
+    # Emit audit_passed when a sweep detects no variants
+    emit_audit_passed_event: true
+
+# -----------------------------------------------------------------------------
+# Remediation scheduling
+# -----------------------------------------------------------------------------
+# Remediation is driven by each control's own remediation duration from Excel
+# or the Efficacy Method (e.g., "time interval for variance correction" for VMCs).
+# A configurable budget constrains how many hours of remediation can be performed.
+# Controls are ordered by: (1) LEC type priority tier, (2) scheduling strategy,
+# (3) FIFO within equal priority/cost. Strategy is configurable below.
+
+remediation:
+  # Scheduling strategy — how variant controls are ordered within each priority tier.
+  #   "budget_efficiency" (default) — cheapest (CapEx+OpEx) first, maximises throughput
+  #   "perceived_risk"              — most expensive first; cost as proxy for importance
+  #                                   (original RePast Simphony spec, slide 54)
+  # Future strategies (not yet implemented):
+  #   "risk_informed"               — prioritise by expected loss reduction / remediation cost
+  scheduling_strategy: budget_efficiency
+  # Deprecated: cost_priority (cheapest_first | most_expensive_first) — superseded by scheduling_strategy
+
+  # Budget mode: how remediation capacity is allocated.
+  #   monthly     - fixed hours per month, reset at each month boundary (default)
+  #   quarterly   - fixed hours per quarter (3x monthly), reset at quarter boundary
+  #   continuous  - hours accrue every tick at a steady rate (no reset)
+  budget_mode: monthly
+
+  # Total remediation hours available per month (default 40 from spec).
+  # For quarterly mode, the quarterly budget is 3x this value.
+  # For continuous mode, hours accrue at budget_hours_per_month / ticks_per_month per tick.
+  budget_hours_per_month: 40
+
+  # Legacy keys (still supported for backwards compatibility):
+  # If budget_hours_per_month is not set, the queue computes it as
+  # hours_per_month x budget_percentage.
+  budget_percentage: 0.25
+  hours_per_month: 160
+
+  effort:
+    # Used when no remediation duration is provided by the control agent or Excel
+    default_hours: 8
+    minor_variance: 4
+    major_variance: 16
+    critical_variance: 40
+
+# -----------------------------------------------------------------------------
+# Personnel (configured via YAML; no personnel sheet)
+# -----------------------------------------------------------------------------
+
+personnel:
+  # Canonical DSC attributes for personnel.
+  # These names MUST match DSC dimensions: expectation_alignment/awareness/capability/situational/incentive
+  default_attributes:
+    expectation_alignment: 0.7
+    awareness: 0.7
+    capability: 0.7
+    situational: 0.7
+    incentive: 0.7
+
+  # Optional legacy risk multipliers (separate from change_events.personnel_risk_multipliers)
+  # Only used by older code paths; keep for compatibility.
+  risk_multipliers:
+    LOW_RISK: 0.8
+    NORMAL: 1
+    HIGH_RISK: 1.2
+
+# Personnel behavioral model integration (Jan 2026 spec)
+personnel_behavior:
+  enabled: false
+
+  # integration_mode:
+  # - legacy : Option A (drop-in compatibility) — uses change_events.personnel_risk_multipliers via legacy_risk_state()
+  # - factor : Option B (continuous factor)      — uses get_variance_factor() directly
+  integration_mode: legacy
+
+  # Organizational archetype used to set baseline parameters; regulated_enterprise fits hospital ransomware.
+  archetype: regulated_enterprise
+
+  # Variance Duration (VD) linkage: optional multiplier on remediation effort hours.
+  enable_vd_linkage: false
+
+  track_history: true
+
+  defaults:
+    susceptibility: 0.35
+    confidence_bound: 0.2
+    confirmation_bias: 0.3
+    optimistic_bias: 0.15
+
+  feature_flags:
+    enable_social_influence: true
+    enable_event_shocks: true
+    enable_contagion: false
+    enable_bounded_confidence: false
+    enable_psychometric_perception: true
+
+  # Name of the org event to emit when a breach occurs
+  breach_event_name: security_breach
+
+  temporary_shock:
+    # Duration (ticks) of TEMPORARY_LOW_RISK after a breach (1 tick = 1 hour)
+    duration_ticks: 48
+
+  variance_factor_range:
+    # MUST match existing FAIR-CAM config expectations
+    min: 0.1
+    max: 0.7
+
+  legacy_state_thresholds:
+    low: 0.25
+    high: 0.75
+
+  # Domain impact multipliers (domain-only taxonomy: le/vm/ds)
+  domain_variance_impact_multipliers:
+    le: 0.7
+    vm: 1
+    ds: 0.4
+
+  vd_modifier:
+    min: 0.7
+    max: 1.3
+    # Domain-only VD linkage (single explicit linkage)
+    domain_vm_fast: 0.8
+    domain_ds_slow: 1.2
+    propensity_scale: 0.1
+
+  update_weights:
+    social: 0.7
+    contagion: 0.2
+    events: 0.1
+
+  confirmation_bias:
+    large_change_threshold: 0.1
+    damp_scale: 0.5
+
+  exposure_decay_rate: 0.3
+
+  contagion:
+    threshold_1: 2
+    threshold_2: 4
+    increment_1: 0.08
+    increment_2: 0.2
+
+  satisficing:
+    initial_aspiration_level: 0.6
+    aspiration_adaptation_rate: 0.05
+    # How strongly aspiration gap drives complacency/vigilance drift
+    strength: 0.05
+
+  influence_weights:
+    dept_same_multiplier: 1.5
+    domain_same_multiplier: 1.3
+
+  network:
+    # Allowed: hierarchical | small_world | modular
+    type: hierarchical
+
+    hierarchical:
+      manager_ic_degree: 5
+      peer_span: 2
+    small_world:
+      k: 6
+      rewire_p: 0.1
+    modular:
+      intra_department_p: 0.4
+      inter_department_p: 0.1
+      max_bridges_per_pair: 2
+
+  department_variance_baseline:
+    security: 0.3
+    it_ops: 0.4
+    engineering: 0.5
+    finance: 0.3
+    executive: 0.45
+    hr: 0.35
+    legal: 0.25
+    sales: 0.55
+    other: 0.45
+
+  # Default domain responsibility weights by department and role_level ('1','2','3')
+  domain_profiles:
+    security:
+      '1': {le: 0.3, vm: 0.3, ds: 0.4}
+      '2': {le: 0.4, vm: 0.4, ds: 0.2}
+      '3': {le: 0.5, vm: 0.4, ds: 0.1}
+    it_ops:
+      '1': {le: 0.2, vm: 0.4, ds: 0.4}
+      '2': {le: 0.3, vm: 0.5, ds: 0.2}
+      '3': {le: 0.3, vm: 0.6, ds: 0.1}
+    engineering:
+      '1': {le: 0.2, vm: 0.3, ds: 0.5}
+      '2': {le: 0.3, vm: 0.4, ds: 0.3}
+      '3': {le: 0.4, vm: 0.5, ds: 0.1}
+    executive:
+      '1': {le: 0.1, vm: 0.2, ds: 0.7}
+      '2': {le: 0.2, vm: 0.3, ds: 0.5}
+      '3': {le: 0.3, vm: 0.4, ds: 0.3}
+
+  domain_profiles_default:
+    '1': {le: 0.2, vm: 0.3, ds: 0.5}
+    '2': {le: 0.3, vm: 0.4, ds: 0.3}
+    '3': {le: 0.4, vm: 0.5, ds: 0.1}
+
+  # Culture profile (CVF) per department
+  culture:
+    department_defaults:
+      security: {hierarchy: 0.5, clan: 0.2, market: 0.1, adhocracy: 0.2}
+      it_ops: {hierarchy: 0.4, clan: 0.3, market: 0.1, adhocracy: 0.2}
+      engineering: {hierarchy: 0.2, clan: 0.3, market: 0.1, adhocracy: 0.4}
+      finance: {hierarchy: 0.6, clan: 0.2, market: 0.15, adhocracy: 0.05}
+      executive: {hierarchy: 0.3, clan: 0.2, market: 0.35, adhocracy: 0.15}
+      hr: {hierarchy: 0.35, clan: 0.4, market: 0.1, adhocracy: 0.15}
+      legal: {hierarchy: 0.55, clan: 0.2, market: 0.2, adhocracy: 0.05}
+      sales: {hierarchy: 0.2, clan: 0.25, market: 0.45, adhocracy: 0.1}
+    behavior_tendencies:
+      variance_tolerance: {hierarchy: 0.2, clan: 0.35, market: 0.5, adhocracy: 
+          0.7}
+      remediation_speed: {hierarchy: 0.4, clan: 0.5, market: 0.7, adhocracy: 0.8}
+      procedure_adherence: {hierarchy: 0.9, clan: 0.6, market: 0.4, adhocracy: 
+          0.3}
+      change_resistance: {hierarchy: 0.8, clan: 0.5, market: 0.4, adhocracy: 0.2}
+    culture_adjustment_scale: 0.05
+
+  # Organizational archetypes
+  archetypes:
+    startup:
+      culture_weights: {hierarchy: 0.15, clan: 0.25, market: 0.2, adhocracy: 0.4}
+      default_susceptibility: 0.7
+      default_confidence_bound: 0.35
+      default_confirmation_bias: 0.15
+      default_optimistic_bias: 0.4
+      network_type: small_world
+      base_variance_propensity: 0.55
+    regulated_enterprise:
+      culture_weights: {hierarchy: 0.5, clan: 0.2, market: 0.2, adhocracy: 0.1}
+      default_susceptibility: 0.35
+      default_confidence_bound: 0.2
+      default_confirmation_bias: 0.4
+      default_optimistic_bias: 0.15
+      network_type: hierarchical
+      base_variance_propensity: 0.35
+    engineering_driven:
+      culture_weights: {hierarchy: 0.2, clan: 0.3, market: 0.15, adhocracy: 0.35}
+      default_susceptibility: 0.5
+      default_confidence_bound: 0.3
+      default_confirmation_bias: 0.25
+      default_optimistic_bias: 0.25
+      network_type: modular
+      base_variance_propensity: 0.45
+    professional_services:
+      culture_weights: {hierarchy: 0.3, clan: 0.35, market: 0.25, adhocracy: 0.1}
+      default_susceptibility: 0.45
+      default_confidence_bound: 0.25
+      default_confirmation_bias: 0.3
+      default_optimistic_bias: 0.2
+      network_type: modular
+      base_variance_propensity: 0.4
+
+  # Special event handling (leadership_change, reorganization blend to dept baseline)
+  special_events:
+    blend_weight_current: 0.7
+    blend_weight_baseline: 0.3
+
+  # Psychometric risk perception (behind enable_psychometric_perception flag)
+  psychometric_perception:
+    dread_weight: 0.6
+    unknown_weight: 0.4
+    threat_defaults:
+      ransomware:
+        controllability: 0.3
+        catastrophic_potential: 0.8
+        observability: 0.4
+        known_to_exposed: 0.6
+        immediacy: 0.8
+      apt:
+        controllability: 0.2
+        catastrophic_potential: 0.9
+        observability: 0.2
+        known_to_exposed: 0.3
+        immediacy: 0.3
+      insider:
+        controllability: 0.4
+        catastrophic_potential: 0.7
+        observability: 0.3
+        known_to_exposed: 0.5
+        immediacy: 0.5
+      phishing:
+        controllability: 0.5
+        catastrophic_potential: 0.5
+        observability: 0.6
+        known_to_exposed: 0.7
+        immediacy: 0.7
+
+  # Satisficing / aspiration level
+  # (main satisficing block is above with strength, initial_aspiration_level, adaptation_rate)
+
+  # Event impacts on variance_propensity (negative => lower variance)
+  event_impacts:
+    security_breach: -0.15
+    near_miss: -0.08
+    audit_finding: -0.06
+    audit_passed: -0.02
+    incident_postmortem: -0.08
+    training_completed: -0.04
+    deadline_pressure: 0.12
+    budget_cut: 0.08
+    staffing_reduction: 0.1
+    # Special events: handled via blend-toward-baseline logic (see special_events config).
+    # Set to null so the code routes through _apply_event_impacts special path.
+    leadership_change:
+    reorganization:
+
+# -----------------------------------------------------------------------------
+# DSC decision model (misalignment table)
+# -----------------------------------------------------------------------------
+
+dsc_decision:
+  # Allowed: table | logistic
+  mode: table
+
+  # Defaults for optional query inputs (used when callers do not provide explicit values)
+  defaults:
+    risk_magnitude: 0.5
+    time_pressure: 0.5
+
+
+  # Map canonical DSC dimensions to the DSC control "Control Type" values in Excel.
+  # These must match the values in control_params.xlsx for DSC rows.
+  dimension_to_control_types:
+    expectation_alignment:
+    - Define Expectations
+    - Communicate Expectations
+    awareness:
+    - Expectation Awareness
+    - Org Relevance Awareness
+    capability:
+    - Capability
+    situational: []
+    incentive:
+    - Personal Priority Alignment
+  conditional_prob_table:
+    name: default_v13
+    inline:
+      # a  c  s  i  -> p_misaligned                                     # true dims
+    - awareness: false
+      capability: false
+      situational: false
+      incentive: false
+      p_misaligned: 0.95
+    - awareness: false
+      capability: false
+      situational: false
+      incentive: true
+      p_misaligned: 0.72
+    - awareness: false
+      capability: false
+      situational: true
+      incentive: false
+      p_misaligned: 0.77
+    - awareness: false
+      capability: false
+      situational: true
+      incentive: true
+      p_misaligned: 0.54
+    - awareness: false
+      capability: true
+      situational: false
+      incentive: false
+      p_misaligned: 0.72
+    - awareness: false
+      capability: true
+      situational: false
+      incentive: true
+      p_misaligned: 0.5
+    - awareness: false
+      capability: true
+      situational: true
+      incentive: false
+      p_misaligned: 0.54
+    - awareness: false
+      capability: true
+      situational: true
+      incentive: true
+      p_misaligned: 0.32
+    - awareness: true
+      capability: false
+      situational: false
+      incentive: false
+      p_misaligned: 0.68
+    - awareness: true
+      capability: false
+      situational: false
+      incentive: true
+      p_misaligned: 0.45
+    - awareness: true
+      capability: false
+      situational: true
+      incentive: false
+      p_misaligned: 0.5
+    - awareness: true
+      capability: false
+      situational: true
+      incentive: true
+      p_misaligned: 0.27
+    - awareness: true
+      capability: true
+      situational: false
+      incentive: false
+      p_misaligned: 0.45
+    - awareness: true
+      capability: true
+      situational: false
+      incentive: true
+      p_misaligned: 0.23
+    - awareness: true
+      capability: true
+      situational: true
+      incentive: false
+      p_misaligned: 0.27
+    - awareness: true
+      capability: true
+      situational: true
+      incentive: true
+      p_misaligned: 0.05
+loss:
+  use_tables: true
+
+  # Secondary Loss Event Frequency (SLEF) - fraction of primary loss events that
+  # also result in secondary losses. In FAIR, SLEF is a fraction of LEF.
+  # - 1.0 = all primary losses also incur secondary losses (default)
+  # - 0.5 = 50% of primary loss events also have secondary losses
+  # - 0.0 = no secondary losses ever occur
+  secondary_loss_event_frequency: 0.5
+
+  # Placeholder split between primary and secondary loss components when using simplified tables
+  # This ratio determines how total loss is allocated between primary (response costs,
+  # productivity loss) and secondary (fines, judgments, reputation damage) components.
+  primary_ratio: 0.7
+  tables:
+    empirical_outage_json: calibration/loss_tables/empirical_outage.json
+    empirical_breach_json: calibration/loss_tables/empirical_breach.json
+    default_outage_duration_hours: 24
+
+    # When a lookup value falls outside the bin ranges in a loss table:
+    # - clamp   : use first/last bin
+    # - nearest : use nearest bin by distance
+    # - fail    : treat as missing (the loss component will be skipped)
+    lookup_policy: clamp
+
+  # Scenario-level metadata for empirical breach loss lookup (IRIS 2025 dimensions).
+  scenario_metadata:
+    scenario_type: ransomware      # ransomware | data_breach | insider
+    sector: healthcare             # IRIS taxonomy (lowercase, underscored)
+    revenue_bucket: 100m_to_1b     # lt_10m | 10m_to_100m | 100m_to_1b | 1b_to_10b | 10b_to_100b | gt_100b
+
+# -----------------------------------------------------------------------------
+# Threats
+# -----------------------------------------------------------------------------
+
+threats:
+  default_contacts_per_year: 4
+
+  # Default sophistication distribution if the ThreatAgent template doesn't provide it
+  sophistication_defaults:
+    dist_type: Beta PERT
+    param1: 0.4
+    param2: 0.7
+    param3: 0.95
+    param4: 4
+
+  contact_frequency_defaults:
+    contacts_per_year: 4
+    # Distribution used to schedule contact attempts. Allowed:
+    # - Poisson   : exponential inter-arrival (mean = hours_per_year / contacts_per_year)
+    # - Uniform   : uniform(0, uniform_max_multiplier * mean)
+    dist_type: Poisson
+    # Only used when dist_type is Uniform
+    uniform_max_multiplier: 2
+    hours_per_year_key: time.hours_per_year
+
+  # persistent/dedicated threats use max sophistication (param3) directly
+  persistent_use_max_sophistication: true
+
+  contact:
+    # if false, deterrence LECs apply to ALL threats (not just internal)
+    deterrence_internal_only: true
+    # Control types that participate in contact evaluation (Phase 2 baseline: LECs)
+    applicable_control_types:
+    - LEC
+    missing_lec_marker: NO_LEC
+
+
+# -----------------------------------------------------------------------------
+# Risk Appetite Assessment
+# -----------------------------------------------------------------------------
+# Risk appetite = loss threshold + max exceedance probability + timeframe.
+# Each threshold entry defines a board-level risk appetite statement.
+# Assessment computes P(Exceed) from simulation loss events.
+
+risk_appetite:
+  thresholds:
+  - name: "Breach > $5M"
+    loss_threshold: 5000000
+    max_probability: 0.05
+    timeframe_hours: 8760         # 12 months
+    loss_type: gross              # gross | primary | secondary
+
+  - name: "Breach > $10M"
+    loss_threshold: 10000000
+    max_probability: 0.02
+    timeframe_hours: 8760
+    loss_type: gross
+
+  - name: "Any loss > $1M"
+    loss_threshold: 1000000
+    max_probability: 0.10
+    timeframe_hours: 8760
+    loss_type: gross
+
+# Narrative settings (optional)
+narrative:
+  # How many hops upstream to include when attributing a "root cause" control.
+  # 0 disables upstream expansion.
+  root_cause_upstream_depth: 0
+
+# DSC calibration helper defaults (used only by src/data/dsc_calibration.py)
+dsc_calibration:
+  defaults:
+    regularization: 1.0
+  observation_defaults:
+    # Defaults used only when calibrating from sparse observation sets.
+    # Core simulation should pass explicit values.
+    awareness: 0.5
+    capability: 0.5
+    situational: 0.5
+    incentive: 0.5
+    risk_magnitude: 0.5
+    time_pressure: 0.5
+    aligned: true
+
+# Loss event processing
+loss_events:
+  default:
+    # Monitoring backtrack window (used when computing loss time)
+    monitoring_backtrack_hours: 24
+
+    # Default Beta-PERT confidence (lambda) when a specific distribution does not provide one.
+    beta_pert_confidence: 4
+
+    # Detection time (hours)
+    detection_time_dist:
+      type: beta_pert
+      min: 1
+      mode: 8
+      max: 72
+      # confidence: 4.0  # optional; if omitted, beta_pert_confidence is used
+
+    # Termination time (hours)
+    termination_time_dist:
+      type: beta_pert
+      min: 4
+      mode: 24
+      max: 168
+
+  info_velocity:
+    # Fraction of records affected = min(max_fraction, records_per_hour * loss_time_hours / total_records)
+    # (total_records comes from the loss table if present; otherwise default_records is used)
+    # Note: If threat agent has Mean_Velocity_Hours from Excel, that overrides records_per_hour.
+    records_per_hour: 50
+    max_fraction: 1
+    default_records: 10000
+
+  # Threat-specific defaults (used when Excel Threat Agents sheet doesn't provide values)
+  threat_defaults:
+    # Mean Event Velocity for Losses (records per hour during breach)
+    velocity_hours: 168
+    # Loss Rate Exponent (scaling factor for loss magnitude)
+    loss_rate_exponent: 0.66
+
+  process_recovery:
+    # Base recovery time used for process assets when no better data exists.
+    base_recovery_hours: 72
+
+  # Response concurrency factor (KB §04)
+  # T_response = T_containment + T_recovery - alpha * min(T_containment, T_recovery)
+  # alpha=0: sequential response (detection then containment)
+  # alpha=1: fully parallel (detection and containment overlap completely)
+  # 0.15: limited parallelism (Substrata estimate for typical IR teams)
+  # Typical well-resourced teams: 0.3-0.5
+  response_concurrency_alpha: 0.15
+
+  # ---------------------------------------------------------------------------
+  # Detection AND gate
+  # ---------------------------------------------------------------------------
+  # FAIR-CAM mandates that detection requires all three subfunctions to work:
+  #   Detection = Visibility AND Monitoring AND Recognition
+  #
+  # - Visibility LECs (probability [0-1]): provide evidence of activity
+  # - Monitoring LECs (time in hours): review cadence for detection sweeps
+  # - Recognition LECs (probability [0-1]): distinguish normal from abnormal
+  #
+  # If any subfunction has no operational (normal-state) control, detection
+  # fails and the breach goes undetected for undetected_time_hours.
+  #
+  # When all three pass, a Bernoulli trial with P = vis_eff × recog_eff
+  # determines whether this specific breach is detected. This maps to the
+  # simplified KB §04 formula: P(Detect) = V_eff × R_eff.
+  detection_and_gate:
+    enabled: true
+    # Hours the breach goes undetected when detection fails (6 days).
+    # M-Trends 2025 median dwell = 6 days = 144 hours.
+    undetected_time_hours: 144
+    # If true, perform Bernoulli trial with P = vis_eff × recog_eff
+    # even when the AND gate passes (all subfunctions operational)
+    use_probability_gate: true
+    # Floor detection probability (prevents impossible detection)
+    min_detection_probability: 0.05
+    # Strict AND gate (KB §01): when true, missing subfunctions FAIL detection.
+    # When false, missing subfunctions are treated as "ungated" (backward compat).
+    # A scenario with no visibility LECs should have zero detection capability.
+    require_all_subfunctions: true
+    # Stage-gated detection model
+    # When enabled, attacks progress through multiple stages with detection
+    # opportunities at each. Earlier detection = lower loss severity.
+    stage_gated:
+      enabled: false   # Disabled by default for backward compat
+      # Number of reviews per stage (higher = more detection chances)
+      reviews_per_stage: 1
+
+  efficacy_to_time:
+    # Map control efficacy to time reduction for detection/termination/recovery.
+    # Interpretation: reduced_time = base_time * max(min_multiplier, 1 - efficacy * weight)
+    # Note: This is OPTIONAL and only applies when enabled=true.
+    # Per-LEC timing from Excel (via Efficacy Method column) takes precedence.
+    enabled: false
+    min_multiplier: 0.2
+    weight: 0.5
+    # LEC types for efficacy-based time reduction (only used when enabled=true)
+    detection_lec_types:
+    - monitoring
+    - recognition
+    - visibility
+    termination_lec_types:
+    - event_termination
+    - response
+  loss_reduction:
+    # Apply loss reduction controls (typically LEC response/recovery controls).
+    # Net loss = gross * (1 - min(max_reduction, weight * best_efficacy)).
+    # Only LECs in normal state contribute; degraded controls are skipped.
+    weight: 0.5
+    max_reduction: 0.7
+    lec_types:
+    - loss_reduction
+    - response
+    - event_termination
+    - resilience
+api:
+  cors:
+    origins:
+    - "http://localhost:5173"
+    - "http://127.0.0.1:5173"
+    allow_credentials: true
+    allow_methods: ["*"]
+    allow_headers: ["*"]

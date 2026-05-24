@@ -1,0 +1,900 @@
+{
+  "experiment": "threat_landscape_frequency_sweep",
+  "budget_fixed": 40,
+  "iterations": 1000,
+  "freq_levels": [
+    0.0,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "per_level": {
+    "0.0": {
+      "median_divergence_pct": 0.06,
+      "mean_divergence_pct": 12.31,
+      "min_divergence_pct": -9.56,
+      "max_divergence_pct": 160.91,
+      "mean_ale": 0.0,
+      "mean_breaches": 0.0,
+      "controls": {
+        "LEC6": {
+          "analytical": 0.9997,
+          "mean_emergent": 1.0,
+          "pct_divergence": 0.03
+        },
+        "LEC10a": {
+          "analytical": 0.8978,
+          "mean_emergent": 0.8911,
+          "pct_divergence": -0.74
+        },
+        "LEC5": {
+          "analytical": 0.9991,
+          "mean_emergent": 1.0,
+          "pct_divergence": 0.09
+        },
+        "LEC10b": {
+          "analytical": 0.0351,
+          "mean_emergent": 0.0494,
+          "pct_divergence": 40.53
+        },
+        "LEC8": {
+          "analytical": 0.8678,
+          "mean_emergent": 0.8983,
+          "pct_divergence": 3.51
+        },
+        "LEC7a": {
+          "analytical": 0.8706,
+          "mean_emergent": 0.8004,
+          "pct_divergence": -8.07
+        },
+        "LEC3": {
+          "analytical": 0.9991,
+          "mean_emergent": 1.0,
+          "pct_divergence": 0.09
+        },
+        "LEC7d": {
+          "analytical": 0.8858,
+          "mean_emergent": 0.8011,
+          "pct_divergence": -9.56
+        },
+        "LEC1": {
+          "analytical": 0.8449,
+          "mean_emergent": 0.8059,
+          "pct_divergence": -4.62
+        },
+        "LEC4": {
+          "analytical": 0.9991,
+          "mean_emergent": 1.0,
+          "pct_divergence": 0.09
+        },
+        "LEC2": {
+          "analytical": 0.9302,
+          "mean_emergent": 0.8918,
+          "pct_divergence": -4.13
+        },
+        "LEC7b": {
+          "analytical": 0.9991,
+          "mean_emergent": 1.0,
+          "pct_divergence": 0.09
+        },
+        "LEC7c": {
+          "analytical": 0.0532,
+          "mean_emergent": 0.0501,
+          "pct_divergence": -5.93
+        },
+        "LEC13": {
+          "analytical": 0.1132,
+          "mean_emergent": 0.2954,
+          "pct_divergence": 160.91
+        }
+      }
+    },
+    "0.1": {
+      "median_divergence_pct": -0.86,
+      "mean_divergence_pct": -4.76,
+      "min_divergence_pct": -38.6,
+      "max_divergence_pct": 9.67,
+      "mean_ale": 28526.64,
+      "mean_breaches": 0.0,
+      "controls": {
+        "LEC10b": {
+          "analytical": 0.0439,
+          "mean_emergent": 0.0482,
+          "pct_divergence": 9.67
+        },
+        "LEC13": {
+          "analytical": 0.4942,
+          "mean_emergent": 0.3034,
+          "pct_divergence": -38.6
+        },
+        "LEC6": {
+          "analytical": 0.9997,
+          "mean_emergent": 0.9751,
+          "pct_divergence": -2.47
+        },
+        "LEC7d": {
+          "analytical": 0.7533,
+          "mean_emergent": 0.78,
+          "pct_divergence": 3.55
+        },
+        "LEC5": {
+          "analytical": 0.9991,
+          "mean_emergent": 0.9991,
+          "pct_divergence": -0.0
+        },
+        "LEC2": {
+          "analytical": 0.8635,
+          "mean_emergent": 0.8918,
+          "pct_divergence": 3.28
+        },
+        "LEC8": {
+          "analytical": 0.9647,
+          "mean_emergent": 0.8755,
+          "pct_divergence": -9.24
+        },
+        "LEC10a": {
+          "analytical": 0.885,
+          "mean_emergent": 0.8698,
+          "pct_divergence": -1.71
+        },
+        "LEC7b": {
+          "analytical": 0.9991,
+          "mean_emergent": 0.9734,
+          "pct_divergence": -2.58
+        },
+        "LEC7a": {
+          "analytical": 0.779,
+          "mean_emergent": 0.7803,
+          "pct_divergence": 0.16
+        },
+        "LEC4": {
+          "analytical": 0.9991,
+          "mean_emergent": 0.9991,
+          "pct_divergence": -0.0
+        },
+        "LEC1": {
+          "analytical": 0.8165,
+          "mean_emergent": 0.7854,
+          "pct_divergence": -3.8
+        },
+        "LEC3": {
+          "analytical": 0.9991,
+          "mean_emergent": 0.999,
+          "pct_divergence": -0.01
+        },
+        "LEC7c": {
+          "analytical": 0.065,
+          "mean_emergent": 0.0488,
+          "pct_divergence": -24.87
+        }
+      }
+    },
+    "0.2": {
+      "median_divergence_pct": -3.29,
+      "mean_divergence_pct": -6.36,
+      "min_divergence_pct": -38.6,
+      "max_divergence_pct": 6.74,
+      "mean_ale": 97274.0,
+      "mean_breaches": 0.02,
+      "controls": {
+        "LEC10b": {
+          "analytical": 0.0439,
+          "mean_emergent": 0.0469,
+          "pct_divergence": 6.74
+        },
+        "LEC13": {
+          "analytical": 0.4942,
+          "mean_emergent": 0.3034,
+          "pct_divergence": -38.6
+        },
+        "LEC6": {
+          "analytical": 0.9997,
+          "mean_emergent": 0.9506,
+          "pct_divergence": -4.92
+        },
+        "LEC7d": {
+          "analytical": 0.7533,
+          "mean_emergent": 0.7601,
+          "pct_divergence": 0.91
+        },
+        "LEC5": {
+          "analytical": 0.9991,
+          "mean_emergent": 0.998,
+          "pct_divergence": -0.11
+        },
+        "LEC2": {
+          "analytical": 0.8635,
+          "mean_emergent": 0.8918,
+          "pct_divergence": 3.28
+        },
+        "LEC8": {
+          "analytical": 0.9647,
+          "mean_emergent": 0.855,
+          "pct_divergence": -11.36
+        },
+        "LEC10a": {
+          "analytical": 0.885,
+          "mean_emergent": 0.8459,
+          "pct_divergence": -4.42
+        },
+        "LEC7b": {
+          "analytical": 0.9991,
+          "mean_emergent": 0.9494,
+          "pct_divergence": -4.98
+        },
+        "LEC7a": {
+          "analytical": 0.779,
+          "mean_emergent": 0.7622,
+          "pct_divergence": -2.16
+        },
+        "LEC4": {
+          "analytical": 0.9991,
+          "mean_emergent": 0.9983,
+          "pct_divergence": -0.08
+        },
+        "LEC1": {
+          "analytical": 0.8165,
+          "mean_emergent": 0.7639,
+          "pct_divergence": -6.44
+        },
+        "LEC3": {
+          "analytical": 0.9991,
+          "mean_emergent": 0.998,
+          "pct_divergence": -0.11
+        },
+        "LEC7c": {
+          "analytical": 0.065,
+          "mean_emergent": 0.0476,
+          "pct_divergence": -26.72
+        }
+      }
+    },
+    "0.3": {
+      "median_divergence_pct": -5.42,
+      "mean_divergence_pct": -5.84,
+      "min_divergence_pct": -41.11,
+      "max_divergence_pct": 31.42,
+      "mean_ale": 3925891.12,
+      "mean_breaches": 0.05,
+      "controls": {
+        "LEC5": {
+          "analytical": 0.9996,
+          "mean_emergent": 0.9971,
+          "pct_divergence": -0.25
+        },
+        "LEC13": {
+          "analytical": 0.5153,
+          "mean_emergent": 0.3034,
+          "pct_divergence": -41.11
+        },
+        "LEC2": {
+          "analytical": 0.9302,
+          "mean_emergent": 0.8918,
+          "pct_divergence": -4.13
+        },
+        "LEC6": {
+          "analytical": 0.9998,
+          "mean_emergent": 0.9328,
+          "pct_divergence": -6.7
+        },
+        "LEC7d": {
+          "analytical": 0.886,
+          "mean_emergent": 0.746,
+          "pct_divergence": -15.81
+        },
+        "LEC7a": {
+          "analytical": 0.7288,
+          "mean_emergent": 0.7466,
+          "pct_divergence": 2.44
+        },
+        "LEC7b": {
+          "analytical": 0.9994,
+          "mean_emergent": 0.932,
+          "pct_divergence": -6.75
+        },
+        "LEC10a": {
+          "analytical": 0.8979,
+          "mean_emergent": 0.8272,
+          "pct_divergence": -7.88
+        },
+        "LEC1": {
+          "analytical": 0.8926,
+          "mean_emergent": 0.7465,
+          "pct_divergence": -16.37
+        },
+        "LEC8": {
+          "analytical": 0.8684,
+          "mean_emergent": 0.8378,
+          "pct_divergence": -3.52
+        },
+        "LEC10b": {
+          "analytical": 0.0352,
+          "mean_emergent": 0.0462,
+          "pct_divergence": 31.42
+        },
+        "LEC4": {
+          "analytical": 0.9994,
+          "mean_emergent": 0.997,
+          "pct_divergence": -0.23
+        },
+        "LEC7c": {
+          "analytical": 0.0532,
+          "mean_emergent": 0.0465,
+          "pct_divergence": -12.62
+        },
+        "LEC3": {
+          "analytical": 0.9991,
+          "mean_emergent": 0.997,
+          "pct_divergence": -0.21
+        }
+      }
+    },
+    "0.4": {
+      "median_divergence_pct": -7.73,
+      "mean_divergence_pct": -9.11,
+      "min_divergence_pct": -38.6,
+      "max_divergence_pct": 3.28,
+      "mean_ale": 657020.68,
+      "mean_breaches": 0.05,
+      "controls": {
+        "LEC10b": {
+          "analytical": 0.0439,
+          "mean_emergent": 0.045,
+          "pct_divergence": 2.36
+        },
+        "LEC13": {
+          "analytical": 0.4942,
+          "mean_emergent": 0.3034,
+          "pct_divergence": -38.6
+        },
+        "LEC6": {
+          "analytical": 0.9997,
+          "mean_emergent": 0.9059,
+          "pct_divergence": -9.39
+        },
+        "LEC7d": {
+          "analytical": 0.7533,
+          "mean_emergent": 0.7274,
+          "pct_divergence": -3.43
+        },
+        "LEC5": {
+          "analytical": 0.9991,
+          "mean_emergent": 0.9962,
+          "pct_divergence": -0.29
+        },
+        "LEC2": {
+          "analytical": 0.8635,
+          "mean_emergent": 0.8918,
+          "pct_divergence": 3.28
+        },
+        "LEC8": {
+          "analytical": 0.9647,
+          "mean_emergent": 0.8145,
+          "pct_divergence": -15.57
+        },
+        "LEC10a": {
+          "analytical": 0.885,
+          "mean_emergent": 0.809,
+          "pct_divergence": -8.59
+        },
+        "LEC7b": {
+          "analytical": 0.9991,
+          "mean_emergent": 0.9064,
+          "pct_divergence": -9.28
+        },
+        "LEC7a": {
+          "analytical": 0.779,
+          "mean_emergent": 0.7255,
+          "pct_divergence": -6.87
+        },
+        "LEC4": {
+          "analytical": 0.9991,
+          "mean_emergent": 0.9961,
+          "pct_divergence": -0.3
+        },
+        "LEC1": {
+          "analytical": 0.8165,
+          "mean_emergent": 0.7308,
+          "pct_divergence": -10.49
+        },
+        "LEC3": {
+          "analytical": 0.9991,
+          "mean_emergent": 0.9962,
+          "pct_divergence": -0.29
+        },
+        "LEC7c": {
+          "analytical": 0.065,
+          "mean_emergent": 0.0455,
+          "pct_divergence": -30.08
+        }
+      }
+    },
+    "0.5": {
+      "median_divergence_pct": -9.86,
+      "mean_divergence_pct": -8.73,
+      "min_divergence_pct": -41.11,
+      "max_divergence_pct": 23.72,
+      "mean_ale": 300044.66,
+      "mean_breaches": 0.03,
+      "controls": {
+        "LEC13": {
+          "analytical": 0.5153,
+          "mean_emergent": 0.3034,
+          "pct_divergence": -41.11
+        },
+        "LEC10b": {
+          "analytical": 0.0352,
+          "mean_emergent": 0.0435,
+          "pct_divergence": 23.72
+        },
+        "LEC7a": {
+          "analytical": 0.812,
+          "mean_emergent": 0.7108,
+          "pct_divergence": -12.46
+        },
+        "LEC7b": {
+          "analytical": 0.9992,
+          "mean_emergent": 0.8892,
+          "pct_divergence": -11.01
+        },
+        "LEC3": {
+          "analytical": 0.9992,
+          "mean_emergent": 0.9955,
+          "pct_divergence": -0.38
+        },
+        "LEC10a": {
+          "analytical": 0.8982,
+          "mean_emergent": 0.7907,
+          "pct_divergence": -11.96
+        },
+        "LEC6": {
+          "analytical": 0.9998,
+          "mean_emergent": 0.8919,
+          "pct_divergence": -10.79
+        },
+        "LEC2": {
+          "analytical": 0.9302,
+          "mean_emergent": 0.8918,
+          "pct_divergence": -4.13
+        },
+        "LEC7c": {
+          "analytical": 0.0533,
+          "mean_emergent": 0.0443,
+          "pct_divergence": -16.86
+        },
+        "LEC7d": {
+          "analytical": 0.886,
+          "mean_emergent": 0.7129,
+          "pct_divergence": -19.54
+        },
+        "LEC5": {
+          "analytical": 0.9995,
+          "mean_emergent": 0.9953,
+          "pct_divergence": -0.43
+        },
+        "LEC8": {
+          "analytical": 0.868,
+          "mean_emergent": 0.7986,
+          "pct_divergence": -8.0
+        },
+        "LEC4": {
+          "analytical": 0.9992,
+          "mean_emergent": 0.9954,
+          "pct_divergence": -0.38
+        },
+        "LEC1": {
+          "analytical": 0.7881,
+          "mean_emergent": 0.7176,
+          "pct_divergence": -8.94
+        }
+      }
+    },
+    "0.6": {
+      "median_divergence_pct": -11.22,
+      "mean_divergence_pct": -9.59,
+      "min_divergence_pct": -41.11,
+      "max_divergence_pct": 21.41,
+      "mean_ale": 426069.63,
+      "mean_breaches": 0.05,
+      "controls": {
+        "LEC7d": {
+          "analytical": 0.8863,
+          "mean_emergent": 0.696,
+          "pct_divergence": -21.48
+        },
+        "LEC5": {
+          "analytical": 0.9992,
+          "mean_emergent": 0.9948,
+          "pct_divergence": -0.44
+        },
+        "LEC13": {
+          "analytical": 0.5153,
+          "mean_emergent": 0.3034,
+          "pct_divergence": -41.11
+        },
+        "LEC7b": {
+          "analytical": 0.9993,
+          "mean_emergent": 0.8753,
+          "pct_divergence": -12.41
+        },
+        "LEC7a": {
+          "analytical": 0.7426,
+          "mean_emergent": 0.6984,
+          "pct_divergence": -5.95
+        },
+        "LEC10a": {
+          "analytical": 0.898,
+          "mean_emergent": 0.7797,
+          "pct_divergence": -13.18
+        },
+        "LEC1": {
+          "analytical": 0.8288,
+          "mean_emergent": 0.6991,
+          "pct_divergence": -15.65
+        },
+        "LEC10b": {
+          "analytical": 0.0352,
+          "mean_emergent": 0.0427,
+          "pct_divergence": 21.41
+        },
+        "LEC6": {
+          "analytical": 0.9998,
+          "mean_emergent": 0.8696,
+          "pct_divergence": -13.02
+        },
+        "LEC2": {
+          "analytical": 0.9302,
+          "mean_emergent": 0.8918,
+          "pct_divergence": -4.13
+        },
+        "LEC3": {
+          "analytical": 0.9997,
+          "mean_emergent": 0.9947,
+          "pct_divergence": -0.5
+        },
+        "LEC4": {
+          "analytical": 0.9991,
+          "mean_emergent": 0.9947,
+          "pct_divergence": -0.44
+        },
+        "LEC8": {
+          "analytical": 0.8686,
+          "mean_emergent": 0.7814,
+          "pct_divergence": -10.04
+        },
+        "LEC7c": {
+          "analytical": 0.0533,
+          "mean_emergent": 0.044,
+          "pct_divergence": -17.38
+        }
+      }
+    },
+    "0.7": {
+      "median_divergence_pct": -12.14,
+      "mean_divergence_pct": -12.33,
+      "min_divergence_pct": -38.6,
+      "max_divergence_pct": 3.28,
+      "mean_ale": 920643.38,
+      "mean_breaches": 0.08,
+      "controls": {
+        "LEC10b": {
+          "analytical": 0.0439,
+          "mean_emergent": 0.0421,
+          "pct_divergence": -4.28
+        },
+        "LEC13": {
+          "analytical": 0.4942,
+          "mean_emergent": 0.3034,
+          "pct_divergence": -38.6
+        },
+        "LEC6": {
+          "analytical": 0.9997,
+          "mean_emergent": 0.8573,
+          "pct_divergence": -14.25
+        },
+        "LEC7d": {
+          "analytical": 0.7533,
+          "mean_emergent": 0.6828,
+          "pct_divergence": -9.35
+        },
+        "LEC5": {
+          "analytical": 0.9991,
+          "mean_emergent": 0.9939,
+          "pct_divergence": -0.52
+        },
+        "LEC2": {
+          "analytical": 0.8635,
+          "mean_emergent": 0.8918,
+          "pct_divergence": 3.28
+        },
+        "LEC8": {
+          "analytical": 0.9647,
+          "mean_emergent": 0.7687,
+          "pct_divergence": -20.32
+        },
+        "LEC10a": {
+          "analytical": 0.885,
+          "mean_emergent": 0.7722,
+          "pct_divergence": -12.74
+        },
+        "LEC7b": {
+          "analytical": 0.9991,
+          "mean_emergent": 0.8562,
+          "pct_divergence": -14.3
+        },
+        "LEC7a": {
+          "analytical": 0.779,
+          "mean_emergent": 0.6892,
+          "pct_divergence": -11.53
+        },
+        "LEC4": {
+          "analytical": 0.9991,
+          "mean_emergent": 0.9934,
+          "pct_divergence": -0.57
+        },
+        "LEC1": {
+          "analytical": 0.8165,
+          "mean_emergent": 0.6922,
+          "pct_divergence": -15.22
+        },
+        "LEC3": {
+          "analytical": 0.9991,
+          "mean_emergent": 0.9937,
+          "pct_divergence": -0.54
+        },
+        "LEC7c": {
+          "analytical": 0.065,
+          "mean_emergent": 0.0431,
+          "pct_divergence": -33.75
+        }
+      }
+    },
+    "0.8": {
+      "median_divergence_pct": -15.94,
+      "mean_divergence_pct": -12.5,
+      "min_divergence_pct": -41.11,
+      "max_divergence_pct": 16.69,
+      "mean_ale": 1434391.48,
+      "mean_breaches": 0.12,
+      "controls": {
+        "LEC7a": {
+          "analytical": 0.8459,
+          "mean_emergent": 0.6706,
+          "pct_divergence": -20.72
+        },
+        "LEC7d": {
+          "analytical": 0.8859,
+          "mean_emergent": 0.6694,
+          "pct_divergence": -24.44
+        },
+        "LEC10a": {
+          "analytical": 0.8982,
+          "mean_emergent": 0.745,
+          "pct_divergence": -17.06
+        },
+        "LEC1": {
+          "analytical": 0.8237,
+          "mean_emergent": 0.6778,
+          "pct_divergence": -17.71
+        },
+        "LEC7c": {
+          "analytical": 0.0532,
+          "mean_emergent": 0.0423,
+          "pct_divergence": -20.48
+        },
+        "LEC10b": {
+          "analytical": 0.0352,
+          "mean_emergent": 0.041,
+          "pct_divergence": 16.69
+        },
+        "LEC5": {
+          "analytical": 0.9993,
+          "mean_emergent": 0.9921,
+          "pct_divergence": -0.72
+        },
+        "LEC7b": {
+          "analytical": 0.9992,
+          "mean_emergent": 0.84,
+          "pct_divergence": -15.93
+        },
+        "LEC2": {
+          "analytical": 0.9302,
+          "mean_emergent": 0.8918,
+          "pct_divergence": -4.13
+        },
+        "LEC3": {
+          "analytical": 0.9996,
+          "mean_emergent": 0.9919,
+          "pct_divergence": -0.77
+        },
+        "LEC4": {
+          "analytical": 0.9994,
+          "mean_emergent": 0.9919,
+          "pct_divergence": -0.75
+        },
+        "LEC8": {
+          "analytical": 0.8682,
+          "mean_emergent": 0.7642,
+          "pct_divergence": -11.98
+        },
+        "LEC6": {
+          "analytical": 1.0,
+          "mean_emergent": 0.8406,
+          "pct_divergence": -15.94
+        },
+        "LEC13": {
+          "analytical": 0.5153,
+          "mean_emergent": 0.3034,
+          "pct_divergence": -41.11
+        }
+      }
+    },
+    "0.9": {
+      "median_divergence_pct": -15.68,
+      "mean_divergence_pct": -12.88,
+      "min_divergence_pct": -41.11,
+      "max_divergence_pct": 15.93,
+      "mean_ale": 845973.29,
+      "mean_breaches": 0.08,
+      "controls": {
+        "LEC10a": {
+          "analytical": 0.8983,
+          "mean_emergent": 0.7327,
+          "pct_divergence": -18.44
+        },
+        "LEC4": {
+          "analytical": 0.9996,
+          "mean_emergent": 0.9918,
+          "pct_divergence": -0.77
+        },
+        "LEC7a": {
+          "analytical": 0.8412,
+          "mean_emergent": 0.6673,
+          "pct_divergence": -20.67
+        },
+        "LEC6": {
+          "analytical": 0.9998,
+          "mean_emergent": 0.8303,
+          "pct_divergence": -16.95
+        },
+        "LEC7c": {
+          "analytical": 0.0533,
+          "mean_emergent": 0.0412,
+          "pct_divergence": -22.73
+        },
+        "LEC10b": {
+          "analytical": 0.0352,
+          "mean_emergent": 0.0408,
+          "pct_divergence": 15.93
+        },
+        "LEC5": {
+          "analytical": 0.9993,
+          "mean_emergent": 0.9918,
+          "pct_divergence": -0.75
+        },
+        "LEC2": {
+          "analytical": 0.9302,
+          "mean_emergent": 0.8918,
+          "pct_divergence": -4.13
+        },
+        "LEC1": {
+          "analytical": 0.7672,
+          "mean_emergent": 0.6723,
+          "pct_divergence": -12.37
+        },
+        "LEC13": {
+          "analytical": 0.5153,
+          "mean_emergent": 0.3034,
+          "pct_divergence": -41.11
+        },
+        "LEC3": {
+          "analytical": 0.9999,
+          "mean_emergent": 0.9924,
+          "pct_divergence": -0.75
+        },
+        "LEC7d": {
+          "analytical": 0.8862,
+          "mean_emergent": 0.658,
+          "pct_divergence": -25.75
+        },
+        "LEC7b": {
+          "analytical": 0.9995,
+          "mean_emergent": 0.8257,
+          "pct_divergence": -17.39
+        },
+        "LEC8": {
+          "analytical": 0.8681,
+          "mean_emergent": 0.743,
+          "pct_divergence": -14.41
+        }
+      }
+    },
+    "1.0": {
+      "median_divergence_pct": -16.78,
+      "mean_divergence_pct": -13.27,
+      "min_divergence_pct": -41.11,
+      "max_divergence_pct": 13.57,
+      "mean_ale": 930875.09,
+      "mean_breaches": 0.09,
+      "controls": {
+        "LEC6": {
+          "analytical": 0.9998,
+          "mean_emergent": 0.813,
+          "pct_divergence": -18.68
+        },
+        "LEC10b": {
+          "analytical": 0.0352,
+          "mean_emergent": 0.0399,
+          "pct_divergence": 13.57
+        },
+        "LEC7d": {
+          "analytical": 0.8858,
+          "mean_emergent": 0.6481,
+          "pct_divergence": -26.83
+        },
+        "LEC7c": {
+          "analytical": 0.0532,
+          "mean_emergent": 0.0408,
+          "pct_divergence": -23.34
+        },
+        "LEC3": {
+          "analytical": 1.0,
+          "mean_emergent": 0.9908,
+          "pct_divergence": -0.92
+        },
+        "LEC7b": {
+          "analytical": 0.9998,
+          "mean_emergent": 0.8082,
+          "pct_divergence": -19.16
+        },
+        "LEC10a": {
+          "analytical": 0.8981,
+          "mean_emergent": 0.7247,
+          "pct_divergence": -19.31
+        },
+        "LEC8": {
+          "analytical": 0.8684,
+          "mean_emergent": 0.7266,
+          "pct_divergence": -16.33
+        },
+        "LEC2": {
+          "analytical": 0.9302,
+          "mean_emergent": 0.8918,
+          "pct_divergence": -4.13
+        },
+        "LEC7a": {
+          "analytical": 0.7833,
+          "mean_emergent": 0.6484,
+          "pct_divergence": -17.23
+        },
+        "LEC13": {
+          "analytical": 0.5153,
+          "mean_emergent": 0.3034,
+          "pct_divergence": -41.11
+        },
+        "LEC5": {
+          "analytical": 0.9993,
+          "mean_emergent": 0.9908,
+          "pct_divergence": -0.85
+        },
+        "LEC4": {
+          "analytical": 0.9999,
+          "mean_emergent": 0.9902,
+          "pct_divergence": -0.98
+        },
+        "LEC1": {
+          "analytical": 0.7312,
+          "mean_emergent": 0.6545,
+          "pct_divergence": -10.49
+        }
+      }
+    }
+  }
+}

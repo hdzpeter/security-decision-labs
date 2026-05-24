@@ -4,7 +4,7 @@ This guide walks through a clean setup of the FAIR Risk Quantification Tool on a
 
 ---
 
-## 1. Clone & Initial Layout
+## 1. Clone and Initial Layout
 
 From your desired workspace directory:
 

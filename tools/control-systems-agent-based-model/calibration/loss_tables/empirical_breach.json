@@ -1,0 +1,61 @@
+{
+  "_metadata": {
+    "description": "Empirical data breach loss magnitude distributions from IRIS 2025 (Cyentia Institute, N=150,000+ events). Replaces Ponemon record-count-binned tables.",
+    "source": "IRIS 2025 Annual Report (Cyentia Institute / Advisen)",
+    "source_pages": "15, 21, 35",
+    "extracted_via": "Substrata corpus (2026-05-05)",
+    "parameterization": "Two-point lognormal: mu = ln(median), sigma = (ln(upper_percentile) - mu) / z_score. For p95: z=1.6449, for p90: z=1.2816."
+  },
+  "baseline": {
+    "median": 603000,
+    "p95": 32000000,
+    "percentile_type": "p95",
+    "source_figure": "Figure 9"
+  },
+  "by_scenario_type": {
+    "ransomware": {
+      "median": 3200000,
+      "upper_percentile": 27600000,
+      "percentile_type": "p90",
+      "source_figure": "Figure 15"
+    },
+    "data_breach": {
+      "median": 1300000,
+      "upper_percentile": 7400000,
+      "percentile_type": "p90",
+      "source_figure": "Figure 15"
+    },
+    "insider": {
+      "median": 6900,
+      "upper_percentile": 1600000,
+      "percentile_type": "p90",
+      "source_figure": "Figure 15"
+    }
+  },
+  "by_sector": {
+    "financial_services": {"median": 1000000, "p95": 194000000},
+    "manufacturing": {"median": 1000000, "p95": 42000000},
+    "retail": {"median": 746000, "p95": 45000000},
+    "professional_services": {"median": 736000, "p95": 17000000},
+    "information": {"median": 718000, "p95": 217000000},
+    "hospitality": {"median": 600000, "p95": 62000000},
+    "healthcare": {"median": 557000, "p95": 14000000},
+    "public": {"median": 214000, "p95": 18000000},
+    "utilities": {"median": 146000, "p95": 3000000},
+    "entertainment": {"median": 282000, "p95": 12000000},
+    "education": {"median": 249000, "p95": 6000000},
+    "technology": {"median": 718000, "p95": 217000000},
+    "government": {"median": 214000, "p95": 18000000},
+    "energy": {"median": 146000, "p95": 3000000},
+    "telecommunications": {"median": 718000, "p95": 217000000}
+  },
+  "by_revenue_bucket": {
+    "gt_100b": {"median": 6000000, "p95": 259000000},
+    "10b_to_100b": {"median": 2000000, "p95": 269000000},
+    "1b_to_10b": {"median": 2000000, "p95": 62000000},
+    "100m_to_1b": {"median": 467000, "p95": 12000000},
+    "10m_to_100m": {"median": 403000, "p95": 7000000},
+    "lt_10m": {"median": 329000, "p95": 10000000}
+  },
+  "_design_note": "Dwell time does NOT scale loss magnitude for information assets. Per FAIR-CAM KB §04: 'Avoid asserting specific time-to-loss curves.' Detection stage (early/mid/late/undetected) determines outcome class via the stage-gated detection model. Outage/process assets retain duration-based lookup because business interruption cost IS time-driven. See calibration/README.md for rationale."
+}

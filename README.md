@@ -15,6 +15,7 @@ Part of [Apropos Security](https://apropos-security.com) · [Notebooks](https://
 ### [FAIR Risk Quantification](tools/fair-simulator/README.md)
 [![License](https://img.shields.io/badge/license-CC--BY--NC--SA%204.0-orange)](tools/fair-simulator/LICENSE)
 [![Status](https://img.shields.io/badge/status-active-green)]()
+[![Methodology](https://img.shields.io/badge/Methodology-FAIR-blue)]()
 
 Monte Carlo simulation tool for FAIR (Factor Analysis of Information Risk) methodology with industry benchmarks.
 
@@ -44,4 +45,3 @@ Agent-based simulation of FAIR-CAM control dynamics. Reproduction package for Jo
 **This repository uses multiple licenses.**
 
 - **Individual tools**: Each has its own license (see tool directories)
-

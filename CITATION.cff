@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it."
+title: "security-decision-labs: interactive FAIR cyber risk quantification playground"
+authors:
+  - family-names: Voicu
+    given-names: Laura
+    orcid: "https://orcid.org/0009-0008-4623-2532"
+keywords:
+  - cybersecurity
+  - FAIR methodology
+  - risk quantification
+  - monte carlo simulation
+  - IRIS benchmarks
+  - streamlit
+  - interactive simulator
+repository-code: "https://github.com/security-decision-science/security-decision-labs"
+version: "0.1.0"
+date-released: "2025-10-09"
+doi: ""
