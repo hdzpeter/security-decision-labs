@@ -7,7 +7,7 @@
 
 Minimal reproduction package for:
 
-> Jones, J. and Voicu, L. (2026). *Control Physiology: An Agent-Based Model of FAIR-CAM Dynamics.* SSRN preprint.
+> Jones, J. and Voicu, L. (2026). *Control Physiology: An Agent-Based Model of FAIR-CAM Dynamics.* arXiv:2605.26597 [cs.CR]. https://doi.org/10.48550/arXiv.2605.26597
 
 This repository ships the code, scenario data, configuration, calibration
 tables, and experiment scripts needed to reproduce the paper's figures and
@@ -135,11 +135,14 @@ Full details in [`REPRODUCE.md`](./REPRODUCE.md).
 ## Citation
 
 ```bibtex
-@misc{Jones2026ControlPhysiology,
-  author  = {Jones, Jack and Voicu, Laura},
-  title   = {Control Physiology: An Agent-Based Model of FAIR-CAM Dynamics},
-  year    = {2026},
-  note    = {SSRN preprint, \url{https://ssrn.com/abstract=6818420}},
+@article{Jones2026ControlPhysiology,
+  author        = {Jones, Jack and Voicu, Laura},
+  title         = {Control Physiology: An Agent-Based Model of FAIR-CAM Dynamics},
+  year          = {2026},
+  eprint        = {2605.26597},
+  archiveprefix = {arXiv},
+  primaryclass  = {cs.CR},
+  doi           = {10.48550/arXiv.2605.26597},
 }
 ```
 
@@ -148,7 +151,3 @@ Full details in [`REPRODUCE.md`](./REPRODUCE.md).
 Code and data in this repository are released under the Creative Commons
 Attribution-NonCommercial-ShareAlike 4.0 International Licence
 (CC BY-NC-SA 4.0). See [`LICENSE`](./LICENSE).
-
-## Contact
-
-Laura Voicu — `laura.voicu@me.com`
