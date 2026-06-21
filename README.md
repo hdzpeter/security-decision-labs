@@ -38,6 +38,22 @@ Agent-based simulation of FAIR-CAM control dynamics. Reproduction package for Jo
 
 [Read More](tools/control-systems-agent-based-model/README.md) | [Reproduce](tools/control-systems-agent-based-model/REPRODUCE.md)
 
+### [TEF Estimator](tools/tef-estimator/README.md)
+[![PyPI](https://img.shields.io/pypi/v/tef-estimator)](https://pypi.org/project/tef-estimator/)
+[![License](https://img.shields.io/badge/license-CC--BY--NC--SA%204.0-orange)](tools/tef-estimator/LICENSE)
+[![Status](https://img.shields.io/badge/status-active-green)]()
+[![Methodology](https://img.shields.io/badge/Methodology-FAIR-blue)]()
+
+Data-grounded Threat Event Frequency estimation with vector decomposition. Produces defensible TEF estimates for FAIR risk quantification by decomposing threat frequency into four initial access vectors.
+
+**Features:** Four-vector decomposition (exploitation, credential, phishing, supply chain), three-anchor base rate triangulation, cross-vector dampening (VERIS-calibrated), credibility blending with org telemetry, web UI, CLI, continuous telemetry monitoring
+
+**Install:** `pip install tef-estimator` · [PyPI](https://pypi.org/project/tef-estimator/)
+
+**License:** CC BY-NC-SA 4.0 (Non-Commercial Use Only)
+
+[Read More](tools/tef-estimator/README.md) | [User Guide](tools/tef-estimator/docs/user-guide.md) | [Technical Reference](tools/tef-estimator/docs/technical-reference.md)
+
 ---
 
 ## Licensing
