@@ -1,0 +1,143 @@
+{
+  "_metadata": {
+    "source": "Cross-source derived parameters and judgment-based estimates",
+    "extracted_date": "2026-05-24",
+    "extracted_by": "Laura Voicu",
+    "note": "Geographic and profile multipliers are judgment-based ranges informed by DBIR/IRIS patterns. Dampening parameters are explicitly judgment-based pending empirical replacement."
+  },
+  "_substrata_assessment": {
+    "source_id": "derived",
+    "verdict": "n/a",
+    "methodology_transparency": "n/a",
+    "measurement_type": "expert_elicitation",
+    "quality_tier": 4,
+    "bias_propagation_tags": [
+      "judgment_based",
+      "derived_from_multiple_sources"
+    ],
+    "note": "Cross-source derived parameters and judgment-based estimates. Not a primary source."
+  },
+  "geo_multipliers": {
+    "_citation": "Judgment-informed by DBIR 2025 geographic patterns",
+    "us": [
+      1.1,
+      1.2,
+      1.3
+    ],
+    "western_europe": [
+      1.0,
+      1.1,
+      1.2
+    ],
+    "asia_pacific": [
+      0.8,
+      0.9,
+      1.1
+    ],
+    "other": [
+      0.6,
+      0.8,
+      1.0
+    ],
+    "_derivation_method": "extracted",
+    "_quality_tier": 2
+  },
+  "profile_multipliers": {
+    "_citation": "Judgment-informed by IRIS 2025 + DBIR 2025 cross-tabulation",
+    "critical_infrastructure": [
+      1.0,
+      1.2,
+      1.3
+    ],
+    "supply_chain_provider": [
+      1.1,
+      1.3,
+      1.5
+    ],
+    "recent_ma": [
+      1.0,
+      1.2,
+      1.3
+    ],
+    "_derivation_method": "extracted",
+    "_quality_tier": 2
+  },
+  "dampening_config": {
+    "_citation": "VERIS VCDB co-occurrence analysis (10,037 incidents, scripts/compute_dampening.py) for vector_k; judgment-based for factor_k (VERIS lacks population denominators needed for within-vector derivation)",
+    "factor_k": 0.7,
+    "vector_k": 0.85,
+    "max_composite": 5.0,
+    "factor_k_source": "Judgment-based (0.70). VERIS incident data cannot derive within-vector dampening: sector×size co-occurrence in incidents conflates risk interaction with population correlation (financial orgs tend to be large). Requires population denominators unavailable in VCDB.",
+    "vector_k_source": "VERIS VCDB empirical (10,037 incidents, 1,789 with mapped vectors, 218 multi-vector). Bimodal pairwise structure: exploitation↔credential/phishing are substitutes (lift~0.2, vectors rarely co-occur), credential↔phishing are strong complements (lift=8.29, 95% CI [7.46,9.18]). Median pairwise lift=1.33 → k=0.75, but no single k fits the bimodal distribution. k=0.85 is a defensible aggregate: dampens the dominant credential-phishing co-occurrence without over-dampening independent exploitation pairs.",
+    "max_composite_source": "Transparent cap: no profile should produce >5x the base rate. Rationale: IRIS overall upper bound (10%) / base rate mode (1%) ~ 10x; 5x allows differentiation while preventing runaway stacking.",
+    "veris_pairwise_lifts": {
+      "_note": "Empirical lift values from VERIS VCDB. Lift>1 = vectors co-occur (complements); lift<1 = vectors are alternatives (substitutes). See data/veris/dampening_analysis.json for full output.",
+      "exploitation_x_credential": {
+        "lift": 0.209,
+        "confidence": "medium",
+        "ci_95": [
+          0.101,
+          0.338
+        ]
+      },
+      "exploitation_x_phishing": {
+        "lift": 0.225,
+        "confidence": "medium",
+        "ci_95": [
+          0.093,
+          0.382
+        ]
+      },
+      "exploitation_x_supply_chain": {
+        "lift": 0.833,
+        "confidence": "low",
+        "ci_95": null
+      },
+      "credential_x_phishing": {
+        "lift": 8.294,
+        "confidence": "high",
+        "ci_95": [
+          7.457,
+          9.182
+        ]
+      },
+      "credential_x_supply_chain": {
+        "lift": 8.979,
+        "confidence": "medium",
+        "ci_95": [
+          5.57,
+          12.414
+        ]
+      },
+      "phishing_x_supply_chain": {
+        "lift": 1.331,
+        "confidence": "low",
+        "ci_95": null
+      }
+    },
+    "_derivation_method": "extracted",
+    "_quality_tier": 2
+  },
+  "credibility_k": {
+    "_citation": "Bühlmann structural parameter k = σ²(process) / σ²(hypothetical means). Lower k = faster credibility growth. Derived from peer grid variance (σ² hypothetical means) and assumed process variance based on vector observability characteristics.",
+    "_methodology": "σ²(hypothetical means) estimated from peer grid TEF variance within revenue bands. Process variance assumed proportional to observation noise: exploitation (well-observed via WAF/IDS) < credential/phishing (moderate, auth logs/gateway) << supply chain (sparse, mostly invisible).",
+    "exploitation": 6.0,
+    "credential": 10.0,
+    "phishing": 10.0,
+    "supply_chain": 40.0,
+    "_derivation_method": "extracted",
+    "_quality_tier": 2
+  },
+  "data_vintage": {
+    "iris_2025": "Cyentia IRIS 2025 (150k+ events, 2008-2024)",
+    "iris_ransomware": "Cyentia IRIS Ransomware Spotlight (14k+ events, 2019-2023)",
+    "dbir_2025": "DBIR 2025 (Verizon)",
+    "coalition_2025": "Coalition 2025 Cyber Claims Report (2024 data)",
+    "at_bay_2025": "At-Bay 2025 InsurSec Report (2024 data)",
+    "beazley_q3_2025": "Beazley Q3 2025 Threat Briefing",
+    "naic_2025": "NAIC 2025 Cybersecurity Insurance Market Report",
+    "veris_vcdb": "VERIS Community Database (10,037 validated incidents, multi-year). Used for cross-vector dampening coefficient empirical derivation.",
+    "_derivation_method": "extracted",
+    "_quality_tier": 2
+  }
+}

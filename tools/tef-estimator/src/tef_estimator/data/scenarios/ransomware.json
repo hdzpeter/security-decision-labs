@@ -1,0 +1,88 @@
+{
+  "_metadata": {
+    "scenario": "ransomware",
+    "description": "Ransomware scenario-specific derived parameters",
+    "extracted_date": "2026-05-24",
+    "extracted_by": "Laura Voicu"
+  },
+  "base_rate_triangulation": {
+    "_citation": "Three-anchor consensus: operational tempo (Recorded Future/ransomware.live), IRIS back-calculation, Coalition market-adjusted. All anchors converted from observed LEF to TEF via population-level susceptibility prior.",
+    "susceptibility_prior": [0.10, 0.20, 0.30],
+    "_susceptibility_prior_note": "10-30% population-level. Represents average organization with average controls. Not an org-specific assessment — org-specific adjustment happens through sector/revenue/tech multipliers in the vector engines. Empirical anchors: Mandiant M-Trends ~30% of intrusions lead to ransomware deployment (susceptibility|intrusion), CrowdStrike breakout data implies 20-40% initial access success × 30% deployment = 6-12% end-to-end. Range 10-30% brackets available evidence and matches BEC methodology. All anchor TEF values below were derived using this prior; the engine rescales if the prior changes.",
+    "operational_tempo": [
+      0.011,
+      0.025,
+      0.067
+    ],
+    "operational_tempo_note": "Ransomware.live: ~4,000 leak-site listings/year. Underreporting 5-10x (not all groups have leak sites, not all victims posted, many pay before listing) → 20,000-40,000 actual loss events/year. Against ~6M US addressable businesses (Census Bureau) → 0.33-0.67% LEF. Divide by susceptibility 10-30% → TEF 1.1-6.7%. Mode at geometric mean ≈ 2.5%.",
+    "iris_back_calculation": [
+      0.005,
+      0.015,
+      0.08
+    ],
+    "iris_back_calculation_note": "IRIS 2025 overall LEF = 0.465%. Ransomware share (IRIS Table 1) = 31.7% → ransomware LEF ≈ 0.147%. Divide by susceptibility 10-30% → TEF 0.49-1.47%. High value (8%) reflects very low susceptibility (~2%) for small firms where IRIS undercounts. Already expressed as TEF.",
+    "coalition_market_adjusted": [
+      0.03,
+      0.06,
+      0.15
+    ],
+    "coalition_market_adjusted_note": "Coalition 2025: global ransomware claims frequency 0.31% (Risk & Insurance). Revenue-band variation: 0.25-0.40% (lower bands to mid-market). Bias correction 3.70x (NAIC: 4.4M policies vs Coalition book, selection for better-controlled clients) → 0.93-1.48% market-adjusted LEF. Divide by susceptibility 10-30% → TEF 3.1-14.8%. Mode: 1.15% LEF / 0.20 susceptibility ≈ 6%.",
+    "consensus": [
+      0.01,
+      0.03,
+      0.10
+    ],
+    "consensus_note": "Conservative synthesis of three corrected anchors. Anchor modes: operational tempo 2.5%, IRIS back-calc 1.5%, Coalition 6.0%. Mean of modes = 3.3%. Consensus mode 3% reflects conservative weighting (IRIS pulls down). Low (1%) anchored by IRIS back-calc floor. High (10%) anchored by Coalition upper range."
+  },
+  "credential_tempo": {
+    "_citation": "Derived from Recorded Future + IR report credential attack campaign patterns",
+    "global_campaigns_per_month": [
+      1000,
+      2000,
+      3000
+    ],
+    "credential_proportion": [
+      0.45,
+      0.52,
+      0.58
+    ],
+    "addressable_population": [
+      5000000,
+      10000000,
+      15000000
+    ]
+  },
+  "exploitation_scanning": {
+    "_citation": "GreyNoise 2025 Mass Exploitation Report + 2026 State of the Edge Report. IP-level malicious rate derived from cross-report comparison (13.5M tagged IPs in 2024 vs 3.8M malicious in H2 2025). Session-level malicious rate: 3.7% (18.3M/500M daily). Suspicious rate not published \u2014 would require API stats endpoint.",
+    "status": "derived_from_reports",
+    "grn_malicious_rate": [
+      0.2,
+      0.28,
+      0.35
+    ],
+    "grn_malicious_rate_derivation": "IP-level: 3.8M malicious unique IPs / ~13.5M total tagged. Session-level: 18.3M malicious / 500M total daily = 3.7%. IP-level range used for ceiling calc.",
+    "grn_session_malicious_rate": 0.037,
+    "grn_suspicious_rate": null,
+    "grn_suspicious_rate_note": "Not published in either report. Requires Enterprise API stats endpoint or Research Community Access.",
+    "campaign_ip_ratio_lognormal_mu": 4.0,
+    "campaign_ip_ratio_lognormal_sigma": 1.5,
+    "campaign_ip_ratio_note": "Judgment-based. React2Shell campaign (CVE-2025-55182) showed 73% of 3.9M sessions from just 2 JA4H fingerprints, suggesting high concentration. But campaign/IP ratios vary widely.",
+    "poa_ransomware": [
+      0.5,
+      0.7,
+      0.9
+    ],
+    "poa_ransomware_note": "Judgment-based. GreyNoise reports 28% of KEV CVEs tracked in 2024 associated with ransomware groups (Mass Exploitation 2025, p3).",
+    "ransomware_proportion_of_scanning": [
+      0.2,
+      0.28,
+      0.35
+    ],
+    "ransomware_proportion_note": "Anchored to GreyNoise: 28% of KEV CVEs associated with ransomware (Mass Exploitation 2025). Range reflects uncertainty in mapping CVE-level data to scanning volume."
+  },
+  "output_templates": {
+    "scenario_label": "Ransomware",
+    "attempt_verb": "attempt to attack",
+    "one_sentence": "Based on industry data, ransomware operators {attempt_verb} organizations matching your profile roughly once every {recurrence_years:.0f} years (range: {low_yr:.0f}-{high_yr:.0f} years). This measures how often adversaries TRY -- not how often they succeed. Success probability depends on your controls (assessed separately)."
+  }
+}

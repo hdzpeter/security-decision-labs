@@ -1,0 +1,532 @@
+"""
+TEF estimation result -- the output of the engine.
+
+Three-tier output structure:
+  Tier 1 (summary): The slide -- positioned estimate, recurrence interval,
+         vector bar, one sentence, peer percentile.
+  Tier 2 (analysis): The analyst's workspace -- distributions, sensitivity,
+         per-vector ranges.
+  Tier 3 (audit): The challenge layer -- traces, validation, warnings,
+         sources, base rate derivation.
+"""
+
+from __future__ import annotations
+
+from dataclasses import dataclass, field
+from datetime import date
+
+from tef_estimator.data.common import PERTRange, DampeningConfig
+from tef_estimator.distributions import LognormalParams
+from tef_estimator.vectors.base import VectorEstimate
+
+
+@dataclass
+class SummaryTier:
+    """Tier 1 -- the slide."""
+    positioned_median: float
+    positioned_low: float
+    positioned_high: float
+    annual_probability_pct: str
+    recurrence_years: float
+    one_sentence: str
+    peer_percentile: int | None
+    peer_context: str | None
+    vector_bar: list[dict[str, float | str]]
+
+
+@dataclass
+class AnalysisTier:
+    """Tier 2 -- the analyst's workspace."""
+    lognormal: LognormalParams
+    pert: PERTRange
+    vectors: list[VectorEstimate]
+
+
+@dataclass
+class AuditTier:
+    """Tier 3 -- the challenge layer."""
+    traces: list[dict]
+    validation_checks: list[str]
+    warnings: list[str]
+    data_sources: list[str]
+    base_rate: PERTRange
+    dampening: DampeningConfig
+    scenario_name: str
+
+
+@dataclass
+class TEFResult:
+    """Complete TEF estimation output."""
+
+    # --- Profile summary ---
+    profile_summary: str
+    estimate_date: date
+    scenario_name: str
+
+    # --- Vector decomposition ---
+    vectors: list[VectorEstimate]
+
+    # --- Aggregate positioned estimate ---
+    total_floor: float
+    total_positioned_low: float
+    total_positioned_median: float
+    total_positioned_high: float
+    total_ceiling: float
+
+    # --- Distribution parameters ---
+    lognormal: LognormalParams
+
+    # --- Base rate used ---
+    base_rate: PERTRange
+
+    # --- Dampening config ---
+    dampening: DampeningConfig
+
+    # --- Audit trail ---
+    validation_checks: list[str] = field(default_factory=list)
+    warnings: list[str] = field(default_factory=list)
+
+    # --- Peer percentile (set by peer.py after estimation) ---
+    peer_percentile: int | None = None
+    peer_context: str | None = None
+
+    @property
+    def total_positioned_range(self) -> PERTRange:
+        return PERTRange(self.total_positioned_low, self.total_positioned_median, self.total_positioned_high)
+
+    @property
+    def raw_vector_total(self) -> float:
+        return sum(v.positioned_median for v in self.vectors)
+
+    @property
+    def annual_probability_pct(self) -> str:
+        if self.total_positioned_median >= 1.0:
+            return f"{self.total_positioned_median:.1f}/yr"
+        return f"{self.total_positioned_median * 100:.1f}%"
+
+    @property
+    def median_recurrence_years(self) -> float:
+        if self.total_positioned_median > 0:
+            return 1.0 / self.total_positioned_median
+        return float("inf")
+
+    @property
+    def mean_recurrence_years(self) -> float:
+        return self.median_recurrence_years
+
+    # --- Three-tier access ---
+
+    @property
+    def summary(self) -> SummaryTier:
+        total_median = self.total_positioned_median
+        raw_total = self.raw_vector_total
+        vector_bar = []
+        if raw_total > 0:
+            for v in self.vectors:
+                vector_bar.append({
+                    "vector": v.vector_name,
+                    "share": v.positioned_median / raw_total,
+                })
+
+        return SummaryTier(
+            positioned_median=total_median,
+            positioned_low=self.total_positioned_low,
+            positioned_high=self.total_positioned_high,
+            annual_probability_pct=self.annual_probability_pct,
+            recurrence_years=self.median_recurrence_years,
+            one_sentence=self.plain_language_summary(),
+            peer_percentile=self.peer_percentile,
+            peer_context=self.peer_context,
+            vector_bar=vector_bar,
+        )
+
+    @property
+    def analysis(self) -> AnalysisTier:
+        return AnalysisTier(
+            lognormal=self.lognormal,
+            pert=self.total_positioned_range,
+            vectors=self.vectors,
+        )
+
+    @property
+    def audit(self) -> AuditTier:
+        all_sources = set()
+        traces = []
+        for v in self.vectors:
+            all_sources.update(v.data_sources)
+            if v.trace is not None:
+                traces.append(v.trace.to_dict() if hasattr(v.trace, 'to_dict') else {})
+
+        return AuditTier(
+            traces=traces,
+            validation_checks=self.validation_checks,
+            warnings=self.warnings,
+            data_sources=sorted(all_sources),
+            base_rate=self.base_rate,
+            dampening=self.dampening,
+            scenario_name=self.scenario_name,
+        )
+
+    def plain_language_summary(self) -> str:
+        """Board-ready plain language interpretation."""
+        low_yr = 1.0 / self.total_positioned_high if self.total_positioned_high > 0 else float("inf")
+        high_yr = 1.0 / self.total_positioned_low if self.total_positioned_low > 0 else float("inf")
+
+        top_vector = ""
+        raw_total = self.raw_vector_total
+        if self.vectors and raw_total > 0:
+            dominant = max(self.vectors, key=lambda v: v.positioned_median)
+            share_pct = (dominant.positioned_median / raw_total) * 100
+            driver = dominant.primary_drivers[0] if dominant.primary_drivers else dominant.vector_name
+            top_vector = (
+                f" The primary attack pathway is {dominant.vector_name.lower()}-based access "
+                f"({share_pct:.0f}% of estimated frequency), driven by {driver.lower()}."
+            )
+
+        text = (
+            f"Based on industry data, {self.scenario_name.lower()} operators "
+            f"attempt to attack organizations matching your profile roughly once every "
+            f"{self.median_recurrence_years:.0f} years "
+            f"(range: {low_yr:.0f}-{high_yr:.0f} years).{top_vector} "
+            f"This measures how often adversaries TRY -- not how often they succeed. "
+            f"Success probability depends on your controls (assessed separately)."
+        )
+        if self.peer_percentile is not None:
+            text += (
+                f" This estimate is at the {self.peer_percentile}th percentile "
+                f"across all {self.peer_context or 'comparable'} organizations."
+            )
+        return text
+
+    def vector_breakdown_text(self) -> str:
+        """Formatted vector breakdown for console output."""
+        lines = ["VECTOR BREAKDOWN:"]
+        max_name_len = max(len(v.vector_name) for v in self.vectors)
+        for v in self.vectors:
+            low_pct = v.positioned_low * 100
+            high_pct = v.positioned_high * 100
+            lines.append(
+                f"  {v.vector_name:<{max_name_len + 2}}"
+                f"{v.positioned_low:.5f} - {v.positioned_high:.5f} events/year  "
+                f"({low_pct:.2f}% - {high_pct:.2f}%)"
+            )
+            for driver in v.primary_drivers:
+                lines.append(f"    -> {driver}")
+        lines.append("")
+        lines.append(
+            f"  {'TOTAL':<{max_name_len + 2}}"
+            f"{self.total_positioned_low:.5f} - {self.total_positioned_high:.5f} events/year  "
+            f"({self.total_positioned_low * 100:.2f}% - {self.total_positioned_high * 100:.2f}%)"
+        )
+        lines.append(
+            "  (cross-vector dampening applied -- vectors are not fully independent)"
+        )
+        return "\n".join(lines)
+
+    def distribution_text(self) -> str:
+        """Distribution parameters for Monte Carlo consumers."""
+        ln = self.lognormal
+        return (
+            f"DISTRIBUTION PARAMETERS (for Monte Carlo):\n"
+            f"  Recommended distribution: Lognormal\n"
+            f"  mu (ln-space): {ln.mu:.3f}\n"
+            f"  sigma (ln-space): {ln.sigma:.3f}\n"
+            f"  5th percentile:  {ln.p5:.5f}  ({ln.p5 * 100:.2f}%)\n"
+            f"  Median:          {ln.median:.5f}  ({ln.median * 100:.2f}%)\n"
+            f"  95th percentile: {ln.p95:.5f}  ({ln.p95 * 100:.2f}%)\n"
+            f"\n"
+            f"  Alternative: PERT(min={self.total_positioned_low:.5f}, "
+            f"mode={self.total_positioned_median:.5f}, "
+            f"max={self.total_positioned_high:.5f})"
+        )
+
+    @property
+    def has_credibility_data(self) -> bool:
+        return any(v.credibility_z is not None for v in self.vectors)
+
+    def credibility_text(self) -> str:
+        """Bühlmann credibility blending summary."""
+        if not self.has_credibility_data:
+            return ""
+
+        blended_vectors = [v for v in self.vectors if v.credibility_z is not None]
+
+        lines = ["CREDIBILITY ADJUSTMENT (org telemetry):"]
+        max_name = max(len(v.vector_name) for v in blended_vectors)
+        for v in blended_vectors:
+            prior_pct = v.prior_median * 100
+            obs_pct = v.observed_frequency * 100
+            blended_pct = v.positioned_median * 100
+            lines.append(
+                f"  {v.vector_name:<{max_name + 2}}"
+                f"Z={v.credibility_z:.2f}   "
+                f"prior: {prior_pct:.2f}%  "
+                f"observed: {obs_pct:.2f}%  "
+                f"-> blended: {blended_pct:.2f}%"
+            )
+
+        prior_total = sum(v.prior_median for v in blended_vectors)
+        blended_total = sum(v.positioned_median for v in blended_vectors)
+        delta = blended_total - prior_total
+        sign = "+" if delta >= 0 else ""
+        lines.append(
+            f"\n  Blended vectors shift: {sign}{delta * 100:.2f}pp"
+        )
+        return "\n".join(lines)
+
+    def full_report(self) -> str:
+        """Complete text report -- Tier 3 full audit trail."""
+        sep = "=" * 60
+        sections = [
+            f"\n{self.scenario_name.upper()} THREAT EVENT FREQUENCY ESTIMATE",
+            sep,
+            f"Estimate Date: {self.estimate_date.strftime('%B %Y')} (point-in-time; refresh quarterly)",
+            f"Organization Profile: {self.profile_summary}",
+            "",
+            self.plain_language_summary(),
+            "",
+            sep,
+            self.vector_breakdown_text(),
+            "",
+            sep,
+            self.distribution_text(),
+        ]
+
+        if self.has_credibility_data:
+            sections.extend(["", sep, self.credibility_text()])
+
+        # Calculation traces
+        has_traces = any(v.trace is not None for v in self.vectors)
+        if has_traces:
+            sections.extend(["", sep, "CALCULATION TRACES:"])
+            for v in self.vectors:
+                if v.trace is not None and hasattr(v.trace, 'render_text'):
+                    sections.extend(["", v.trace.render_text()])
+
+        if self.validation_checks:
+            sections.extend(["", sep, "VALIDATION CHECKS:"])
+            for check in self.validation_checks:
+                sections.append(f"  + {check}")
+
+        if self.warnings:
+            sections.extend(["", sep, "WARNINGS:"])
+            for warn in self.warnings:
+                sections.append(f"  ! {warn}")
+
+        all_sources = set()
+        for v in self.vectors:
+            all_sources.update(v.data_sources)
+        sections.extend(["", sep, "DATA SOURCES:"])
+        for src in sorted(all_sources):
+            sections.append(f"  * {src}")
+
+        sections.extend([
+            "", sep,
+            "BASE RATE DERIVATION:",
+            f"  Three-anchor triangulation: PERT(min={self.base_rate.low}, "
+            f"mode={self.base_rate.mode}, max={self.base_rate.high})",
+            f"  1. Operational tempo: ~{self.base_rate.low * 100:.1f}% (lower bound)",
+            f"  2. IRIS back-calculation: ~{self.base_rate.mode * 100:.1f}% (mode)",
+            f"  3. Coalition market-adjusted: ~{self.base_rate.high * 100:.1f}% (upper bound)",
+            f"  Dampening coefficient k={self.dampening.factor_k:.2f}: {self.dampening.factor_k_source}",
+            "",
+            "WHAT THIS ESTIMATE DOES NOT INCLUDE:",
+            "  * Susceptibility (probability that an attempt succeeds)",
+            "  * Loss magnitude (financial impact if it does)",
+            "  * Control effectiveness (reduces susceptibility)",
+            "  * Attack surface size effect (enters through susceptibility, not TEF)",
+        ])
+
+        return "\n".join(sections)
+
+    def brief_report(self) -> str:
+        """Tier 1 summary -- fits on one slide."""
+        s = self.summary
+        lines = [
+            f"{self.scenario_name.upper()} TEF ESTIMATE",
+            "=" * 40,
+            f"Annual probability: {s.annual_probability_pct}",
+            f"Recurrence: ~1 in {s.recurrence_years:.0f} years",
+            "",
+        ]
+        if s.peer_percentile is not None:
+            lines.append(f"Peer percentile: {s.peer_percentile}th ({s.peer_context})")
+            lines.append("")
+
+        lines.append("VECTOR BREAKDOWN:")
+        max_name = max(len(d["vector"]) for d in s.vector_bar) if s.vector_bar else 10
+        for d in s.vector_bar:
+            share = d["share"]
+            bar = "#" * int(share * 40)
+            lines.append(f"  {d['vector']:<{max_name + 2}} {share:>5.0%} {bar}")
+
+        lines.extend(["", s.one_sentence])
+        return "\n".join(lines)
+
+    def to_markdown(self) -> str:
+        """Markdown-formatted report suitable for file export."""
+        s = self.summary
+        lines = [
+            f"# {self.scenario_name} TEF Estimate",
+            "",
+            f"**Date:** {self.estimate_date.strftime('%B %Y')} (point-in-time; refresh quarterly)",
+            f"**Profile:** {self.profile_summary}",
+            "",
+            "## Summary",
+            "",
+            f"| Metric | Value |",
+            f"|--------|-------|",
+            f"| Annual probability | {s.annual_probability_pct} |",
+            f"| Recurrence | ~1 in {s.recurrence_years:.0f} years |",
+            f"| Range | {self.total_positioned_low * 100:.2f}% -- {self.total_positioned_high * 100:.2f}% |",
+        ]
+        if s.peer_percentile is not None:
+            lines.append(f"| Peer percentile | {s.peer_percentile}th ({s.peer_context}) |")
+        lines.append("")
+
+        lines.extend([
+            "## Vector Breakdown",
+            "",
+            "| Vector | Share | Range |",
+            "|--------|------:|-------|",
+        ])
+        raw_total = self.raw_vector_total
+        for v in self.vectors:
+            share = v.positioned_median / raw_total if raw_total > 0 else 0
+            lines.append(
+                f"| {v.vector_name} | {share:.0%} | "
+                f"{v.positioned_low * 100:.2f}% -- {v.positioned_high * 100:.2f}% |"
+            )
+        lines.append("")
+
+        lines.extend([
+            "## Distribution Parameters",
+            "",
+            "| Parameter | Value |",
+            "|-----------|-------|",
+            f"| Distribution | Lognormal |",
+            f"| mu (ln-space) | {self.lognormal.mu:.3f} |",
+            f"| sigma (ln-space) | {self.lognormal.sigma:.3f} |",
+            f"| 5th percentile | {self.lognormal.p5 * 100:.2f}% |",
+            f"| Median | {self.lognormal.median * 100:.2f}% |",
+            f"| 95th percentile | {self.lognormal.p95 * 100:.2f}% |",
+            "",
+        ])
+
+        has_traces = any(v.trace is not None for v in self.vectors)
+        if has_traces:
+            lines.extend(["## Calculation Traces", ""])
+            for v in self.vectors:
+                if v.trace is not None and hasattr(v.trace, 'render_text'):
+                    lines.extend([f"### {v.vector_name}", "", "```", v.trace.render_text(), "```", ""])
+
+        if self.validation_checks:
+            lines.extend(["## Validation Checks", ""])
+            for check in self.validation_checks:
+                if check.strip():
+                    lines.append(f"- {check}")
+            lines.append("")
+
+        if self.warnings:
+            lines.extend(["## Warnings", ""])
+            for warn in self.warnings:
+                lines.append(f"- {warn}")
+            lines.append("")
+
+        all_sources = set()
+        for v in self.vectors:
+            all_sources.update(v.data_sources)
+        lines.extend(["## Data Sources", ""])
+        for src in sorted(all_sources):
+            lines.append(f"- {src}")
+        lines.append("")
+
+        lines.extend([
+            "## Base Rate Derivation",
+            "",
+            f"Three-anchor triangulation: PERT(min={self.base_rate.low}, "
+            f"mode={self.base_rate.mode}, max={self.base_rate.high})",
+            "",
+            f"1. Operational tempo: ~{self.base_rate.low * 100:.1f}% (lower bound)",
+            f"2. IRIS back-calculation: ~{self.base_rate.mode * 100:.1f}% (mode)",
+            f"3. Coalition market-adjusted: ~{self.base_rate.high * 100:.1f}% (upper bound)",
+            "",
+            "---",
+            "",
+            s.one_sentence,
+        ])
+
+        return "\n".join(lines)
+
+    def to_dict(self) -> dict:
+        """JSON-serializable dict with all three tiers."""
+        s = self.summary
+        a = self.analysis
+        au = self.audit
+
+        return {
+            "scenario": self.scenario_name.lower(),
+            "profile": self.profile_summary,
+            "estimate_date": self.estimate_date.isoformat(),
+            "summary": {
+                "positioned_median": s.positioned_median,
+                "positioned_low": s.positioned_low,
+                "positioned_high": s.positioned_high,
+                "annual_probability_pct": s.annual_probability_pct,
+                "recurrence_years": s.recurrence_years,
+                "peer_percentile": s.peer_percentile,
+                "peer_context": s.peer_context,
+                "one_sentence": s.one_sentence,
+                "vector_bar": s.vector_bar,
+            },
+            "analysis": {
+                "lognormal": {
+                    "mu": a.lognormal.mu,
+                    "sigma": a.lognormal.sigma,
+                    "p5": a.lognormal.p5,
+                    "median": a.lognormal.median,
+                    "p95": a.lognormal.p95,
+                },
+                "pert": {"min": a.pert.low, "mode": a.pert.mode, "max": a.pert.high},
+                "vectors": [
+                    {
+                        "name": v.vector_name,
+                        "floor": v.floor,
+                        "positioned_low": v.positioned_low,
+                        "positioned_median": v.positioned_median,
+                        "positioned_high": v.positioned_high,
+                        "ceiling": v.ceiling,
+                        "primary_drivers": v.primary_drivers,
+                    }
+                    for v in a.vectors
+                ],
+                "credibility": [
+                    {
+                        "vector": v.vector_name,
+                        "prior_median": v.prior_median,
+                        "observed_frequency": v.observed_frequency,
+                        "credibility_z": v.credibility_z,
+                        "blended_median": v.positioned_median,
+                    }
+                    for v in a.vectors
+                    if v.credibility_z is not None
+                ] or None,
+            },
+            "audit": {
+                "traces": au.traces,
+                "validation_checks": au.validation_checks,
+                "warnings": au.warnings,
+                "data_sources": au.data_sources,
+                "base_rate": {
+                    "low": au.base_rate.low,
+                    "mode": au.base_rate.mode,
+                    "high": au.base_rate.high,
+                },
+                "dampening": {
+                    "factor_k": au.dampening.factor_k,
+                    "vector_k": au.dampening.vector_k,
+                    "max_composite": au.dampening.max_composite,
+                },
+                "scenario_definition": {"name": au.scenario_name},
+            },
+        }

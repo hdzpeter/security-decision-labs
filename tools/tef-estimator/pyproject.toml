@@ -1,0 +1,74 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tef-estimator"
+version = "1.1.3"
+description = "Data-grounded Threat Event Frequency estimation with vector decomposition"
+readme = "README.md"
+license = { text = "CC-BY-NC-SA-4.0" }
+requires-python = ">=3.10"
+authors = [
+    { name = "Laura Voicu", email = "laura.voicu@me.com" },
+    { name = "Jack Jones" },
+]
+keywords = ["FAIR", "cyber risk", "ransomware", "BEC", "TEF", "risk quantification", "CRQ"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Information Technology",
+    "Topic :: Security",
+    "License :: Other/Proprietary License",
+    "Programming Language :: Python :: 3",
+]
+
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "pydantic>=2.0",
+    "pyyaml>=6.0",
+    "rich>=13.0",
+    "typer>=0.9",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "pytest-cov", "ruff"]
+viz = ["matplotlib>=3.7", "plotly>=5.0"]
+ui = ["nicegui>=2.0"]
+telemetry = ["requests>=2.25"]
+all = ["tef-estimator[dev,viz,ui,telemetry]"]
+
+[project.scripts]
+tef-estimator = "tef_estimator.cli:app"
+
+[project.urls]
+PyPI = "https://pypi.org/project/tef-estimator/"
+Homepage = "https://github.com/security-decision-science/security-decision-labs/tree/main/tools/tef-estimator"
+Documentation = "https://github.com/security-decision-science/security-decision-labs/tree/main/tools/tef-estimator/docs"
+Issues = "https://github.com/security-decision-science/security-decision-labs/tree/main/tools/tef-estimator/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/tef_estimator"]
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+    "data/veris/",
+    "data/snapshots/",
+    "data/reference/**/*.pdf",
+    "data/refresh_log.json",
+    "docs/Data Sources/",
+    "docs/*.pdf",
+    "docs/*.docx",
+    "docs/*.xlsx",
+    ".env",
+    ".idea/",
+    ".pytest_cache/",
+    ".venv/",
+    "**/__pycache__/",
+    "**/.DS_Store",
+    "ransom_payment.json",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

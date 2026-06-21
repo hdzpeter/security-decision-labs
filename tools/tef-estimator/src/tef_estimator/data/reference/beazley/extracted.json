@@ -1,0 +1,61 @@
+{
+  "_metadata": {
+    "source": "Beazley Q3 2025 Threat Briefing",
+    "access": "Free download: https://www.beazley.com/thought-leadership/cyber-and-tech/",
+    "extracted_date": "2026-05-24",
+    "extracted_by": "Laura Voicu"
+  },
+  "_substrata_assessment": {
+    "source_id": "beazley",
+    "verdict": "pass_with_caveats",
+    "methodology_transparency": "thin",
+    "measurement_type": "claims",
+    "quality_tier": 2,
+    "bias_propagation_tags": [
+      "insured_population_only",
+      "beazley_policyholders",
+      "thin_methodology"
+    ]
+  },
+  "initial_access_vectors": {
+    "_citation": "Beazley Q3 2025 Threat Briefing — initial access breakdown",
+    "vpn_credential_proportion": 0.48,
+    "rdp_initial_access_low": 0.06,
+    "rdp_initial_access_high": 0.1,
+    "_derivation_method": "extracted",
+    "_quality_tier": 2
+  },
+  "ransomware_trends": {
+    "_citation": "Beazley Q3 2025 Threat Briefing",
+    "ransomware_claims_yoy_change": 0.16,
+    "healthcare_share_of_claims": 0.22,
+    "professional_services_largest_share": true,
+    "_derivation_method": "extracted",
+    "_quality_tier": 2
+  },
+  "vector_proportions": {
+    "_citation": "Derived from Beazley Q3 2025 + DBIR 2025 + Sophos + Unit42 + Mandiant + CrowdStrike",
+    "credential": [
+      0.45,
+      0.52,
+      0.58
+    ],
+    "exploitation": [
+      0.18,
+      0.22,
+      0.28
+    ],
+    "phishing": [
+      0.12,
+      0.17,
+      0.22
+    ],
+    "supply_chain": [
+      0.04,
+      0.06,
+      0.1
+    ],
+    "_derivation_method": "extracted",
+    "_quality_tier": 2
+  }
+}

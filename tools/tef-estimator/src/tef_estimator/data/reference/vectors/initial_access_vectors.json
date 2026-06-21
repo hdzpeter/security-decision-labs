@@ -1,0 +1,806 @@
+{
+  "_extraction_log": {
+    "total_records": 38,
+    "sources": [
+      "DBIR_2025 (Verizon, 22052 incidents / 12195 breaches)",
+      "DBIR_2026 (Verizon, 31861 incidents / 22625 breaches)",
+      "Unit42_IR_2025 (Palo Alto, 500 engagements)",
+      "Unit42_IR_2026 (Palo Alto, 750 engagements)",
+      "IBM_CODB_2025 (600 organizations)",
+      "Mandiant_MTrends_2026 (Google/Mandiant, 500k+ IR hours)",
+      "Beazley_Q3_2025 (Beazley, cyber insurance claims)",
+      "CrowdStrike_GTR_2026 (CrowdStrike, EDR telemetry)"
+    ],
+    "notes": "Initial access vector breakdowns from IR reports. All values manually verified from source PDFs. DBIR 2025 percentages are of non-Error, non-Misuse breaches (n=9891). DBIR 2026 percentages are of non-Error, non-Misuse breaches (n=20,023). Unit42 and IBM data also present in exports/quorum/distributions/response_cost_benchmarks.json. CrowdStrike, Mandiant, and Beazley records added 2026-06-05."
+  },
+  "records": [
+    {
+      "id": "dbir2025_credential_abuse_all",
+      "source": "DBIR_2025",
+      "vector": "credential_abuse",
+      "sector": "all",
+      "metric": "pct_of_initial_access",
+      "value": 0.22,
+      "n_observations": 9891,
+      "year_range": "2023-2024",
+      "data_quality": "direct",
+      "extraction_note": "Figure 5, page 10. Non-Error, non-Misuse breaches. 22% credential abuse.",
+      "_bias_tags": [
+        "incident_response_sample",
+        "detected_incidents_only",
+        "multi_source"
+      ],
+      "_source_verdict": "pass",
+      "fair_concept": "lef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "dbir2025_exploit_vuln_all",
+      "source": "DBIR_2025",
+      "vector": "exploitation_of_vulnerabilities",
+      "sector": "all",
+      "metric": "pct_of_initial_access",
+      "value": 0.2,
+      "n_observations": 9891,
+      "year_range": "2023-2024",
+      "data_quality": "direct",
+      "extraction_note": "Figure 5, page 10. Non-Error, non-Misuse breaches. 20% exploitation of vulnerabilities.",
+      "_bias_tags": [
+        "incident_response_sample",
+        "detected_incidents_only",
+        "multi_source"
+      ],
+      "_source_verdict": "pass",
+      "fair_concept": "lef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "dbir2025_phishing_all",
+      "source": "DBIR_2025",
+      "vector": "phishing",
+      "sector": "all",
+      "metric": "pct_of_initial_access",
+      "value": 0.16,
+      "n_observations": 9891,
+      "year_range": "2023-2024",
+      "data_quality": "direct",
+      "extraction_note": "Figure 5, page 10. Non-Error, non-Misuse breaches. 16% phishing.",
+      "_bias_tags": [
+        "incident_response_sample",
+        "detected_incidents_only",
+        "multi_source"
+      ],
+      "_source_verdict": "pass",
+      "fair_concept": "lef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "dbir2025_exploit_edge_devices",
+      "source": "DBIR_2025",
+      "vector": "exploitation_of_vulnerabilities",
+      "sector": "all",
+      "metric": "pct_edge_device_target",
+      "value": 0.22,
+      "n_observations": null,
+      "year_range": "2023-2024",
+      "data_quality": "direct",
+      "extraction_note": "22% of exploitation actions targeted edge devices/VPNs. 8x growth from prior year.",
+      "_bias_tags": [
+        "incident_response_sample",
+        "detected_incidents_only",
+        "multi_source"
+      ],
+      "_source_verdict": "pass",
+      "fair_concept": "lef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "dbir2025_third_party_all",
+      "source": "DBIR_2025",
+      "vector": "third_party",
+      "sector": "all",
+      "metric": "pct_of_breaches",
+      "value": 0.3,
+      "n_observations": 12195,
+      "year_range": "2023-2024",
+      "data_quality": "direct",
+      "extraction_note": "30% of breaches involved third-party compromise.",
+      "_bias_tags": [
+        "incident_response_sample",
+        "detected_incidents_only",
+        "multi_source"
+      ],
+      "_source_verdict": "pass",
+      "fair_concept": "lef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "dbir2025_espionage_exploit",
+      "source": "DBIR_2025",
+      "vector": "exploitation_of_vulnerabilities",
+      "sector": "all",
+      "metric": "pct_of_espionage_breaches",
+      "value": 0.7,
+      "n_observations": null,
+      "year_range": "2023-2024",
+      "data_quality": "direct",
+      "extraction_note": "Espionage-motivated breaches used exploitation 70% of the time.",
+      "_bias_tags": [
+        "incident_response_sample",
+        "detected_incidents_only",
+        "multi_source"
+      ],
+      "_source_verdict": "pass",
+      "fair_concept": "lef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "dbir2026_exploit_vuln_all",
+      "source": "DBIR_2026",
+      "vector": "exploitation_of_vulnerabilities",
+      "sector": "all",
+      "metric": "pct_of_initial_access",
+      "value": 0.31,
+      "n_observations": 20023,
+      "year_range": "2024-2025",
+      "data_quality": "direct",
+      "extraction_note": "Figure 10, page 15. Non-Error, non-Misuse breaches (n=20,023). 31% exploitation of vulnerabilities, up from 20% (55% increase). Now top initial access vector. Hand-verified from PDF.",
+      "_bias_tags": [
+        "incident_response_sample",
+        "detected_incidents_only",
+        "multi_source",
+        "voluntary_contribution"
+      ],
+      "_source_verdict": "pass",
+      "fair_concept": "lef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "dbir2026_phishing_all",
+      "source": "DBIR_2026",
+      "vector": "phishing",
+      "sector": "all",
+      "metric": "pct_of_initial_access",
+      "value": 0.16,
+      "n_observations": 20023,
+      "year_range": "2024-2025",
+      "data_quality": "direct",
+      "extraction_note": "Figure 10, page 15. Non-Error, non-Misuse breaches (n=20,023). 16% phishing, unchanged from prior year. Hand-verified from PDF.",
+      "_bias_tags": [
+        "incident_response_sample",
+        "detected_incidents_only",
+        "multi_source",
+        "voluntary_contribution"
+      ],
+      "_source_verdict": "pass",
+      "fair_concept": "lef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "dbir2026_credential_abuse_all",
+      "source": "DBIR_2026",
+      "vector": "credential_abuse",
+      "sector": "all",
+      "metric": "pct_of_initial_access",
+      "value": 0.13,
+      "n_observations": 20023,
+      "year_range": "2024-2025",
+      "data_quality": "direct",
+      "extraction_note": "Figure 10, page 15. Non-Error, non-Misuse breaches (n=20,023). 13% credential abuse, down from 22%. No longer top vector. Hand-verified from PDF.",
+      "_bias_tags": [
+        "incident_response_sample",
+        "detected_incidents_only",
+        "multi_source",
+        "voluntary_contribution"
+      ],
+      "_source_verdict": "pass",
+      "fair_concept": "lef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "dbir2026_pretexting_all",
+      "source": "DBIR_2026",
+      "vector": "pretexting",
+      "sector": "all",
+      "metric": "pct_of_initial_access",
+      "value": 0.06,
+      "n_observations": 20023,
+      "year_range": "2024-2025",
+      "data_quality": "direct",
+      "extraction_note": "Figure 10, page 15. Non-Error, non-Misuse breaches (n=20,023). 6% pretexting. Becoming more common initial access vector for ransomware/extortion. Hand-verified from PDF.",
+      "_bias_tags": [
+        "incident_response_sample",
+        "detected_incidents_only",
+        "multi_source",
+        "voluntary_contribution"
+      ],
+      "_source_verdict": "pass",
+      "fair_concept": "lef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "dbir2026_third_party_all",
+      "source": "DBIR_2026",
+      "vector": "third_party",
+      "sector": "all",
+      "metric": "pct_of_breaches",
+      "value": 0.48,
+      "n_observations": 22625,
+      "year_range": "2024-2025",
+      "data_quality": "direct",
+      "extraction_note": "Page 11: 48% of breaches involved third-party compromise, up 60% from 30% in prior year. Hand-verified from PDF.",
+      "_bias_tags": [
+        "incident_response_sample",
+        "detected_incidents_only",
+        "multi_source",
+        "voluntary_contribution"
+      ],
+      "_source_verdict": "pass",
+      "fair_concept": "lef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "unit42_2025_vulnerabilities_all",
+      "source": "Unit42_IR_2025",
+      "vector": "vulnerabilities",
+      "sector": "all",
+      "metric": "pct_of_initial_access",
+      "value": 0.19,
+      "n_observations": 500,
+      "year_range": "2023-2024",
+      "data_quality": "direct",
+      "extraction_note": "Unit 42 IR Report 2025. 500 engagements. vulnerabilities: 19%.",
+      "_bias_tags": [
+        "ir_engagement_only",
+        "unit42_clients"
+      ],
+      "_source_verdict": "pass_with_caveats",
+      "fair_concept": "lef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "unit42_2025_phishing_all",
+      "source": "Unit42_IR_2025",
+      "vector": "phishing",
+      "sector": "all",
+      "metric": "pct_of_initial_access",
+      "value": 0.23,
+      "n_observations": 500,
+      "year_range": "2023-2024",
+      "data_quality": "direct",
+      "extraction_note": "Unit 42 IR Report 2025. 500 engagements. phishing: 23%.",
+      "_bias_tags": [
+        "ir_engagement_only",
+        "unit42_clients"
+      ],
+      "_source_verdict": "pass_with_caveats",
+      "fair_concept": "lef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "unit42_2025_compromised_credentials_all",
+      "source": "Unit42_IR_2025",
+      "vector": "compromised_credentials",
+      "sector": "all",
+      "metric": "pct_of_initial_access",
+      "value": 0.16,
+      "n_observations": 500,
+      "year_range": "2023-2024",
+      "data_quality": "direct",
+      "extraction_note": "Unit 42 IR Report 2025. 500 engagements. compromised_credentials: 16%.",
+      "_bias_tags": [
+        "ir_engagement_only",
+        "unit42_clients"
+      ],
+      "_source_verdict": "pass_with_caveats",
+      "fair_concept": "lef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "unit42_2025_brute_force_all",
+      "source": "Unit42_IR_2025",
+      "vector": "brute_force",
+      "sector": "all",
+      "metric": "pct_of_initial_access",
+      "value": 0.13,
+      "n_observations": 500,
+      "year_range": "2023-2024",
+      "data_quality": "direct",
+      "extraction_note": "Unit 42 IR Report 2025. 500 engagements. brute_force: 13%.",
+      "_bias_tags": [
+        "ir_engagement_only",
+        "unit42_clients"
+      ],
+      "_source_verdict": "pass_with_caveats",
+      "fair_concept": "lef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "unit42_2025_social_engineering_all",
+      "source": "Unit42_IR_2025",
+      "vector": "social_engineering",
+      "sector": "all",
+      "metric": "pct_of_initial_access",
+      "value": 0.08,
+      "n_observations": 500,
+      "year_range": "2023-2024",
+      "data_quality": "direct",
+      "extraction_note": "Unit 42 IR Report 2025. 500 engagements. social_engineering: 8%.",
+      "_bias_tags": [
+        "ir_engagement_only",
+        "unit42_clients"
+      ],
+      "_source_verdict": "pass_with_caveats",
+      "fair_concept": "lef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "unit42_2025_iam_misconfiguration_all",
+      "source": "Unit42_IR_2025",
+      "vector": "iam_misconfiguration",
+      "sector": "all",
+      "metric": "pct_of_initial_access",
+      "value": 0.04,
+      "n_observations": 500,
+      "year_range": "2023-2024",
+      "data_quality": "direct",
+      "extraction_note": "Unit 42 IR Report 2025. 500 engagements. iam_misconfiguration: 4%.",
+      "_bias_tags": [
+        "ir_engagement_only",
+        "unit42_clients"
+      ],
+      "_source_verdict": "pass_with_caveats",
+      "fair_concept": "lef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "unit42_2025_other_all",
+      "source": "Unit42_IR_2025",
+      "vector": "other",
+      "sector": "all",
+      "metric": "pct_of_initial_access",
+      "value": 0.17,
+      "n_observations": 500,
+      "year_range": "2023-2024",
+      "data_quality": "direct",
+      "extraction_note": "Unit 42 IR Report 2025. 500 engagements. other: 17%.",
+      "_bias_tags": [
+        "ir_engagement_only",
+        "unit42_clients"
+      ],
+      "_source_verdict": "pass_with_caveats",
+      "fair_concept": "lef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "unit42_2026_vulnerabilities_all",
+      "source": "Unit42_IR_2026",
+      "vector": "vulnerabilities",
+      "sector": "all",
+      "metric": "pct_of_initial_access",
+      "value": 0.22,
+      "n_observations": 750,
+      "year_range": "2024-2025",
+      "data_quality": "direct",
+      "extraction_note": "Unit 42 IR Report 2026. 750 engagements. vulnerabilities: 22%.",
+      "_bias_tags": [
+        "ir_engagement_only",
+        "unit42_clients"
+      ],
+      "_source_verdict": "pass_with_caveats",
+      "fair_concept": "lef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "unit42_2026_phishing_all",
+      "source": "Unit42_IR_2026",
+      "vector": "phishing",
+      "sector": "all",
+      "metric": "pct_of_initial_access",
+      "value": 0.22,
+      "n_observations": 750,
+      "year_range": "2024-2025",
+      "data_quality": "direct",
+      "extraction_note": "Unit 42 IR Report 2026. 750 engagements. phishing: 22%.",
+      "_bias_tags": [
+        "ir_engagement_only",
+        "unit42_clients"
+      ],
+      "_source_verdict": "pass_with_caveats",
+      "fair_concept": "lef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "unit42_2026_compromised_credentials_all",
+      "source": "Unit42_IR_2026",
+      "vector": "compromised_credentials",
+      "sector": "all",
+      "metric": "pct_of_initial_access",
+      "value": 0.13,
+      "n_observations": 750,
+      "year_range": "2024-2025",
+      "data_quality": "direct",
+      "extraction_note": "Unit 42 IR Report 2026. 750 engagements. compromised_credentials: 13%.",
+      "_bias_tags": [
+        "ir_engagement_only",
+        "unit42_clients"
+      ],
+      "_source_verdict": "pass_with_caveats",
+      "fair_concept": "lef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "unit42_2026_social_engineering_all",
+      "source": "Unit42_IR_2026",
+      "vector": "social_engineering",
+      "sector": "all",
+      "metric": "pct_of_initial_access",
+      "value": 0.11,
+      "n_observations": 750,
+      "year_range": "2024-2025",
+      "data_quality": "direct",
+      "extraction_note": "Unit 42 IR Report 2026. 750 engagements. social_engineering: 11%.",
+      "_bias_tags": [
+        "ir_engagement_only",
+        "unit42_clients"
+      ],
+      "_source_verdict": "pass_with_caveats",
+      "fair_concept": "lef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "unit42_2026_brute_force_all",
+      "source": "Unit42_IR_2026",
+      "vector": "brute_force",
+      "sector": "all",
+      "metric": "pct_of_initial_access",
+      "value": 0.08,
+      "n_observations": 750,
+      "year_range": "2024-2025",
+      "data_quality": "direct",
+      "extraction_note": "Unit 42 IR Report 2026. 750 engagements. brute_force: 8%.",
+      "_bias_tags": [
+        "ir_engagement_only",
+        "unit42_clients"
+      ],
+      "_source_verdict": "pass_with_caveats",
+      "fair_concept": "lef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "unit42_2026_insider_all",
+      "source": "Unit42_IR_2026",
+      "vector": "insider",
+      "sector": "all",
+      "metric": "pct_of_initial_access",
+      "value": 0.08,
+      "n_observations": 750,
+      "year_range": "2024-2025",
+      "data_quality": "direct",
+      "extraction_note": "Unit 42 IR Report 2026. 750 engagements. insider: 8%.",
+      "_bias_tags": [
+        "ir_engagement_only",
+        "unit42_clients"
+      ],
+      "_source_verdict": "pass_with_caveats",
+      "fair_concept": "lef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "unit42_2026_trusted_relationship_all",
+      "source": "Unit42_IR_2026",
+      "vector": "trusted_relationship",
+      "sector": "all",
+      "metric": "pct_of_initial_access",
+      "value": 0.04,
+      "n_observations": 750,
+      "year_range": "2024-2025",
+      "data_quality": "direct",
+      "extraction_note": "Unit 42 IR Report 2026. 750 engagements. trusted_relationship: 4%.",
+      "_bias_tags": [
+        "ir_engagement_only",
+        "unit42_clients"
+      ],
+      "_source_verdict": "pass_with_caveats",
+      "fair_concept": "lef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "unit42_2026_seo_attacks_all",
+      "source": "Unit42_IR_2026",
+      "vector": "seo_attacks",
+      "sector": "all",
+      "metric": "pct_of_initial_access",
+      "value": 0.04,
+      "n_observations": 750,
+      "year_range": "2024-2025",
+      "data_quality": "direct",
+      "extraction_note": "Unit 42 IR Report 2026. 750 engagements. seo_attacks: 4%.",
+      "_bias_tags": [
+        "ir_engagement_only",
+        "unit42_clients"
+      ],
+      "_source_verdict": "pass_with_caveats",
+      "fair_concept": "lef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "unit42_2026_iam_misconfiguration_all",
+      "source": "Unit42_IR_2026",
+      "vector": "iam_misconfiguration",
+      "sector": "all",
+      "metric": "pct_of_initial_access",
+      "value": 0.03,
+      "n_observations": 750,
+      "year_range": "2024-2025",
+      "data_quality": "direct",
+      "extraction_note": "Unit 42 IR Report 2026. 750 engagements. iam_misconfiguration: 3%.",
+      "_bias_tags": [
+        "ir_engagement_only",
+        "unit42_clients"
+      ],
+      "_source_verdict": "pass_with_caveats",
+      "fair_concept": "lef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "ibm_codb2025_exploit_vuln_all",
+      "source": "IBM_CODB_2025",
+      "vector": "exploitation_of_vulnerabilities",
+      "sector": "all",
+      "metric": "pct_of_breaches",
+      "value": 0.1,
+      "n_observations": 600,
+      "year_range": "2024-2025",
+      "data_quality": "direct",
+      "extraction_note": "IBM Cost of a Data Breach 2025. Vulnerability exploitation: 10% of breaches. 600 organizations.",
+      "_bias_tags": [
+        "self_reported_costs",
+        "ponemon_sample",
+        "no_per_record_use",
+        "directional_only_for_absolutes"
+      ],
+      "_source_verdict": "conditional",
+      "fair_concept": "lef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "mandiant_mtrends2026_exploits_all",
+      "source": "Mandiant_M-Trends_2026",
+      "vector": "exploitation_of_vulnerabilities",
+      "sector": "all",
+      "metric": "pct_of_initial_access",
+      "value": 0.32,
+      "n_observations": null,
+      "year_range": "2025",
+      "data_quality": "direct",
+      "extraction_note": "M-Trends 2026 p3: Exploits = most common initial infection vector for 6th consecutive year at 32%.",
+      "_bias_tags": [
+        "ir_engagement_only",
+        "post_compromise_selection",
+        "large_enterprise_skew"
+      ],
+      "_source_verdict": "pass_with_caveats",
+      "fair_concept": "lef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "mandiant_mtrends2026_vishing_all",
+      "source": "Mandiant_M-Trends_2026",
+      "vector": "phishing",
+      "sector": "all",
+      "metric": "pct_of_initial_access",
+      "value": 0.11,
+      "n_observations": null,
+      "year_range": "2025",
+      "data_quality": "direct",
+      "extraction_note": "M-Trends 2026 p3: Voice phishing (vishing) surged to 11%, #2 vector. Highly interactive, resilient against automated controls.",
+      "_bias_tags": [
+        "ir_engagement_only",
+        "post_compromise_selection",
+        "large_enterprise_skew"
+      ],
+      "_source_verdict": "pass_with_caveats",
+      "fair_concept": "lef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "mandiant_mtrends2026_email_phishing_all",
+      "source": "Mandiant_M-Trends_2026",
+      "vector": "phishing",
+      "sector": "all",
+      "metric": "pct_of_initial_access",
+      "value": 0.06,
+      "n_observations": null,
+      "year_range": "2025",
+      "data_quality": "direct",
+      "extraction_note": "M-Trends 2026 p3: Email phishing declined from 14% (2024) to 6% (2025). Note: this is email phishing only; combined with vishing (11%) total social engineering is 17%.",
+      "_bias_tags": [
+        "ir_engagement_only",
+        "post_compromise_selection",
+        "large_enterprise_skew"
+      ],
+      "_source_verdict": "pass_with_caveats",
+      "fair_concept": "lef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "mandiant_mtrends2026_prior_compromise_ransomware",
+      "source": "Mandiant_M-Trends_2026",
+      "vector": "prior_compromise",
+      "sector": "all",
+      "metric": "pct_of_initial_access",
+      "value": 0.3,
+      "n_observations": null,
+      "year_range": "2025",
+      "data_quality": "direct",
+      "extraction_note": "M-Trends 2026 p3: In ransomware-related incidents, prior compromise (hand-off from initial access broker) was #1 initial access vector at 30%.",
+      "_bias_tags": [
+        "ir_engagement_only",
+        "post_compromise_selection",
+        "large_enterprise_skew"
+      ],
+      "_source_verdict": "pass_with_caveats",
+      "fair_concept": "lef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "beazley_q3_2025_vpn_credential_all",
+      "source": "Beazley_Q3_2025",
+      "vector": "credential_abuse",
+      "sector": "all",
+      "metric": "pct_of_initial_access",
+      "value": 0.48,
+      "n_observations": null,
+      "year_range": "2025",
+      "data_quality": "direct",
+      "extraction_note": "Beazley Q3 2025 Threat Briefing: VPN credential proportion = 48% of initial access.",
+      "_bias_tags": [
+        "insured_population_only",
+        "beazley_policyholders",
+        "thin_methodology"
+      ],
+      "_source_verdict": "pass_with_caveats",
+      "fair_concept": "lef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "beazley_q3_2025_rdp_all",
+      "source": "Beazley_Q3_2025",
+      "vector": "rdp_exploitation",
+      "sector": "all",
+      "metric": "pct_of_initial_access",
+      "value": 0.08,
+      "n_observations": null,
+      "year_range": "2025",
+      "data_quality": "direct",
+      "extraction_note": "Beazley Q3 2025: RDP initial access 6-10%, mode 8%.",
+      "_bias_tags": [
+        "insured_population_only",
+        "beazley_policyholders",
+        "thin_methodology"
+      ],
+      "_source_verdict": "pass_with_caveats",
+      "fair_concept": "lef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "beazley_q3_2025_vector_credential_range",
+      "source": "Beazley_Q3_2025",
+      "vector": "credential_abuse",
+      "sector": "all",
+      "metric": "pct_of_initial_access",
+      "value": 0.52,
+      "n_observations": null,
+      "year_range": "2025",
+      "data_quality": "derived",
+      "extraction_note": "Multi-source cross-validation (Beazley, Verizon, Unit42, Mandiant, CrowdStrike, Sophos): credential vector proportion PERT range [0.45, 0.52, 0.58], mode 0.52.",
+      "_bias_tags": [
+        "insured_population_only",
+        "beazley_policyholders",
+        "thin_methodology"
+      ],
+      "_source_verdict": "pass_with_caveats",
+      "fair_concept": "lef",
+      "derivation_method": "calculated",
+      "quality_tier": 2
+    },
+    {
+      "id": "crowdstrike_gtr2026_malware_free_credential_proxy",
+      "source": "CrowdStrike_GTR_2026",
+      "vector": "credential_abuse",
+      "sector": "all",
+      "metric": "proxy_indicator",
+      "value": 0.82,
+      "n_observations": null,
+      "year_range": "2025",
+      "data_quality": "derived",
+      "extraction_note": "CrowdStrike GTR 2026 p8: 82% malware-free detections. Used as proxy for credential/identity attack dominance — attacks that don't deploy malware rely on valid credentials, social engineering, or living-off-the-land.",
+      "_bias_tags": [
+        "vendor_telemetry",
+        "crowdstrike_customers",
+        "edr_detected_only"
+      ],
+      "_source_verdict": "pass_with_caveats",
+      "fair_concept": "tef",
+      "derivation_method": "calculated",
+      "quality_tier": 2
+    },
+    {
+      "id": "crowdstrike_gtr2026_valid_account_cloud",
+      "source": "CrowdStrike_GTR_2026",
+      "vector": "credential_abuse",
+      "sector": "all",
+      "metric": "pct_of_cloud_incidents",
+      "value": 0.35,
+      "n_observations": null,
+      "year_range": "2025",
+      "data_quality": "direct",
+      "extraction_note": "CrowdStrike GTR 2026 p9: Valid account abuse = 35% of cloud incidents.",
+      "_bias_tags": [
+        "vendor_telemetry",
+        "crowdstrike_customers",
+        "edr_detected_only"
+      ],
+      "_source_verdict": "pass_with_caveats",
+      "fair_concept": "tef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    },
+    {
+      "id": "crowdstrike_gtr2026_edge_device_exploitation_china",
+      "source": "CrowdStrike_GTR_2026",
+      "vector": "exploitation_of_vulnerabilities",
+      "sector": "all",
+      "metric": "pct_of_china_nexus_intrusions",
+      "value": 0.4,
+      "n_observations": null,
+      "year_range": "2025",
+      "data_quality": "direct",
+      "extraction_note": "CrowdStrike GTR 2026 p30: Edge devices targeted in 40% of cases where China-nexus adversary exploited a vulnerability.",
+      "_bias_tags": [
+        "vendor_telemetry",
+        "crowdstrike_customers",
+        "edr_detected_only"
+      ],
+      "_source_verdict": "pass_with_caveats",
+      "fair_concept": "tef",
+      "derivation_method": "extracted",
+      "quality_tier": 1
+    }
+  ]
+}

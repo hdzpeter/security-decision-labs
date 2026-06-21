@@ -1,0 +1,32 @@
+# TEF Estimator default configuration.
+#
+# To override, copy this file to ~/.tef-estimator/config.yaml and edit.
+# The UI can further override these values at runtime.
+
+# Population-level susceptibility prior used to convert observed LEF to TEF.
+# Represents "the average organization with average controls."
+# Org-specific adjustment happens through sector/revenue/tech multipliers.
+# Example: a security-mature org might use [0.05, 0.10, 0.15].
+susceptibility_prior:
+  low: 0.10
+  mode: 0.20
+  high: 0.30
+
+# Dampening compresses correlated multipliers to prevent runaway stacking.
+dampening:
+  # Within-vector: compresses sector x revenue x tech x geo interaction.
+  factor_k: 0.70
+  # Cross-vector: compresses the sum of four vector estimates.
+  # Empirically supported by VERIS VCDB co-occurrence analysis (10,037 incidents).
+  vector_k: 0.85
+  # No profile can produce more than this multiple of the base rate.
+  max_composite: 5.0
+
+# Bühlmann credibility k per vector.
+# Lower k = faster convergence to observed data.
+# Exploitation is well-observed (WAF/IDS), supply chain is sparse.
+credibility_k:
+  exploitation: 6.0
+  credential: 10.0
+  phishing: 10.0
+  supply_chain: 40.0
