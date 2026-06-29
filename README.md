@@ -54,6 +54,19 @@ Data-grounded Threat Event Frequency estimation with vector decomposition. Produ
 
 [Read More](tools/tef-estimator/README.md) | [User Guide](tools/tef-estimator/docs/user-guide.md) | [Technical Reference](tools/tef-estimator/docs/technical-reference.md)
 
+### [LLM Classification Validator](tools/llm-classification-validator/README.md)
+[![License](https://img.shields.io/badge/license-CC--BY--NC--SA%204.0-orange)](tools/llm-classification-validator/LICENSE)
+[![Status](https://img.shields.io/badge/status-active-green)]()
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
+
+Five-dimension psychometric validation framework for LLM-generated classifications. Tests whether an LLM's outputs are reliable enough to trust, using the same statistical methods applied to human raters.
+
+**Features:** Coherence (inter-rater kappa), consistency (rule-based checks), convergent validity (reference comparison), adversarial discrimination (minimal pairs), stability and sensitivity (paraphrase invariance), interactive dashboard, configurable thresholds, bootstrap confidence intervals
+
+**License:** CC BY-NC-SA 4.0 (Non-Commercial Use Only)
+
+[Read More](tools/llm-classification-validator/README.md) | [Methodology](tools/llm-classification-validator/docs/METHODOLOGY.md) | [Examples](tools/llm-classification-validator/examples/)
+
 ---
 
 ## Licensing
