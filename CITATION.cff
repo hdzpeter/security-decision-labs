@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this work, please cite it."
-title: "security-decision-labs: interactive FAIR cyber risk quantification playground"
+title: "security-decision-labs: tools for evidence-based security decision-making"
 authors:
   - family-names: Voicu
     given-names: Laura
@@ -8,12 +8,15 @@ authors:
 keywords:
   - cybersecurity
   - FAIR methodology
+  - FAIR-CAM
   - risk quantification
   - monte carlo simulation
-  - IRIS benchmarks
-  - streamlit
-  - interactive simulator
+  - agent-based model
+  - threat event frequency
+  - LLM validation
+  - psychometrics
+  - control effectiveness
 repository-code: "https://github.com/security-decision-science/security-decision-labs"
-version: "0.1.0"
-date-released: "2025-10-09"
+version: "1.0.0"
+date-released: "2026-06-29"
 doi: ""
