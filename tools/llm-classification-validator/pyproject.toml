@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "llm-classification-validator"
+version = "1.0.0"
+description = "Psychometric validation framework for LLM-generated classifications"
+requires-python = ">=3.10"
+license = "LicenseRef-CC-BY-NC-SA-4.0"
+authors = [
+    { name = "Laura Voicu" },
+]
+keywords = ["llm", "validation", "classification", "psychometric", "kappa"]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/security-decision-science/llm-classification-validator"
+Repository = "https://github.com/security-decision-science/llm-classification-validator"
+Changelog = "https://github.com/security-decision-science/llm-classification-validator/blob/main/CHANGELOG.md"
+Blog = "https://TODO-CSA-BLOG-URL"
+
+[project.optional-dependencies]
+ui = ["nicegui>=3.0", "plotly>=5.0"]
+dev = ["pytest>=7.0", "pytest-cov"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/llm_classification_validator"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

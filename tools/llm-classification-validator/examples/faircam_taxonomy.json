@@ -1,0 +1,51 @@
+{
+  "LEC": {
+    "name": "Loss Event Controls",
+    "subdomains": {
+      "Prevention": {
+        "functions": ["Avoidance", "Deterrence", "Resistance"]
+      },
+      "Detection": {
+        "functions": ["Visibility", "Monitoring", "Recognition"]
+      },
+      "Response": {
+        "functions": ["Containment", "Resilience", "Loss Minimisation"]
+      }
+    }
+  },
+  "VMC": {
+    "name": "Variance Management Controls",
+    "subdomains": {
+      "Prevention": {
+        "functions": ["Reduce Change Frequency", "Reduce Variance Probability"]
+      },
+      "Identification": {
+        "functions": [
+          "Threat Capability Monitoring",
+          "Controls Monitoring",
+          "Treatment Selection & Prioritisation"
+        ]
+      },
+      "Correction": {
+        "functions": ["Implementation"]
+      }
+    }
+  },
+  "DSC": {
+    "name": "Decision Support Controls",
+    "subdomains": {
+      "Prevention": {
+        "functions": [
+          "Define Expectations & Objectives",
+          "Communicate Expectations",
+          "Provide Situational Awareness",
+          "Ensure Capability",
+          "Proper Incentives"
+        ]
+      },
+      "Identification": {
+        "functions": ["Root Cause Analyses", "Audits", "Post-mortems"]
+      }
+    }
+  }
+}

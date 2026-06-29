@@ -1,0 +1,85 @@
+# LLM Classification Validator — Configuration
+#
+# Source of truth for defaults: src/llm_classification_validator/eval_defaults.json
+# This YAML template mirrors those defaults. Copy and override what you need.
+# Load with: EvalConfig.from_yaml("eval_config.yaml")
+
+# ── Coherence (Dimension 1) ─────────────────────────────────
+# Inter-rater agreement via Cohen's/Fleiss' kappa.
+coherence:
+  thresholds:
+    - metric: mean_kappa
+      target: 0.65
+      minimum: 0.50
+  bootstrap:
+    iterations: 1000
+    confidence: 0.90
+    seed: 42
+
+# ── Consistency (Dimension 2) ────────────────────────────────
+# Deterministic rule-based validation.
+consistency:
+  fail_on_error: true
+  fail_on_warning: false
+  pass_rate_target: 0.95
+  pass_rate_minimum: 0.80
+
+# ── Convergent validity (Dimension 3) ────────────────────────
+# Agreement with external references (crosswalks, ground truth).
+convergent:
+  thresholds:
+    - metric: jaccard
+      target: 0.60
+      minimum: 0.45
+    - metric: kappa
+      target: 0.65
+      minimum: 0.50
+  bootstrap:
+    iterations: 1000
+    confidence: 0.90
+    seed: 42
+
+# ── Adversarial discrimination (Dimension 4) ─────────────────
+# Minimal pair and ambiguity testing.
+adversarial:
+  discrimination_target: 0.85
+  discrimination_minimum: 0.70
+  ambiguity_target: 0.75
+  ambiguity_minimum: 0.60
+  combined_target: 0.80
+  combined_minimum: 0.65
+  discrimination_weight: 0.6
+  ambiguity_weight: 0.4
+
+# ── Stability and sensitivity (Dimension 5) ──────────────────
+# Paraphrase invariance and perturbation sensitivity.
+stability:
+  thresholds:
+    - metric: stability
+      target: 0.85
+      minimum: 0.70
+    - metric: change_detection
+      target: 0.70
+      minimum: 0.55
+    - metric: direction_accuracy
+      target: 0.80
+      minimum: 0.65
+  false_change_max: 0.15
+  bootstrap:
+    iterations: 1000
+    confidence: 0.90
+    seed: 42
+
+# ── Sampling ─────────────────────────────────────────────────
+# Stratified expert review sampling parameters.
+sampling:
+  min_per_stratum: 3
+  min_total: 20
+  confidence: 0.90
+  seed: 42
+
+# ── Runner ───────────────────────────────────────────────────
+# Evaluation orchestration.
+runner:
+  max_workers: 2
+  parallel_advanced: true
