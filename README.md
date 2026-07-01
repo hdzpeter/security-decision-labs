@@ -4,7 +4,7 @@
 
 # Security Decision Labs
 
-Interactive tools for evidence-based security decision-making.
+FAIR cyber risk quantification toolkit, agent-based control simulation, threat event frequency estimator, LLM classification validator, Monte Carlo risk engine.
 
 Part of [Apropos Security](https://apropos-security.com) · [Notebooks](https://security-decision-science.github.io/security-decision-science/) · [Library (pip)](https://github.com/security-decision-science/decision-security) · [Blog](https://medium.com/apropos-security)
 
