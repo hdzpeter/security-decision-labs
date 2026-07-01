@@ -4,7 +4,7 @@
 
 # Security Decision Labs
 
-FAIR cyber risk quantification toolkit, agent-based control simulation, threat event frequency estimator, LLM classification validator, Monte Carlo risk engine.
+FAIR cyber risk quantification toolkit: agent-based control simulation, threat event frequency estimator, LLM classification validator, Monte Carlo risk engine.
 
 Part of [Apropos Security](https://apropos-security.com) · [Notebooks](https://security-decision-science.github.io/security-decision-science/) · [Library (pip)](https://github.com/security-decision-science/decision-security) · [Blog](https://medium.com/apropos-security)
 
@@ -62,6 +62,8 @@ Data-grounded Threat Event Frequency estimation with vector decomposition. Produ
 Five-dimension psychometric validation framework for LLM-generated classifications. Tests whether an LLM's outputs are reliable enough to trust, using the same statistical methods applied to human raters.
 
 **Features:** Coherence (inter-rater kappa), consistency (rule-based checks), convergent validity (reference comparison), adversarial discrimination (minimal pairs), stability and sensitivity (paraphrase invariance), interactive dashboard, configurable thresholds, bootstrap confidence intervals
+
+**Install:** `pip install llm-classification-validator` · [PyPI](https://pypi.org/project/llm-classification-validator/)
 
 **License:** CC BY-NC-SA 4.0 (Non-Commercial Use Only)
 
