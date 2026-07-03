@@ -5,7 +5,7 @@
 
 The LLM classification validator is a five-dimension framework for testing LLM outputs. 
 
-Companion blog post: [Validating LLM-Generated Control Mappings Beyond Aggregate Accuracy](https://TODO-CSA-BLOG-URL) (Cloud Security Alliance)
+Companion blog post: [Validating LLM-Generated Control Mappings Beyond Aggregate Accuracy](https://cloudsecurityalliance.org/blog/2026/07/02/validating-llm-generated-control-mappings-beyond-aggregate-accuracy) (Cloud Security Alliance)
 
 For a detailed explanation of the methodology, see [docs/METHODOLOGY.md](docs/METHODOLOGY.md).
 
